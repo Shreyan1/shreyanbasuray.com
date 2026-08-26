@@ -40,7 +40,31 @@
   a{color:#3D5AFE;text-decoration:none;}
   a:hover{color:#1B36C9;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-  .flink{display:inline-flex;align-items:center;min-height:44px}
+  .flink{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:24px}
+  /* --- mobile hygiene (WCAG 2.5.8 targets, iOS text inflation, no sideways scroll) --- */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{overflow-x:hidden}
+  @supports (overflow:clip){body{overflow-x:clip}}
+  img,svg,video,canvas{max-width:100%}
+  .taplink{display:inline-flex;align-items:center;min-height:44px}
+  .snapgrid{overflow:hidden;padding:8px;box-sizing:border-box}
+  /* --- navigation --- */
+  .navchk{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .navburger{display:none}
+  .navpanel{display:none}
+  @media (max-width:820px){
+    .navdesk{display:none !important}
+    .navburger{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 15px;border:1px solid rgba(255,255,255,.45);box-sizing:border-box;border-radius:2px;color:#FFFFFF;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;user-select:none}
+    .navburger:hover{background:rgba(255,255,255,.14)}
+    .navchk:focus-visible ~ .navbar .navburger{outline:2px solid #FFC300;outline-offset:2px}
+    .navchk:checked ~ .navpanel{display:block}
+    .navchk:checked ~ .navbar .navburger .bopen{display:none}
+    .navchk:checked ~ .navbar .navburger .bshut{display:inline}
+    .navburger .bshut{display:none}
+  }
+  .navlink{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:4px 0;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.06em;color:#EDF0FF;border-bottom:1px solid rgba(255,255,255,.22)}
+  .navlink[aria-current="page"]{color:#FFC300}
+  .navlink:hover{color:#FFFFFF}
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
 </style>
 <style>picture{display:contents}img{max-width:100%}:focus-visible{outline:2px solid #FFC300;outline-offset:2px}</style>
@@ -52,9 +76,10 @@
 <div style="background:#F7F3EA;color:#15171B;font-family:Outfit,system-ui,sans-serif;">
 
 <div style="background:#3D5AFE;color:#F4F2FF;">
-  <div style="max-width:1140px;margin:0 auto;padding:20px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;">
-    <a href="/" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:900;letter-spacing:.02em;color:#FFC300;">shreyan basu ray</a>
-    <div style="display:flex;align-items:center;gap:12px 28px;flex-wrap:wrap;">
+    <input type="checkbox" id="nav-open" class="navchk" aria-label="Open the menu">
+  <div class="navbar" style="max-width:1140px;margin:0 auto;padding:20px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;">
+    <a href="/" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:900;letter-spacing:.02em;color:#FFC300;;display:inline-flex;align-items:center;min-height:44px">shreyan basu ray</a>
+    <div class="navdesk" style="display:flex;align-items:center;gap:12px 28px;flex-wrap:wrap;">
       <div style="display:flex;flex-wrap:wrap;gap:8px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;">
         <a href="/" style="color:#EDF0FF;padding:9px 11px;border-radius:2px;border:1px solid rgba(255,255,255,.18);background-color:#000000;" class="hv1">/home</a>
         <a href="/work/" style="color:#EDF0FF;padding:9px 11px;border-radius:2px;border:1px solid rgba(255,255,255,.18);background-color:#000000;" class="hv1">/work</a>
@@ -77,7 +102,26 @@
         </a>
       </div>
     </div>
+        <label for="nav-open" class="navburger">
+          <svg width="16" height="14" viewBox="0 0 16 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1 2h14M1 7h14M1 12h14"></path></svg>
+          <span class="bopen">menu</span><span class="bshut">close</span>
+        </label>
   </div>
+    <div class="navpanel">
+      <div style="max-width:1140px;margin:0 auto;padding:4px clamp(20px,5vw,48px) 24px;">
+        <a href="/" class="navlink">/home<span aria-hidden="true">→</span></a>
+        <a href="/work/" class="navlink">/work<span aria-hidden="true">→</span></a>
+        <a href="/consulting/" class="navlink">/consulting<span aria-hidden="true">→</span></a>
+        <a href="/writing/" class="navlink" aria-current="page">/writing<span aria-hidden="true">•</span></a>
+        <a href="/about/" class="navlink">/about<span aria-hidden="true">→</span></a>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:18px;">
+          <a href="https://github.com/Shreyan1" aria-label="GitHub" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"></path></svg></a>
+          <a href="https://linkedin.com/in/shreyanbasuray" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM5 13.3H2.7V6.1H5v7.2zM3.85 5.1a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM13.3 13.3H11V9.5c0-.9-.32-1.52-1.13-1.52-.62 0-.99.42-1.15.82-.06.15-.08.35-.08.55v3.95H6.35s.03-6.4 0-7.2h2.29v1.02c.3-.47.85-1.14 2.06-1.14 1.5 0 2.6.98 2.6 3.08v4.24z"></path></svg></a>
+          <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.02 0C3.7 0 .2 3.5.2 7.82c0 1.38.36 2.72 1.04 3.9L0 16l4.4-1.16a7.8 7.8 0 0 0 3.62.9c4.32 0 7.82-3.5 7.82-7.82S12.34 0 8.02 0zm4.6 11.06c-.2.55-1.16 1.06-1.6 1.1-.44.05-.86.22-2.9-.6-2.46-.99-4-3.5-4.12-3.66-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.84-2 .22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.4l.75 1.8c.06.13.1.28.01.45l-.28.42c-.09.12-.19.25-.08.44.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.95.19.1.3.08.42-.05l.6-.7c.15-.19.28-.14.47-.07l1.7.8c.19.09.32.13.37.21.05.08.05.48-.15 1.03z"></path></svg></a>
+          <a href="mailto:basurayshreyan@gmail.com" aria-label="Email" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.2" y="3" width="13.6" height="10" rx="1"></rect><path d="M1.6 3.8 8 8.6l6.4-4.8"></path></svg></a>
+        </div>
+      </div>
+    </div>
 
   <div style="max-width:1140px;margin:0 auto;padding:52px clamp(20px,5vw,48px) 84px;">
     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9D3FF;">writing ✦ articles, papers, policy</div>
@@ -105,7 +149,7 @@
   <div style="margin-top:72px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;">Technical articles</h2>
-      <a href="https://wandb.ai/basurayshreyan" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;font-weight:600;" target="_blank" rel="noopener noreferrer">all on weights &amp; biases →</a>
+      <a class="taplink" href="https://wandb.ai/basurayshreyan" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;font-weight:600;" target="_blank" rel="noopener noreferrer">all on weights &amp; biases →</a>
     </div>
     <div style="margin-top:20px;border-top:1px solid #E2DCCE;">
       <a href="https://wandb.ai/ai-team-articles/Agentic%20Workflows%20in%20Production/reports/Agentic-workflows-in-production-Mechanisms-trade-offs-costs-and-design-patterns--VmlldzoxNzU1OTgwNQ" target="_blank" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:baseline;padding:18px 0;border-bottom:1px solid #E2DCCE;color:#15171B;" rel="noopener noreferrer" class="hv3">
@@ -176,26 +220,26 @@
       </a>
       <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);">
         <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">framework</div>
-        <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a href="https://drive.google.com/file/d/17glCQYFuRk1FF-QWwTnQSndOKxoWXx2U/view?usp=sharing" target="_blank" style="color:#15171B;" rel="noopener noreferrer" class="hv3">SafeTrust: agentic development in India ↗</a></h3>
+        <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv3" href="https://drive.google.com/file/d/17glCQYFuRk1FF-QWwTnQSndOKxoWXx2U/view?usp=sharing" target="_blank" style="color:#15171B;" rel="noopener noreferrer">SafeTrust: agentic development in India ↗</a></h3>
         <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A framework for building and deploying agentic systems responsibly in the Indian context.</p>
       </div>
       </div>
       <div style="display:grid;gap:16px;">
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">book</div>
-          <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a href="https://amzn.in/d/c3pgkTh" target="_blank" style="color:#15171B;" rel="noopener noreferrer" class="hv3">The Architect's Handbook: Engineering Responsible AI ↗</a></h3>
+          <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv3" href="https://amzn.in/d/c3pgkTh" target="_blank" style="color:#15171B;" rel="noopener noreferrer">The Architect's Handbook: Engineering Responsible AI ↗</a></h3>
           <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A practitioner's handbook on building AI systems that can be governed, audited and explained.</p>
           <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;line-height:1.6;">Eighty-six pages ✦ version 1.0, january 2026</p>
         </div>
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">peer reviewed</div>
-          <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a href="https://scholar.google.com/citations?user=vih7SfEAAAAJ&amp;hl=en" target="_blank" style="color:#15171B;" rel="noopener noreferrer" class="hv3">Quantum Neural Networks ↗</a></h3>
+          <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv3" href="https://scholar.google.com/citations?user=vih7SfEAAAAJ&amp;hl=en" target="_blank" style="color:#15171B;" rel="noopener noreferrer">Quantum Neural Networks ↗</a></h3>
           <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Where quantum machine learning actually earns its cost against classical baselines.</p>
           <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;line-height:1.6;">Springer Nature, with Soujanya Ray ✦ ISEM vol 65, 205 to 233</p>
         </div>
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">policy</div>
-          <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a href="https://drive.google.com/file/d/1nkkkYy6-bbiHx3MTsoL9sN0zk2E3tVxV/view?usp=drive_link" target="_blank" style="color:#15171B;" rel="noopener noreferrer" class="hv3">C-RAI ↗</a></h3>
+          <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv3" href="https://drive.google.com/file/d/1nkkkYy6-bbiHx3MTsoL9sN0zk2E3tVxV/view?usp=drive_link" target="_blank" style="color:#15171B;" rel="noopener noreferrer">C-RAI ↗</a></h3>
           <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A certification framework for responsible AI, proposing how Indian AI systems could be audited and labelled before deployment.</p>
           <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;line-height:1.6;">Sent to MeitY and NASSCOM ✦ draft v2, 2026</p>
         </div>
@@ -209,7 +253,7 @@
     <h2 style="margin:0;font-size:clamp(30px,4vw,46px);font-weight:600;letter-spacing:-.04em;line-height:1.06;max-width:22ch;color:#FDFCFF;">Want a piece written on your stack?</h2>
     <p style="margin:18px 0 0;font-size:19px;line-height:1.6;color:#D5DAFF;max-width:50ch;">I write from experiments I run myself, which means I need access to the system rather than a brief about it.</p>
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center;">
-      <a href="/#brief" style="display:inline-flex;align-items:center;background:#F7F3EA;color:#1B2BAE;padding:15px 28px;font-size:17px;font-weight:600;border-radius:2px;" class="hv5">Get in touch →</a>
+      <a class="taplink hv5" href="/#brief" style="display:inline-flex;align-items:center;background:#F7F3EA;color:#1B2BAE;padding:15px 28px;font-size:17px;font-weight:600;border-radius:2px;">Get in touch →</a>
       <a href="https://wandb.ai/basurayshreyan" style="display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:15px 24px;font-size:17px;font-weight:500;border-radius:2px;" target="_blank" rel="noopener noreferrer" class="hv6">Read on W&amp;B</a>
     </div>
   </div>

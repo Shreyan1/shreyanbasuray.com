@@ -45,10 +45,34 @@
     .rev-arrow{justify-self:start !important;transform:rotate(90deg)}
     .knob-grid{grid-template-columns:minmax(0,1fr) !important}
   }
+  /* --- mobile hygiene (WCAG 2.5.8 targets, iOS text inflation, no sideways scroll) --- */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{overflow-x:hidden}
+  @supports (overflow:clip){body{overflow-x:clip}}
+  img,svg,video,canvas{max-width:100%}
+  .taplink{display:inline-flex;align-items:center;min-height:44px}
+  .snapgrid{overflow:hidden;padding:8px;box-sizing:border-box}
+  /* --- navigation --- */
+  .navchk{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .navburger{display:none}
+  .navpanel{display:none}
+  @media (max-width:820px){
+    .navdesk{display:none !important}
+    .navburger{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 15px;border:1px solid rgba(255,255,255,.45);box-sizing:border-box;border-radius:2px;color:#FFFFFF;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;user-select:none}
+    .navburger:hover{background:rgba(255,255,255,.14)}
+    .navchk:focus-visible ~ .navbar .navburger{outline:2px solid #FFC300;outline-offset:2px}
+    .navchk:checked ~ .navpanel{display:block}
+    .navchk:checked ~ .navbar .navburger .bopen{display:none}
+    .navchk:checked ~ .navbar .navburger .bshut{display:inline}
+    .navburger .bshut{display:none}
+  }
+  .navlink{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:4px 0;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.06em;color:#EDF0FF;border-bottom:1px solid rgba(255,255,255,.22)}
+  .navlink[aria-current="page"]{color:#FFC300}
+  .navlink:hover{color:#FFFFFF}
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
   .hit{position:relative}
   .hit::before{content:"";position:absolute;inset:-7px -6px}
-  .flink{display:inline-flex;align-items:center;min-height:44px}
+  .flink{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:24px}
 </style>
 <style>picture{display:contents}img{max-width:100%}:focus-visible{outline:2px solid #FFC300;outline-offset:2px}</style>
 <style>.hv1:hover,.hv1:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important;border-color:#FFFFFF !important}.hv2:hover,.hv2:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important}.hv3:hover,.hv3:focus-visible{background:#FFFFFF !important}.hv4:hover,.hv4:focus-visible{background:rgba(255,255,255,.12) !important}</style>
@@ -58,9 +82,10 @@
 <div style="background:#F7F3EA;color:#15171B;font-family:Outfit,system-ui,sans-serif;overflow-x:clip;">
 
 <div style="background:#3D5AFE;color:#F4F2FF;">
-  <div style="max-width:1140px;margin:0 auto;padding:20px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;">
-    <a href="/" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:900;letter-spacing:.02em;color:#FFC300;">shreyan basu ray</a>
-    <div style="display:flex;align-items:center;gap:12px 28px;flex-wrap:wrap;">
+    <input type="checkbox" id="nav-open" class="navchk" aria-label="Open the menu">
+  <div class="navbar" style="max-width:1140px;margin:0 auto;padding:20px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;">
+    <a href="/" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:900;letter-spacing:.02em;color:#FFC300;;display:inline-flex;align-items:center;min-height:44px">shreyan basu ray</a>
+    <div class="navdesk" style="display:flex;align-items:center;gap:12px 28px;flex-wrap:wrap;">
       <div style="display:flex;flex-wrap:wrap;gap:8px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;">
         <a href="/" class="hit hv1" style="color:#EDF0FF;padding:9px 11px;border-radius:2px;border:1px solid rgba(255,255,255,.18);background-color:#000000;">/home</a>
         <a href="/work/" class="hit" style="color:#3D5AFE;padding:9px 11px;border-radius:2px;border:1px solid #FFFFFF;background-color:#FFFFFF;">/work</a>
@@ -83,12 +108,31 @@
         </a>
       </div>
     </div>
+        <label for="nav-open" class="navburger">
+          <svg width="16" height="14" viewBox="0 0 16 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1 2h14M1 7h14M1 12h14"></path></svg>
+          <span class="bopen">menu</span><span class="bshut">close</span>
+        </label>
   </div>
+    <div class="navpanel">
+      <div style="max-width:1140px;margin:0 auto;padding:4px clamp(20px,5vw,48px) 24px;">
+        <a href="/" class="navlink">/home<span aria-hidden="true">→</span></a>
+        <a href="/work/" class="navlink" aria-current="page">/work<span aria-hidden="true">•</span></a>
+        <a href="/consulting/" class="navlink">/consulting<span aria-hidden="true">→</span></a>
+        <a href="/writing/" class="navlink">/writing<span aria-hidden="true">→</span></a>
+        <a href="/about/" class="navlink">/about<span aria-hidden="true">→</span></a>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:18px;">
+          <a href="https://github.com/Shreyan1" aria-label="GitHub" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"></path></svg></a>
+          <a href="https://linkedin.com/in/shreyanbasuray" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM5 13.3H2.7V6.1H5v7.2zM3.85 5.1a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM13.3 13.3H11V9.5c0-.9-.32-1.52-1.13-1.52-.62 0-.99.42-1.15.82-.06.15-.08.35-.08.55v3.95H6.35s.03-6.4 0-7.2h2.29v1.02c.3-.47.85-1.14 2.06-1.14 1.5 0 2.6.98 2.6 3.08v4.24z"></path></svg></a>
+          <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.02 0C3.7 0 .2 3.5.2 7.82c0 1.38.36 2.72 1.04 3.9L0 16l4.4-1.16a7.8 7.8 0 0 0 3.62.9c4.32 0 7.82-3.5 7.82-7.82S12.34 0 8.02 0zm4.6 11.06c-.2.55-1.16 1.06-1.6 1.1-.44.05-.86.22-2.9-.6-2.46-.99-4-3.5-4.12-3.66-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.84-2 .22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.4l.75 1.8c.06.13.1.28.01.45l-.28.42c-.09.12-.19.25-.08.44.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.95.19.1.3.08.42-.05l.6-.7c.15-.19.28-.14.47-.07l1.7.8c.19.09.32.13.37.21.05.08.05.48-.15 1.03z"></path></svg></a>
+          <a href="mailto:basurayshreyan@gmail.com" aria-label="Email" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.2" y="3" width="13.6" height="10" rx="1"></rect><path d="M1.6 3.8 8 8.6l6.4-4.8"></path></svg></a>
+        </div>
+      </div>
+    </div>
 
   <div style="max-width:1140px;margin:0 auto;padding:52px clamp(20px,5vw,48px) 84px;">
     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9D3FF;">case studies ✦ top 4 work</div>
     <h1 style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .1s both;margin:18px 0 0;font-size:clamp(36px,5.4vw,60px);line-height:1.03;letter-spacing:-.04em;font-weight:600;max-width:22ch;color:#FDFCFF;">How I have helped enterprises achieve.</h1>
-    <p style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .2s both;margin:22px 0 0;font-size:20px;line-height:1.55;color:#D5DAFF;max-width:52ch;font-weight:300;">Top 4 work: what each one had to do, how it was built, and what it costs to run.</p>
+    <p style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .2s both;margin:22px 0 0;font-size:20px;line-height:1.55;color:#D5DAFF;max-width:52ch;font-weight:300;">Top 4 works: what each one had to do, how it was built, and what it costs to run.</p>
   </div>
 </div>
 
@@ -99,30 +143,8 @@
     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">01 ✦ enterprise voice agent platform ✦ in production</div>
     <h2 style="margin:14px 0 0;font-size:clamp(25px,3vw,33px);font-weight:600;letter-spacing:-.03em;line-height:1.12;">A voice agent that runs at ₹2.29 a minute</h2>
     <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Backend infrastructure so the client can stand up voice support for any company they onboard. My first plan was deliberately vendor-independent. I costed it, latency-tested it, then reversed my own position.</p>
-    <div style="margin:22px 0 0;background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:18px 20px;">
-  <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A8375;">the reversal</div>
-  <div class="rev-grid" style="display:grid;grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr);gap:14px;align-items:center;margin-top:14px;">
-    <div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#A8A296;">planned ✦ vendor independent</div>
-      <div style="margin-top:7px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.85;color:#8A8375;text-decoration:line-through;text-decoration-color:#C9432A;">Faster-Whisper Medium<br>4-bit Qwen<br>XTTS-v2<br>LangGraph</div>
-    </div>
-    <div class="rev-arrow" style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#3D5AFE;justify-self:center;">→</div>
-    <div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">shipped ✦ latency first</div>
-      <div style="margin-top:7px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.85;color:#15171B;font-weight:500;">Google Cloud STT <span style="color:#8A8375;">latest_short</span><br>Gemini 2.0 Flash<br>Cartesia Sonic<br>Pipecat</div>
-    </div>
-  </div>
-  <p style="margin:14px 0 0;padding-top:12px;border-top:1px solid #E2DCCE;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">kept from the first design ✦ BGE-M3 embeddings ✦ Milvus ✦ Silero VAD</p>
-</div>
     <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Independence lost to latency and reliability, and I would make that trade again.</p>
-    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">The per-minute number came out of tuning, not procurement.</p>
-    <div class="knob-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;">
-    <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">max_tokens = 60</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">answers stay phone length</div></div>
-    <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">automatic punctuation off</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">one less transform in the loop</div></div>
-    <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">8 kHz PCM</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">matches Twilio native rate, nothing is resampled</div></div>
-    <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">temperature 0.3</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">phrasing stays repeatable</div></div>
-    </div>
-    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Three profiles switch on an environment variable, so a faster stack can be A/B tested without a redeploy.</p>
+    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">The per-minute number came out of tuning, not procurement, and the four settings on the right are where it came from. Three profiles switch on an environment variable, so a faster stack can be A/B tested without a redeploy.</p>
     <div style="margin:20px 0 0;border-left:3px solid #D9432A;background:#FDF1EC;padding:15px 18px;border-radius:0 2px 2px 0;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#B03A22;">the failure worth reporting</div>
       <p style="margin:9px 0 0;font-size:16px;line-height:1.62;color:#4C4841;max-width:52ch;">Retrieval was querying a <strong style="font-weight:600;color:#15171B;">Milvus</strong> collection before anything had been ingested. No crash, no error, just empty results and confident ungrounded answers. It now checks collection existence and row count at startup and, if empty, disables retrieval with a loud log line rather than failing mid-call.</p>
@@ -130,7 +152,8 @@
     <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">result ✦ ₹2.29 per minute all in, at production quality</p>
     <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">stack ✦ pipecat ✦ gemini 2.0 flash ✦ cartesia sonic ✦ bge-m3 ✦ milvus ✦ silero vad ✦ twilio ✦ redis</p>
   </div>
-  <div style="background:#F7F3EA;border:1px solid #E8E2D4;border-radius:2px;padding:22px 24px;align-self:start;">
+   <div style="display:grid;gap:0;align-content:start;align-self:start;">
+   <div style="background:#F7F3EA;border:1px solid #E8E2D4;border-radius:2px;padding:22px 24px;">
     <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8A8375;padding-bottom:10px;border-bottom:1px solid #E2DCCE;">per-minute variable cost</div>
     <div style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;padding:9px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">STT, Google standard</span><span style="color:#15171B;">$0.024</span></div>
     <div style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;padding:9px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">LLM, Gemini 2.0 Flash</span><span style="color:#15171B;">$0.0001125</span></div>
@@ -142,6 +165,30 @@
     </div>
     <p style="margin:6px 0 0;text-align:right;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;">₹2.29 at ₹95/USD</p>
   </div>
+   <div style="height:12px;"></div>
+      <div style="margin:22px 0 0;background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:18px 20px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A8375;">the reversal</div>
+    <div class="rev-grid" style="display:grid;grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr);gap:14px;align-items:center;margin-top:14px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#A8A296;">planned ✦ vendor independent</div>
+        <div style="margin-top:7px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.85;color:#8A8375;text-decoration:line-through;text-decoration-color:#C9432A;">Faster-Whisper Medium<br>4-bit Qwen<br>XTTS-v2<br>LangGraph</div>
+      </div>
+      <div class="rev-arrow" style="font-family:'JetBrains Mono',monospace;font-size:20px;color:#3D5AFE;justify-self:center;">→</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">shipped ✦ latency first</div>
+        <div style="margin-top:7px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.85;color:#15171B;font-weight:500;">Google Cloud STT <span style="color:#8A8375;">latest_short</span><br>Gemini 2.0 Flash<br>Cartesia Sonic<br>Pipecat</div>
+      </div>
+    </div>
+    <p style="margin:14px 0 0;padding-top:12px;border-top:1px solid #E2DCCE;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">kept from the first design ✦ BGE-M3 embeddings ✦ Milvus ✦ Silero VAD</p>
+  </div>
+   <div style="height:12px;"></div>
+      <div class="knob-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;">
+      <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">max_tokens = 60</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">answers stay phone length</div></div>
+      <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">automatic punctuation off</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">one less transform in the loop</div></div>
+      <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">8 kHz PCM</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">matches Twilio native rate, nothing is resampled</div></div>
+      <div style="background:#F7F3EA;border:1px solid #E2DCCE;border-radius:2px;padding:13px 15px;"><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#1B2BAE;font-weight:500;letter-spacing:.01em;">temperature 0.3</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#6B6659;letter-spacing:.02em;line-height:1.55;margin-top:5px;">phrasing stays repeatable</div></div>
+      </div>
+   </div>
 </div>
 
 <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;margin-top:16px;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:clamp(22px,5vw,38px);box-shadow:0 8px 24px rgba(21,23,27,.08);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(24px,4vw,32px) clamp(24px,5vw,44px);">
@@ -234,7 +281,7 @@
     <h2 style="margin:0;font-size:clamp(30px,4vw,46px);font-weight:600;letter-spacing:-.04em;line-height:1.06;max-width:22ch;color:#FDFCFF;">Something in production behaving oddly?</h2>
     <p style="margin:18px 0 0;font-size:19px;line-height:1.6;color:#D5DAFF;max-width:50ch;">Three questions and I will tell you whether it is worth a call.</p>
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center;">
-      <a href="/#brief" style="display:inline-flex;align-items:center;background:#F7F3EA;color:#1B2BAE;padding:15px 28px;font-size:17px;font-weight:600;border-radius:2px;" class="hv3">Send me the brief →</a>
+      <a class="taplink hv3" href="/#brief" style="display:inline-flex;align-items:center;background:#F7F3EA;color:#1B2BAE;padding:15px 28px;font-size:17px;font-weight:600;border-radius:2px;">Send me the brief →</a>
       <a href="/consulting/" style="display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:15px 24px;font-size:17px;font-weight:500;border-radius:2px;" class="hv4">How I work</a>
     </div>
   </div>
