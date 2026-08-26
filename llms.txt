@@ -48,3 +48,6 @@
 - https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en
 - https://wandb.ai/basurayshreyan
 - https://www.npmjs.com/~shreyanbr
+- https://huggingface.co/shreyanbr
+- https://www.mathworks.com/matlabcentral/profile/authors/23980008
+- https://pypi.org/user/shreyanbr/
