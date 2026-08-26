@@ -52,7 +52,7 @@
 <div style="background:#3D5AFE;color:#F4F2FF;">
   <div style="max-width:1140px;margin:0 auto;padding:20px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;">
     <a href="/" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:900;letter-spacing:.02em;color:#FFC300;">shreyan basu ray</a>
-    <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:12px 28px;flex-wrap:wrap;">
       <div style="display:flex;flex-wrap:wrap;gap:8px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;">
         <a href="/" class="hit hv1" style="color:#EDF0FF;padding:9px 11px;border-radius:2px;border:1px solid rgba(255,255,255,.18);background-color:#000000;">/home</a>
         <a href="/work/" class="hit" style="color:#3D5AFE;padding:9px 11px;border-radius:2px;border:1px solid #FFFFFF;background-color:#FFFFFF;">/work</a>
@@ -90,9 +90,12 @@
   <div>
     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">01 ✦ enterprise voice agent platform ✦ in production</div>
     <h2 style="margin:14px 0 0;font-size:clamp(25px,3vw,33px);font-weight:600;letter-spacing:-.03em;line-height:1.12;">A voice agent that runs at ₹2.29 a minute</h2>
-    <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Built as backend infrastructure so the client can stand up voice AI customer support for any company that needs it. I costed it layer by layer before writing code, and the stack was chosen against that model rather than against a benchmark.</p>
-    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Speech to text, the language model, speech synthesis and retrieval each carry their own per-minute cost, and each was picked for the cheapest option that still held production quality. It is live and running.</p>
+    <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Backend infrastructure so the client can stand up voice support for any company they onboard. My first plan was deliberately vendor-independent: Faster-Whisper Medium, a 4-bit Qwen, XTTS-v2, LangGraph. I costed and latency-tested it, then reversed my own position.</p>
+    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">What shipped is Google Cloud STT on <code>latest_short</code>, Gemini 2.0 Flash, Cartesia Sonic and Pipecat, keeping BGE-M3 embeddings, Milvus and Silero VAD from the original design. Independence lost to latency and reliability, and I would make that trade again.</p>
+    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">The per-minute number came out of tuning, not procurement: <code>max_tokens=60</code> to hold answers to phone length, automatic punctuation off, 8 kHz PCM matching Twilio's native rate so nothing is resampled, temperature 0.3. Three profiles switch on an environment variable, so a faster stack can be A/B tested without a redeploy.</p>
+    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">The failure worth reporting was a silent one. Retrieval was querying a Milvus collection before anything had been ingested: no crash, no error, just empty results and confident ungrounded answers. It now checks collection existence and row count at startup and, if empty, disables retrieval with a loud log line rather than failing mid-call.</p>
     <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">result ✦ ₹2.29 per minute all in, at production quality</p>
+    <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">stack ✦ pipecat ✦ gemini 2.0 flash ✦ cartesia sonic ✦ bge-m3 ✦ milvus ✦ silero vad ✦ twilio ✦ redis</p>
   </div>
   <div style="background:#F7F3EA;border:1px solid #E8E2D4;border-radius:2px;padding:22px 24px;align-self:start;">
     <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8A8375;padding-bottom:10px;border-bottom:1px solid #E2DCCE;">per-minute variable cost</div>
@@ -112,19 +115,37 @@
   <div>
     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">02 ✦ natural language to SQL ✦ facilities SaaS</div>
     <h2 style="margin:14px 0 0;font-size:clamp(25px,3vw,33px);font-weight:600;letter-spacing:-.03em;line-height:1.12;">₹95,000 a month for bad answers</h2>
-    <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">A facilities management platform was paying a vendor copilot to answer questions about their own data badly. I modelled the unit economics layer by layer before writing code: the cheapest model for intent routing, semantic table selection so only relevant schemas reach the language model, and three tiers of cache.</p>
-    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Spend after deployment tracked the model I had built beforehand, which is the part I care about more than the saving itself.</p>
+    <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">The brief, in the client's own words, was to &ldquo;optimise or find alternate to the existing Copilot functionality by improving contextual accuracy and interface responsiveness.&rdquo; A facilities management platform was paying ₹95,000 a month to Microsoft Copilot Studio to answer questions about their own data, badly.</p>
+    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">I built natural language to T-SQL against their Azure SQL schema. Intent classification routes each question to system docs, the database, or out-of-context. Semantic table selection puts only the relevant schemas in front of the model instead of the whole catalogue. Generated SQL carries correction logic, three cache tiers sit behind it — in-memory, disk, Redis — and every call is traced in LangSmith.</p>
+    <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">The figure on the right is a projection I built per layer <em>before</em> implementation. Spend after deployment tracked it. That is the part I care about: not the saving, but the fact that the model held.</p>
   </div>
   <div style="display:grid;gap:12px;align-content:start;">
-    <div style="background:#F7F3EA;border:1px solid #E8E2D4;border-radius:2px;padding:20px 22px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8A8375;">monthly spend, before</div>
-      <div style="font-size:30px;font-weight:600;letter-spacing:-.03em;margin-top:6px;">₹95,000</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#F7F3EA;border:1px solid #E8E2D4;border-radius:2px;padding:16px 18px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8A8375;">before</div>
+        <div style="font-size:26px;font-weight:600;letter-spacing:-.03em;margin-top:6px;">₹95,000</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8A8375;margin-top:2px;">licensing</div>
+      </div>
+      <div style="background:#F7F3EA;border:1px solid #C9D0FF;border-radius:2px;padding:16px 18px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#3D5AFE;">after</div>
+        <div style="font-size:26px;font-weight:600;letter-spacing:-.03em;margin-top:6px;color:#1B2BAE;">₹35,000</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8A8375;margin-top:2px;">inference + infra</div>
+      </div>
     </div>
-    <div style="background:#F7F3EA;border:1px solid #C9D0FF;border-radius:2px;padding:20px 22px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#3D5AFE;">monthly spend, after</div>
-      <div style="font-size:30px;font-weight:600;letter-spacing:-.03em;margin-top:6px;color:#1B2BAE;">₹35,000</div>
+    <div style="background:#F7F3EA;border:1px solid #E8E2D4;border-radius:2px;padding:18px 20px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8A8375;padding-bottom:9px;border-bottom:1px solid #E2DCCE;">the model, per 100k prompts</div>
+      <div style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:8px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">query routing · gpt-3.5 turbo</span><span style="color:#15171B;white-space:nowrap;">$27.50</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:8px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">sql generation · gpt-4o mini</span><span style="color:#15171B;white-space:nowrap;">$198.00</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:8px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">answer generation · gpt-4o mini</span><span style="color:#15171B;white-space:nowrap;">$138.00</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:9px 0;border-bottom:1px solid #E2DCCE;"><span style="color:#3D5AFE;">rag subtotal</span><span style="color:#15171B;white-space:nowrap;">$363.50 · ₹30,898</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:9px 0;"><span style="color:#4C4841;">doc intelligence · gpt-4.1-mini<br><span style="color:#A8A296;">per 10k pages</span></span><span style="color:#15171B;white-space:nowrap;">₹219</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding-top:12px;border-top:1px solid #E2DCCE;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">combined</span>
+        <span style="font-size:20px;font-weight:600;letter-spacing:-.02em;">₹31,116</span>
+      </div>
     </div>
-    <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">routing ✦ semantic table selection ✦ three-tier cache</p>
+    <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8375;letter-spacing:.02em;line-height:1.65;">the model totals ₹31,116; the balance to ₹35,000 is infrastructure and is unconfirmed. the two columns are not like-for-like — ₹95,000 was licensing, ₹35,000 is inference plus infra.</p>
+    <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">model tiering ✦ semantic table selection ✦ three-tier cache ✦ connection pooling</p>
   </div>
 </div>
 
@@ -133,14 +154,15 @@
     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">03 ✦ risk intelligence ✦ fintech</div>
     <h2 style="margin:12px 0 0;font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1.2;">The metric was measuring the wrong thing</h2>
     <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#4C4841;">The reported distress rate was climbing, 21 percent to 27 percent year over year, and it read like a market signal. It was 187 spurious labels from companies that had simply not filed their accounts. I traced it to the label definition rather than to the model, and added a reportability gate that holds the rate inside a point.</p>
-    <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#4C4841;">Every prediction now carries a SHAP attribution, so an analyst can see which financials drove a flag before acting on it.</p>
+    <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#4C4841;">It is XGBoost, and every prediction carries a SHAP attribution so an analyst can see which financials drove a flag before acting on it. The diagnostic engine sits at 92.155 percent on current-year distress flagging and the predictive engine at 87 percent on T+1 failure, both checked against company annual reports rather than a held-out split alone.</p>
     <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">result ✦ 92.155% on current-year distress flagging ✦ 187 false labels removed</p>
   </div>
   <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#15171B;color:#F2EFE7;border-radius:3px;padding:30px;box-shadow:0 8px 24px rgba(21,23,27,.14);">
     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#8EA3FF;">04 ✦ calling product ✦ diagnostic</div>
     <h2 style="margin:12px 0 0;font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1.2;">I built a diagnostic instead of an architecture</h2>
-    <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">A calling product was hanging up mid-call and the ask was for a better architecture. Before designing one I checked what the recordings could actually tell us.</p>
-    <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">All nine recordings were 8 kHz mono, so barge-in could not be measured at all. Any architecture chosen on that evidence would have been chosen blind. The finding was that the measurement had to come first.</p>
+    <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">A Hinglish calling product for bus operators was hanging up mid-call, missing clear answers and talking over customers. The ask was for a better architecture. I took nine recordings and built a reusable diagnostic first, and scoped the paid deliverable as a labelled failure taxonomy with per-category rates rather than an architecture prescription.</p>
+    <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">All nine recordings were 8 kHz mono, so true barge-in cannot be measured at all — dual-channel capture was the first thing I asked for. Energy above 3.4 kHz ran between 0.003 and 0.6 percent, confirming hard narrowband. June files were PCM and July files 32 kbps MP3, so the capture format had changed mid-window. Four recordings carried a stall signature: an utterance under 1.2 s followed by more than 2.5 s of silence.</p>
+    <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">Two of my own numbers moved while I worked. The stall count went from nine to eleven once I tightened the VAD merge window from 300 ms to 80 ms. And I withdrew a claim that one stall cluster sat just before the call ended, after checking the file was 117 seconds long with the cluster in the middle. I would rather show that than a clean story.</p>
     <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#7E7A72;letter-spacing:.03em;line-height:1.6;">result ✦ the build was stopped before the money went in</p>
   </div>
 </div>
