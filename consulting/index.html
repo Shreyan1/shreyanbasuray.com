@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Consulting — AI Diagnostics &amp; Cost Models | Shreyan Basu Ray</title>
+<title>Consulting | AI Diagnostics &amp; Cost Models | Shreyan Basu Ray</title>
 <meta name="description" content="Six ways to work together: production diagnostics, cost modelling before build, build and ship, advisory retainers, responsible AI readiness audits, and workshops.">
 <link rel="canonical" href="https://shreyanbasuray.com/consulting/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#3D5AFE">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shreyan Basu Ray">
-<meta property="og:title" content="Consulting — AI Diagnostics &amp; Cost Models | Shreyan Basu Ray">
+<meta property="og:title" content="Consulting | AI Diagnostics &amp; Cost Models | Shreyan Basu Ray">
 <meta property="og:description" content="Six ways to work together: production diagnostics, cost modelling before build, build and ship, advisory retainers, responsible AI readiness audits, and workshops.">
 <meta property="og:url" content="https://shreyanbasuray.com/consulting/">
 <meta property="og:image" content="https://shreyanbasuray.com/assets/og.jpg">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@theengineerboy1">
 <meta name="twitter:creator" content="@theengineerboy1">
-<meta name="twitter:title" content="Consulting — AI Diagnostics &amp; Cost Models | Shreyan Basu Ray">
+<meta name="twitter:title" content="Consulting | AI Diagnostics &amp; Cost Models | Shreyan Basu Ray">
 <meta name="twitter:description" content="Six ways to work together: production diagnostics, cost modelling before build, build and ship, advisory retainers, responsible AI readiness audits, and workshops.">
 <meta name="twitter:image" content="https://shreyanbasuray.com/assets/og.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
@@ -41,11 +41,34 @@
   a:hover{color:#1B36C9;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   .flink{display:inline-flex;align-items:center;min-height:44px}
+  .ind-row{transition:background .22s ease,transform .22s cubic-bezier(.22,.7,.2,1),box-shadow .22s ease,border-color .22s ease}
+  .ind-row:hover{background:#FFFFFF !important;transform:translateY(-3px);box-shadow:0 14px 30px rgba(21,23,27,.11);border-color:#C9D0FF !important}
+  .ind-row:hover .ind-num{color:#3D5AFE !important}
+  .ind-row:hover .ind-h{color:#1B36C9 !important}
+  .ind-row:hover .ind-p{color:#3D5AFE !important}
+  .ind-row:hover .ind-tag{background:#EEF1FF !important;border-color:#C9D0FF !important;color:#1B36C9 !important}
+  @media (max-width:900px){
+    .ind-head{display:none !important}
+    .ind-row{grid-template-columns:56px minmax(0,1fr) !important}
+    .ind-tags{grid-column:2 !important;margin-top:14px !important}
+  }
+  @media (max-width:520px){
+    .ind-row{grid-template-columns:minmax(0,1fr) !important}
+    .ind-tags{grid-column:1 !important}
+  }
+  .xmark{transition:transform .25s cubic-bezier(.34,1.5,.6,1)}
+  @keyframes xwobble{
+    0%{transform:rotate(var(--xr)) scale(1)}
+    35%{transform:rotate(calc(var(--xr) + 13deg)) scale(1.26)}
+    65%{transform:rotate(calc(var(--xr) - 9deg)) scale(1.18)}
+    100%{transform:rotate(var(--xr)) scale(1.16)}
+  }
+  .xrow:hover .xmark{animation:xwobble .5s cubic-bezier(.34,1.4,.5,1) forwards}
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
 </style>
 <style>picture{display:contents}img{max-width:100%}:focus-visible{outline:2px solid #FFC300;outline-offset:2px}</style>
 <style>.hv1:hover,.hv1:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important;border-color:#FFFFFF !important}.hv2:hover,.hv2:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important}.hv3:hover,.hv3:focus-visible{transform:translateY(-3px) !important;box-shadow:0 12px 28px rgba(21,23,27,.11) !important}.hv4:hover,.hv4:focus-visible{transform:translateY(-3px) !important;border-color:#3D5AFE !important;box-shadow:0 12px 26px rgba(0,0,0,.35) !important}.hv5:hover,.hv5:focus-visible{background:#FFFFFF !important}.hv6:hover,.hv6:focus-visible{background:rgba(255,255,255,.12) !important}.hv7:hover,.hv7:focus-visible{border-color:#FFFFFF !important}</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":"Machine Learning Engineer","email":"mailto:basurayshreyan@gmail.com","description":"Machine learning engineer who ships production AI systems in finance and healthcare, costs them before the build and measures them after deployment.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems"],"sameAs":["https://github.com/Shreyan1","https://linkedin.com/in/shreyanbasuray","https://x.com/theengineerboy1","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"Six ways to work together: production diagnostics, cost modelling before build, build and ship, advisory retainers, responsible AI readiness audits, and workshops.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"WebPage","@id":"https://shreyanbasuray.com/consulting/#page","url":"https://shreyanbasuray.com/consulting/","name":"Consulting — AI Diagnostics & Cost Models | Shreyan Basu Ray","description":"Six ways to work together: production diagnostics, cost modelling before build, build and ship, advisory retainers, responsible AI readiness audits, and workshops.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://shreyanbasuray.com/consulting/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shreyanbasuray.com/"},{"@type":"ListItem","position":2,"name":"Consulting","item":"https://shreyanbasuray.com/consulting/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":"Machine Learning Engineer","email":"mailto:basurayshreyan@gmail.com","description":"Machine learning engineer who ships production AI systems in finance and healthcare, costs them before the build and measures them after deployment.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems"],"sameAs":["https://github.com/Shreyan1","https://linkedin.com/in/shreyanbasuray","https://x.com/theengineerboy1","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"Six ways to work together: production diagnostics, cost modelling before build, build and ship, advisory retainers, responsible AI readiness audits, and workshops.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"WebPage","@id":"https://shreyanbasuray.com/consulting/#page","url":"https://shreyanbasuray.com/consulting/","name":"Consulting | AI Diagnostics & Cost Models | Shreyan Basu Ray","description":"Six ways to work together: production diagnostics, cost modelling before build, build and ship, advisory retainers, responsible AI readiness audits, and workshops.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://shreyanbasuray.com/consulting/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shreyanbasuray.com/"},{"@type":"ListItem","position":2,"name":"Consulting","item":"https://shreyanbasuray.com/consulting/"}]}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"OfferCatalog","name":"Consulting services","itemListElement":[{"@type":"Service","name":"Production diagnostic","provider":{"@id":"https://shreyanbasuray.com/#person"},"areaServed":"Worldwide"},{"@type":"Service","name":"Cost model before build","provider":{"@id":"https://shreyanbasuray.com/#person"},"areaServed":"Worldwide"},{"@type":"Service","name":"Build and ship","provider":{"@id":"https://shreyanbasuray.com/#person"},"areaServed":"Worldwide"},{"@type":"Service","name":"Advisory retainer","provider":{"@id":"https://shreyanbasuray.com/#person"},"areaServed":"Worldwide"},{"@type":"Service","name":"Responsible AI readiness audit","provider":{"@id":"https://shreyanbasuray.com/#person"},"areaServed":"Worldwide"},{"@type":"Service","name":"Workshops and training","provider":{"@id":"https://shreyanbasuray.com/#person"},"areaServed":"Worldwide"}]}</script>
 </head>
 <body>
@@ -153,54 +176,83 @@
   <div style="margin-top:76px;">
     <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;">Industries I have worked in</h2>
     <p style="margin:16px 0 0;font-size:16px;line-height:1.62;color:#4C4841;max-width:70ch;">The method does not change much between sectors. What changes is the data, the regulator and what counts as a wrong answer. These are the ones I have shipped in.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;margin-top:24px;">
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">transport &amp; mobility</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Bus and fleet operators</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Voice agents that take bookings and handle support calls in Hinglish, around the clock. I diagnose them from real call recordings and hand back a labelled failure taxonomy with per-category rates, not an architecture diagram.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ narrowband call audio, barge-in limits, stall signatures</p>
+    <div style="margin-top:26px;border-bottom:1px solid #DED7C7;">
+      <div class="ind-head" style="display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:26px;padding:12px 18px 13px;background:#15171B;color:#F2EFE7;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;">
+        <span style="color:#8A8375;">no.</span>
+        <span>sector ✦ what I actually ship</span>
+        <span style="color:#9DFFD9;">seen in</span>
       </div>
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">customer support</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Deflection that knows when to stop</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Agents that detect the caller's language, answer from your own knowledge base rather than the open internet, and escalate to a human the moment retrieval comes back thin.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ sub-second response budgets, graceful fallback on empty retrieval</p>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">01</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">transport &amp; mobility</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Bus and fleet operators</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Voice agents that take bookings and handle support calls in Hinglish, around the clock. I diagnose them from real call recordings and hand back a labelled failure taxonomy with per-category rates, not an architecture diagram.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">narrowband call audio</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">barge-in limits</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">stall signatures</span></div>
       </div>
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">enterprise software</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Your own data, asked in plain English</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Natural language to SQL over production schemas, with intent routing and semantic table selection so only the relevant tables ever reach the model. Costed per layer before a line of code is written.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ facilities management SaaS, Azure SQL, three-tier cache</p>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">02</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">customer support</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Deflection that knows when to stop</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Agents that detect the caller's language, answer from your own knowledge base rather than the open internet, and escalate to a human the moment retrieval comes back thin.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">sub-second response budgets</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">graceful fallback on empty retrieval</span></div>
       </div>
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">fintech &amp; capital markets</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Investment banking, trading, fraud</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Distress and failure signals, trade alerting, and transaction anomaly detection. Every prediction carries an attribution, so an analyst can see which inputs drove a flag before acting on it.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ ESOP workflows, live alert dashboards, XGBoost with SHAP</p>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">03</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">enterprise software</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Your own data, asked in plain English</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Natural language to SQL over production schemas, with intent routing and semantic table selection so only the relevant tables ever reach the model. Costed per layer before a line of code is written.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">facilities management SaaS</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">Azure SQL</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">three-tier cache</span></div>
       </div>
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">healthtech</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Answers grounded in your own documents</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Clinical assistants that read a provider's curated material instead of general model knowledge, because general models hallucinate confidently on medical advice.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ PDF and spreadsheet ingestion, vector retrieval, cited answers</p>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">04</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">fintech &amp; capital markets</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Investment banking, trading, fraud</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Distress and failure signals, trade alerting, and transaction anomaly detection. Every prediction carries an attribution, so an analyst can see which inputs drove a flag before acting on it.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">ESOP workflows</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">live alert dashboards</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">XGBoost with SHAP</span></div>
       </div>
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">medical imaging &amp; surgery</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Pre-operative and post-operative</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Vessel segmentation from X-ray angiography for cardiac care, and text-guided facial editing for aesthetic and reconstructive planning.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ coronary artery segmentation, U-Net residual CNN</p>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">05</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">healthtech</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Answers grounded in your own documents</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Clinical assistants that read a provider's curated material instead of general model knowledge, because general models hallucinate confidently on medical advice.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">PDF and spreadsheet ingestion</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">vector retrieval</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">cited answers</span></div>
       </div>
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">retail &amp; e-commerce</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Agents over linked commercial data</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Analyst agents that reason across category hierarchies, customer profiles, transactions and purchase sessions together, rather than one flat exported table.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ four linked retail datasets, agentic analysis</p>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">06</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">medical imaging &amp; surgery</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Pre-operative and post-operative</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Vessel segmentation from X-ray angiography for cardiac care, and text-guided facial editing for aesthetic and reconstructive planning.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">coronary artery segmentation</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">U-Net residual CNN</span></div>
       </div>
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv3">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">education &amp; training</div>
-        <h3 style="margin:11px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25;">Teams, cohorts and universities</h3>
-        <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">Workshops for engineering teams, university hackathon mentoring, and written technical material that practitioners actually use.</p>
-        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8375;letter-spacing:.03em;line-height:1.6;">seen in ✦ Code Wizards 2.0 at SRM, published technical articles</p>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">07</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">retail &amp; e-commerce</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Agents over linked commercial data</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Analyst agents that reason across category hierarchies, customer profiles, transactions and purchase sessions together, rather than one flat exported table.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">four linked retail datasets</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">agentic analysis</span></div>
+      </div>
+      <div class="ind-row" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;display:grid;grid-template-columns:clamp(62px,7vw,92px) minmax(0,1fr) minmax(0,278px);gap:4px 26px;align-items:start;padding:24px 18px 26px;border:1px solid transparent;border-top-color:#DED7C7;border-radius:3px;">
+        <div class="ind-numwrap"><span class="ind-num" style="font-family:'JetBrains Mono',monospace;font-size:clamp(30px,4.2vw,42px);font-weight:500;line-height:.95;letter-spacing:-.05em;color:#D3CBB8;transition:color .22s ease;display:block;">08</span></div>
+        <div style="min-width:0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">education &amp; training</div>
+          <h3 class="ind-h" style="margin:9px 0 0;font-size:clamp(20px,2.4vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.18;transition:color .22s ease;">Teams, cohorts and universities</h3>
+          <p class="ind-p" style="margin:10px 0 0;font-size:16px;line-height:1.6;color:#4C4841;max-width:58ch;transition:color .22s ease;">Workshops for engineering teams, university hackathon mentoring, and written technical material that practitioners actually use.</p>
+        </div>
+        <div class="ind-tags" style="display:flex;flex-wrap:wrap;gap:6px;align-content:start;padding-top:4px;"><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">Code Wizards 2.0 at SRM</span><span class="ind-tag" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;line-height:1.35;color:#5C574C;background:#F1EBDB;border:1px solid #E2DCCE;border-radius:2px;padding:6px 9px;transition:background .2s ease,border-color .2s ease,color .2s ease;">published technical articles</span></div>
       </div>
     </div>
     <p style="margin:20px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">not on this list ? → the constraints usually rhyme. tell me the system and i will say plainly whether i am the right person.</p>
@@ -271,22 +323,34 @@
     <h2 style="margin:14px 0 0;font-size:clamp(30px,4.2vw,44px);font-weight:600;letter-spacing:-.035em;line-height:1.08;max-width:18ch;color:#FDFCFF;">What I turn down</h2>
     <p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#C6C2B7;max-width:44ch;">Not to be difficult. Each of these makes the work impossible to judge afterwards, which is bad for both of us.</p>
   </div>
-  <div style="display:grid;gap:12px;">
-    <div style="display:flex;gap:14px;align-items:flex-start;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:18px 20px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;" class="hv4">
-      <span style="display:block;flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:#E08C7A;">✕</span>
-      <span style="display:block;font-size:17px;line-height:1.5;color:#EDEAE2;">Chatbots with no evaluation plan</span>
+  <div style="display:grid;gap:14px;">
+    <div class="xrow hv4" style="display:flex;gap:18px;align-items:center;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:20px 22px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;">
+      <svg class="xmark" width="44" height="44" viewBox="0 0 50 50" fill="none" aria-hidden="true" style="--xr:-8deg;transform:rotate(-8deg);flex:0 0 auto;overflow:visible;">
+        <path d="M12 11 C19 20, 30 30, 38 39" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+        <path d="M38 11 C30 21, 19 30, 11 38" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+      </svg>
+      <span style="display:block;font-size:19px;font-weight:500;line-height:1.35;letter-spacing:-.01em;color:#F2EFE7;">Chatbots with no evaluation plan</span>
     </div>
-    <div style="display:flex;gap:14px;align-items:flex-start;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:18px 20px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;" class="hv4">
-      <span style="display:block;flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:#E08C7A;">✕</span>
-      <span style="display:block;font-size:17px;line-height:1.5;color:#EDEAE2;">Agentic systems with no observability</span>
+    <div class="xrow hv4" style="display:flex;gap:18px;align-items:center;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:20px 22px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;">
+      <svg class="xmark" width="44" height="44" viewBox="0 0 50 50" fill="none" aria-hidden="true" style="--xr:6deg;transform:rotate(6deg);flex:0 0 auto;overflow:visible;">
+        <path d="M11 12 C20 19, 29 31, 39 38" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+        <path d="M39 12 C29 19, 20 31, 10 39" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+      </svg>
+      <span style="display:block;font-size:19px;font-weight:500;line-height:1.35;letter-spacing:-.01em;color:#F2EFE7;">Agentic systems with no observability</span>
     </div>
-    <div style="display:flex;gap:14px;align-items:flex-start;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:18px 20px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;" class="hv4">
-      <span style="display:block;flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:#E08C7A;">✕</span>
-      <span style="display:block;font-size:17px;line-height:1.5;color:#EDEAE2;">Unpaid pilots</span>
+    <div class="xrow hv4" style="display:flex;gap:18px;align-items:center;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:20px 22px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;">
+      <svg class="xmark" width="44" height="44" viewBox="0 0 50 50" fill="none" aria-hidden="true" style="--xr:-4deg;transform:rotate(-4deg);flex:0 0 auto;overflow:visible;">
+        <path d="M12 10 C18 21, 31 29, 38 40" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+        <path d="M38 10 C31 20, 18 29, 11 39" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+      </svg>
+      <span style="display:block;font-size:19px;font-weight:500;line-height:1.35;letter-spacing:-.01em;color:#F2EFE7;">Unpaid pilots</span>
     </div>
-    <div style="display:flex;gap:14px;align-items:flex-start;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:18px 20px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;" class="hv4">
-      <span style="display:block;flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:#E08C7A;">✕</span>
-      <span style="display:block;font-size:17px;line-height:1.5;color:#EDEAE2;">Any work I cannot measure</span>
+    <div class="xrow hv4" style="display:flex;gap:18px;align-items:center;border:1px solid #2C3038;background:#1D2027;border-radius:3px;padding:20px 22px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;">
+      <svg class="xmark" width="44" height="44" viewBox="0 0 50 50" fill="none" aria-hidden="true" style="--xr:9deg;transform:rotate(9deg);flex:0 0 auto;overflow:visible;">
+        <path d="M10 12 C20 20, 28 30, 39 37" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+        <path d="M39 11 C28 20, 20 30, 11 39" stroke="#FF5A3C" stroke-width="8" stroke-linecap="round"></path>
+      </svg>
+      <span style="display:block;font-size:19px;font-weight:500;line-height:1.35;letter-spacing:-.01em;color:#F2EFE7;">Any work I cannot measure</span>
     </div>
   </div>
  </div>
