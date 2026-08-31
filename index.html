@@ -5,29 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Shreyan Basu Ray | ML Engineer, Production AI Systems</title>
-<meta name="description" content="ML engineer shipping production AI in finance and healthcare. I cost systems before the build and measure them after real users arrive. Technical author at Weights &amp; Biases, founder of Claude Developers India.">
+<title>Shreyan Basu Ray | AI Product Evaluation and Go-to-Market</title>
+<meta name="description" content="I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.">
 <link rel="canonical" href="https://shreyanbasuray.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Shreyan Basu Ray">
 <meta name="theme-color" content="#3D5AFE">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Shreyan Basu Ray">
-<meta property="og:title" content="Shreyan Basu Ray | ML Engineer, Production AI Systems">
-<meta property="og:description" content="ML engineer shipping production AI in finance and healthcare. I cost systems before the build and measure them after real users arrive. Technical author at Weights &amp; Biases, founder of Claude Developers India.">
+<meta property="og:title" content="Shreyan Basu Ray | AI Product Evaluation and Go-to-Market">
+<meta property="og:description" content="I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.">
 <meta property="og:url" content="https://shreyanbasuray.com/">
 <meta property="og:image" content="https://shreyanbasuray.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Shreyan Basu Ray, machine learning engineer">
+<meta property="og:image:alt" content="Shreyan Basu Ray, applied ML engineer and AI product advisor">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@theengineerboy1">
 <meta name="twitter:creator" content="@theengineerboy1">
-<meta name="twitter:title" content="Shreyan Basu Ray | ML Engineer, Production AI Systems">
-<meta name="twitter:description" content="ML engineer shipping production AI in finance and healthcare. I cost systems before the build and measure them after real users arrive. Technical author at Weights &amp; Biases, founder of Claude Developers India.">
+<meta name="twitter:title" content="Shreyan Basu Ray | AI Product Evaluation and Go-to-Market">
+<meta name="twitter:description" content="I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.">
 <meta name="twitter:image" content="https://shreyanbasuray.com/assets/og.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/icon-48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon-180.png">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -71,6 +73,20 @@
   input::placeholder,textarea::placeholder{color:#A9A395;opacity:1}
   input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#A9A395}
   input:focus,textarea:focus,select:focus{border-color:#3D5AFE;outline:none;box-shadow:0 0 0 3px rgba(61,90,254,.14)}
+  /* --- hero: portrait sits beside the headline, centred on it, on narrow screens --- */
+  .hero-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"pill portrait" "head portrait" "body portrait";align-items:end;column-gap:clamp(28px,3vw,56px);row-gap:0;}
+  .hero-pill{grid-area:pill;min-width:0;}
+  .hero-head{grid-area:head;min-width:0;align-self:end;}
+  .hero-body{grid-area:body;min-width:0;}
+  .hero-portrait{grid-area:portrait;min-width:0;align-self:end;}
+  @media (max-width:820px){
+    .hero-grid{grid-template-columns:minmax(0,1fr) clamp(84px,26vw,148px);grid-template-areas:"pill pill" "head portrait" "body body";align-items:start;column-gap:18px;row-gap:0;}
+    .hero-pill{align-self:start;}
+    .hero-head{align-self:center;}
+    .hero-head h1{font-size:clamp(24px,7.4vw,48px) !important;overflow-wrap:break-word;}
+    .hero-portrait{align-self:center;justify-self:end;width:100% !important;}
+    .hero-portrait p{font-size:10px !important;line-height:1.3 !important;max-width:100% !important;margin-top:7px !important;}
+  }
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
   .mq{animation:slide 42s linear infinite;}
   @media (prefers-reduced-motion:reduce){.mq{animation:none}}
@@ -80,7 +96,7 @@
 </style>
 <style>picture{display:contents}img{max-width:100%}:focus{outline:2px solid #FFC300;outline-offset:2px}:focus:not(:focus-visible){outline:none}:focus-visible{outline:2px solid #FFC300;outline-offset:2px}</style>
 <style>.hv1:hover{background:#FFFFFF !important;color:#3D5AFE !important;border-color:#FFFFFF !important}.hv1:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important;border-color:#FFFFFF !important}.hv2:hover{background:#FFFFFF !important;color:#3D5AFE !important}.hv2:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important}.hv3:hover{background:rgba(255,255,255,.14) !important;color:#FFFFFF !important}.hv3:focus-visible{background:rgba(255,255,255,.14) !important;color:#FFFFFF !important}.hv4:hover{background:#FFFFFF !important}.hv4:focus-visible{background:#FFFFFF !important}.hv5:hover{background:rgba(255,255,255,.12) !important}.hv5:focus-visible{background:rgba(255,255,255,.12) !important}.hv6:hover{transform:translateY(-3px) !important;box-shadow:0 12px 26px rgba(21,23,27,.11) !important}.hv6:focus-visible{transform:translateY(-3px) !important;box-shadow:0 12px 26px rgba(21,23,27,.11) !important}.hv7:hover{background:#3D5AFE !important;color:#FFFFFF !important;border-color:#3D5AFE !important}.hv7:focus-visible{background:#3D5AFE !important;color:#FFFFFF !important;border-color:#3D5AFE !important}.hv8:hover{transform:translateY(-3px) !important;box-shadow:0 12px 28px rgba(21,23,27,.11) !important}.hv8:focus-visible{transform:translateY(-3px) !important;box-shadow:0 12px 28px rgba(21,23,27,.11) !important}.hv9:hover{color:#3D5AFE !important}.hv9:focus-visible{color:#3D5AFE !important}.hv10:hover{background:#F2EDE1 !important}.hv10:focus-visible{background:#F2EDE1 !important}.hv11:hover{transform:translateY(-3px) !important;box-shadow:0 16px 34px rgba(21,23,27,.2) !important}.hv11:focus-visible{transform:translateY(-3px) !important;box-shadow:0 16px 34px rgba(21,23,27,.2) !important}.hv12:hover{background:#1B36C9 !important}.hv12:focus-visible{background:#1B36C9 !important}.hv13:hover{color:#FFFFFF !important}.hv13:focus-visible{color:#FFFFFF !important}.hv14:hover{transform:translateY(-4px) !important;border-color:#3D5AFE !important}.hv14:focus-visible{transform:translateY(-4px) !important;border-color:#3D5AFE !important}.hv15:hover{background:#EEF1FF !important}.hv15:focus-visible{background:#EEF1FF !important}.hv16:hover{background:rgba(255,255,255,.13) !important}.hv16:focus-visible{background:rgba(255,255,255,.13) !important}.hv17:hover{border-color:#FFFFFF !important}.hv17:focus-visible{border-color:#FFFFFF !important}</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":"Machine Learning Engineer","email":"mailto:basurayshreyan@gmail.com","description":"Machine learning engineer who ships production AI systems in finance and healthcare, costs them before the build and measures them after deployment.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems"],"sameAs":["https://github.com/Shreyan1","https://linkedin.com/in/shreyanbasuray","https://x.com/theengineerboy1","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"ML engineer shipping production AI in finance and healthcare. I cost systems before the build and measure them after real users arrive. Technical author at Weights & Biases, founder of Claude Developers India.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | ML Engineer, Production AI Systems","description":"ML engineer shipping production AI in finance and healthcare. I cost systems before the build and measure them after real users arrive. Technical author at Weights & Biases, founder of Claude Developers India.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","mainEntityOfPage":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":["Applied Machine Learning Engineer","AI Product Advisor","Responsible AI Consultant"],"email":"mailto:basurayshreyan@gmail.com","description":"Advises founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market strategy grounded in what the product can honestly claim.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems","AI red teaming","Adversarial testing of LLM applications","Prompt injection","Jailbreak resistance testing","AI assurance","AI product positioning","Go-to-market strategy for AI products","OWASP Top 10 for LLM Applications","MITRE ATLAS","NIST AI Risk Management Framework","ISO/IEC 42001","DPDP Act 2023"],"sameAs":["https://github.com/Shreyan1","https://www.linkedin.com/in/shreyanbasuray","https://x.com/theengineerboy1","https://orcid.org/0000-0002-2641-8048","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | AI Product Evaluation and Go-to-Market","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"mainEntity":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"}]}</script>
 </head>
 <body>
 <div style="background:#F7F3EA;color:#15171B;font-family:Outfit,system-ui,sans-serif;overflow-x:clip;">
@@ -102,7 +118,7 @@
         <a href="https://github.com/Shreyan1" class="hit hv2" aria-label="GitHub" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FFFFFF;" target="_blank" rel="noopener noreferrer">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"></path></svg>
         </a>
-        <a href="https://linkedin.com/in/shreyanbasuray" class="hit hv2" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FFFFFF;" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/shreyanbasuray" class="hit hv2" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FFFFFF;" target="_blank" rel="noopener noreferrer">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM5 13.3H2.7V6.1H5v7.2zM3.85 5.1a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM13.3 13.3H11V9.5c0-.9-.32-1.52-1.13-1.52-.62 0-.99.42-1.15.82-.06.15-.08.35-.08.55v3.95H6.35s.03-6.4 0-7.2h2.29v1.02c.3-.47.85-1.14 2.06-1.14 1.5 0 2.6.98 2.6 3.08v4.24z"></path></svg>
         </a>
         <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" class="hit hv2" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FFFFFF;" target="_blank" rel="noopener noreferrer">
@@ -127,7 +143,7 @@
         <a href="/about/" class="navlink">/about<span aria-hidden="true">→</span></a>
         <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:18px;">
           <a href="https://github.com/Shreyan1" aria-label="GitHub" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"></path></svg></a>
-          <a href="https://linkedin.com/in/shreyanbasuray" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM5 13.3H2.7V6.1H5v7.2zM3.85 5.1a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM13.3 13.3H11V9.5c0-.9-.32-1.52-1.13-1.52-.62 0-.99.42-1.15.82-.06.15-.08.35-.08.55v3.95H6.35s.03-6.4 0-7.2h2.29v1.02c.3-.47.85-1.14 2.06-1.14 1.5 0 2.6.98 2.6 3.08v4.24z"></path></svg></a>
+          <a href="https://www.linkedin.com/in/shreyanbasuray" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM5 13.3H2.7V6.1H5v7.2zM3.85 5.1a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM13.3 13.3H11V9.5c0-.9-.32-1.52-1.13-1.52-.62 0-.99.42-1.15.82-.06.15-.08.35-.08.55v3.95H6.35s.03-6.4 0-7.2h2.29v1.02c.3-.47.85-1.14 2.06-1.14 1.5 0 2.6.98 2.6 3.08v4.24z"></path></svg></a>
           <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.02 0C3.7 0 .2 3.5.2 7.82c0 1.38.36 2.72 1.04 3.9L0 16l4.4-1.16a7.8 7.8 0 0 0 3.62.9c4.32 0 7.82-3.5 7.82-7.82S12.34 0 8.02 0zm4.6 11.06c-.2.55-1.16 1.06-1.6 1.1-.44.05-.86.22-2.9-.6-2.46-.99-4-3.5-4.12-3.66-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.84-2 .22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.4l.75 1.8c.06.13.1.28.01.45l-.28.42c-.09.12-.19.25-.08.44.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.95.19.1.3.08.42-.05l.6-.7c.15-.19.28-.14.47-.07l1.7.8c.19.09.32.13.37.21.05.08.05.48-.15 1.03z"></path></svg></a>
           <a href="mailto:basurayshreyan@gmail.com" aria-label="Email" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.2" y="3" width="13.6" height="10" rx="1"></rect><path d="M1.6 3.8 8 8.6l6.4-4.8"></path></svg></a>
         </div>
@@ -135,27 +151,31 @@
     </div>
 
 <!-- ============ HERO ============ -->
-  <div style="max-width:1140px;margin:0 auto;padding:clamp(36px,7vw,52px) clamp(20px,5vw,48px) clamp(48px,8vw,76px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(28px,4vw,40px) clamp(28px,3vw,56px);align-items:end;">
-    <div style="min-width:0;">
+  <div class="hero-grid" style="max-width:1140px;margin:0 auto;padding:clamp(36px,7vw,52px) clamp(20px,5vw,48px) clamp(48px,8vw,76px);">
+    <div class="hero-pill">
       <a class="hit hv3" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" style="display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.35);padding:7px 13px;border-radius:2px;margin-bottom:26px;" target="_blank" rel="noopener noreferrer">
         <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(157, 255, 217); display: inline-block;"></span>schedule a meet →
       </a>
-      <h1 style="animation: fadeUp .9s cubic-bezier(.22,.7,.2,1) .16s both; margin: 0; font-size: clamp(38px,6vw,66px); line-height: 1.02; letter-spacing: -.04em; font-weight: 600; max-width: 18ch; color: #FDFCFF; text-align: left; text-transform: none; text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15)">I fix the system, then help you sell it.</h1>
-      <p style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .27s both;margin:22px 0 0;font-size:20px;line-height:1.55;color:#D5DAFF;max-width:44ch;font-weight:300;">I get it working in production, then help you take it to market and into the hands of the people who should be paying for it.</p>
+    </div>
+    <div class="hero-head">
+      <h1 style="animation: fadeUp .9s cubic-bezier(.22,.7,.2,1) .16s both; margin: 0; font-size: clamp(38px,6vw,66px); line-height: 1.02; letter-spacing: -.04em; font-weight: 600; max-width: 18ch; color: #FDFCFF; text-align: left; text-transform: none; text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15)">Launch-ready is a claim you have to earn.</h1>
+    </div>
+    <div class="hero-body">
+      <p style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .27s both;margin:22px 0 0;font-size:20px;line-height:1.55;color:#D5DAFF;max-width:44ch;font-weight:300;">I work with founders and with the engineers who own the code: what the product does today, what it can claim in market, and what has to happen before either is true.</p>
       <div style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .32s both;display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:18px;max-width:48ch;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">ML engineer</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">product intermediator</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">applied ML engineer</span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">responsible AI</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">quantum ML</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">AI evaluation and red team</span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">technical author @W&amp;B</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">hackathon mentor</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">speaker</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#EAECFF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;transition:transform .2s cubic-bezier(.22,.7,.2,1),background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:default;" class="hv1">community builder</span>
       </div>
       <div style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .38s both;display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
         <a class="taplink hv4" href="#brief" style="background:#F7F3EA;color:#1B2BAE;padding:14px 26px;font-size:16px;font-weight:600;border-radius:2px;">Consult me now&nbsp;→</a>
         <a class="taplink hv5" href="/consulting/#process" style="border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:14px 26px;font-size:16px;font-weight:500;border-radius:2px;">How I consult</a>
       </div>
     </div>
-    <div style="min-width:0;width:clamp(280px,76%,560px);">
+    <div class="hero-portrait" style="width:clamp(280px,76%,560px);">
       <div data-flip="" style="animation: fadeUp .9s cubic-bezier(.22,.7,.2,1) .27s both; position: relative; width: 100%; max-width: 560px; aspect-ratio: 1/1; perspective: 1400px; cursor: pointer">
         <div data-flip-inner="" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,.75,.2,1);">
           <img src="/assets/portrait.jpg" alt="Shreyan Basu Ray" style="position: absolute; inset: 0; box-sizing: border-box; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; filter: grayscale(1) contrast(1.05); border: 3px solid #F7F3EA; box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.15); backface-visibility: hidden" width="900" height="900" decoding="async" fetchpriority="high">
@@ -209,7 +229,7 @@
 <!-- ============ WORK ============ -->
   <div id="work" style="margin-top:76px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;">
-      <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5"></rect><rect x="3" y="11" width="12" height="4.5"></rect><rect x="3" y="18" width="7" height="3"></rect></svg>How I have helped enterprises achieve</h2>
+      <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5"></rect><rect x="3" y="11" width="12" height="4.5"></rect><rect x="3" y="18" width="7" height="3"></rect></svg>What I have shipped</h2>
       <a class="taplink" href="/work/" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 600">all cases →</a>
     </div>
 
@@ -484,7 +504,7 @@
     </div>
     <a class="taplink hv13" href="/consulting/" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; color: #8EA3FF; font-weight: 600">how I consult and what you get →</a>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(255px,100%),1fr));gap:16px;margin-top:22px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;margin-top:22px;">
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#1D2027;border:1px solid #2C3038;border-radius:3px;padding:26px;transition:transform .2s ease,border-color .2s ease;" class="hv14">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8EA3FF;line-height:1.6;">works in the demo, breaks in production</div><div aria-hidden="true" style="position:absolute;right:-6px;bottom:-26px;font-size:86px;font-weight:600;letter-spacing:-.05em;color:#FFFFFF;opacity:.05;line-height:1;pointer-events:none;">01</div>
       <p style="margin:14px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">It answered fluently and knew nothing. Retrieval was querying an empty collection, so the model fell back on itself. Silently.</p><p style="margin:12px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:.03em;color:#8A8375;">fix ✦ check the collection at startup, disable retrieval when empty, say so in the log</p>
@@ -500,6 +520,10 @@
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#1D2027;border:1px solid #2C3038;border-radius:3px;padding:26px;transition:transform .2s ease,border-color .2s ease;" class="hv14">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8EA3FF;line-height:1.6;">it works, and nobody is buying it</div><div aria-hidden="true" style="position:absolute;right:-6px;bottom:-26px;font-size:86px;font-weight:600;letter-spacing:-.05em;color:#FFFFFF;opacity:.05;line-height:1;pointer-events:none;">04</div>
       <p style="margin:14px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">The system is fine. The route to the buyer is the bottleneck. This is positioning, pricing and distribution work, plus introductions where I have them.</p><p style="margin:12px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:.03em;color:#8A8375;">advisory ✦ strategy, not a deck you file away</p>
+    </div>
+    <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#1D2027;border:1px solid #2C3038;border-radius:3px;padding:26px;transition:transform .2s ease,border-color .2s ease;" class="hv14">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8EA3FF;line-height:1.6;">it is about to launch and nobody outside has tried it</div><div aria-hidden="true" style="position:absolute;right:-6px;bottom:-26px;font-size:86px;font-weight:600;letter-spacing:-.05em;color:#FFFFFF;opacity:.05;line-height:1;pointer-events:none;">05</div>
+      <p style="margin:14px 0 0;font-size:16px;line-height:1.62;color:#C6C2B7;">An outside pass before the product meets users. Static analysis of the build, adversarial sessions, and a report your engineers can act on.</p><p style="margin:12px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:.03em;color:#8A8375;">found ✦ what it does under pressure, and which defect is a launch blocker rather than a roadmap item</p>
     </div>
   </div>
 
@@ -573,11 +597,12 @@
         <input id="bf-company" type="text" placeholder="Diagnostics platform, 40 people" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
       </label>
       <div role="tablist" aria-label="What you need" style="display:flex;flex-wrap:wrap;gap:8px;">
-        <button type="button" role="tab" class="bftab" data-tab="fix" id="bftab-fix" aria-controls="bfpane-fix" aria-selected="true">fix it</button>
-        <button type="button" role="tab" class="bftab" data-tab="sell" id="bftab-sell" aria-controls="bfpane-sell" aria-selected="false">sell it</button>
-        <button type="button" role="tab" class="bftab" data-tab="both" id="bftab-both" aria-controls="bfpane-both" aria-selected="false">both</button>
-        <button type="button" role="tab" class="bftab" data-tab="write" id="bftab-write" aria-controls="bfpane-write" aria-selected="false">write it</button>
-        <button type="button" role="tab" class="bftab" data-tab="other" id="bftab-other" aria-controls="bfpane-other" aria-selected="false">something else</button>
+        <button type="button" role="tab" class="bftab" data-tab="fix" id="bftab-fix" title="A production system that is slow, wrong, or doing something you cannot explain." aria-controls="bfpane-fix" aria-selected="true">fix it</button>
+        <button type="button" role="tab" class="bftab" data-tab="evaluate" id="bftab-evaluate" title="An AI product going to alpha or launch, and you want an outside pass before it does." aria-controls="bfpane-evaluate" aria-selected="false">evaluate it</button>
+        <button type="button" role="tab" class="bftab" data-tab="sell" id="bftab-sell" title="It works, and the problem now is reach and distribution." aria-controls="bfpane-sell" aria-selected="false">sell it</button>
+        <button type="button" role="tab" class="bftab" data-tab="both" id="bftab-both" title="The system needs work and so does the route to buyers." aria-controls="bfpane-both" aria-selected="false">both</button>
+        <button type="button" role="tab" class="bftab" data-tab="write" id="bftab-write" title="A technical article, guide, or paper you want written properly." aria-controls="bfpane-write" aria-selected="false">write it</button>
+        <button type="button" role="tab" class="bftab" data-tab="other" id="bftab-other" title="Advisory, a workshop, a talk, or something not on this list." aria-controls="bfpane-other" aria-selected="false">something else</button>
       </div>
       <p id="bf-tabnote" style="margin:-4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">a production system that is slow, wrong, or doing something you cannot explain</p>
       <div role="tabpanel" data-pane="fix" id="bfpane-fix" aria-labelledby="bftab-fix" style="display:grid;gap:16px;">
@@ -592,6 +617,20 @@
         <label style="display:grid;gap:6px;">
           <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">how you would know it was fixed</span>
           <input id="bf-fx-success" type="text" placeholder="Retrieval failures caught first" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+        </label>
+      </div>
+      <div role="tabpanel" data-pane="evaluate" id="bfpane-evaluate" aria-labelledby="bftab-evaluate" style="display:none;gap:16px;" hidden>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">what the product does, and who has access to it today</span>
+          <textarea id="bf-ev-product" rows="2" placeholder="Coding assistant, private alpha, 40 testers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">what you are worried it will do in front of a user</span>
+          <textarea id="bf-ev-worry" rows="2" placeholder="Leaks its system prompt, or mishandles a crisis message" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">when it is meant to launch</span>
+          <input id="bf-ev-launch" type="text" placeholder="Public beta in six weeks" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
         </label>
       </div>
       <div role="tabpanel" data-pane="sell" id="bfpane-sell" aria-labelledby="bftab-sell" style="display:none;gap:16px;" hidden>
@@ -709,7 +748,7 @@
 <div style="max-width:1140px;margin:0 auto;padding:34px clamp(20px,5vw,48px) 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;">
   <div style="display: flex; flex-wrap: wrap; gap: 20px; font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 500">
     <a href="https://github.com/Shreyan1" class="flink" target="_blank" rel="noopener noreferrer">github</a>
-    <a href="https://linkedin.com/in/shreyanbasuray" class="flink" target="_blank" rel="noopener noreferrer">linkedin</a>
+    <a href="https://www.linkedin.com/in/shreyanbasuray" class="flink" target="_blank" rel="noopener noreferrer">linkedin</a>
     <a href="https://x.com/theengineerboy1" class="flink" target="_blank" rel="noopener noreferrer">x</a>
     <a href="https://scholar.google.com/citations?user=vih7SfEAAAAJ&amp;hl=en" class="flink" target="_blank" rel="noopener noreferrer">scholar</a>
     <a href="https://wandb.ai/basurayshreyan" class="flink" target="_blank" rel="noopener noreferrer">weights &amp; biases</a>
@@ -742,6 +781,7 @@
       if (err) err.style.display = "none";
       const SPEC = {
         fix: ["fix it", [["bf-fx-system", "The system, and where it runs"], ["bf-fx-problem", "The behaviour you cannot explain"], ["bf-fx-success", "How you would know it was fixed"]]],
+        evaluate: ["evaluate it", [["bf-ev-product", "What the product does, and who has access to it today"], ["bf-ev-worry", "What you are worried it will do in front of a user"], ["bf-ev-launch", "When it is meant to launch"]]],
         sell: ["sell it", [["bf-gt-built", "What you have built, and who uses it today"], ["bf-gt-reach", "Who it has to reach, and how they buy today"], ["bf-gt-tried", "What you have already tried"]]],
         both: ["both", [["bf-bo-system", "The system, and where it runs"], ["bf-bo-problem", "The behaviour you cannot explain"], ["bf-bo-reach", "Who it has to reach, and how they buy today"], ["bf-bo-outcome", "What a good outcome looks like in 90 days"]]],
         write: ["write it", [["bf-wr-topic", "The topic, and who it is for"], ["bf-wr-where", "Where it runs, and roughly how long"], ["bf-wr-when", "When you need it"]]],
@@ -822,6 +862,7 @@ function boot(){
 
     const notes = {
       fix: "a production system that is slow, wrong, or doing something you cannot explain",
+      evaluate: "an AI product going to alpha or launch, and you want an outside pass before it does",
       sell: "it works, and the problem now is reach and distribution",
       both: "the system needs work and so does the route to buyers",
       write: "a technical article, guide, or paper you want written properly",
@@ -841,6 +882,15 @@ function boot(){
       if (note && notes[key]) note.textContent = notes[key];
     };
     tabs.forEach(t => t.addEventListener("click", () => pick(t.getAttribute("data-tab"))));
+    const showNote = key => { if (note && notes[key]) note.textContent = notes[key]; };
+    tabs.forEach(t => {
+      const key = t.getAttribute("data-tab");
+      const restore = () => showNote(window.__bfTab || "fix");
+      t.addEventListener("mouseenter", () => showNote(key));
+      t.addEventListener("focus", () => showNote(key));
+      t.addEventListener("mouseleave", restore);
+      t.addEventListener("blur", restore);
+    });
     if (tabs.length) pick(window.__bfTab || "fix");
 }
 if(document.readyState!=='loading'){boot();}else{document.addEventListener('DOMContentLoaded',boot);}

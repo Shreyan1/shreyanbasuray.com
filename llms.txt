@@ -1,20 +1,29 @@
 # Shreyan Basu Ray
 
-> Machine learning engineer based in India who ships production AI systems for
-> finance and healthcare, costs them before the build, and measures them after
-> real users arrive. Technical author at Weights & Biases and founder of the
-> Claude Developers India community.
+> Advises founders and product teams on the path from AI product build to
+> commercial launch. Independent evaluation and red-team work on AI products,
+> responsible AI and governance readiness, and go-to-market strategy built on
+> what the product can honestly claim. Technical author at Weights & Biases and
+> founder of the Claude Developers India community.
 
 ## Who
 
 - Name: Shreyan Basu Ray
-- Role: Machine learning engineer, independent consultant
+- Role: Applied ML engineer and independent advisor on AI product evaluation and go-to-market
 - Location: India (Delhi / Kolkata)
 - Contact: basurayshreyan@gmail.com
 - Site: https://shreyanbasuray.com
 
 ## What he is known for
 
+- Independent evaluation and red-team work on AI products during private alpha,
+  delivered as a severity ladder with steps to reproduce, a remediation priority
+  order and a framework crosswalk
+- Findings mapped to OWASP Top 10 for LLM Applications, MITRE ATLAS, CWE, the
+  NIST AI Risk Management Framework, ISO/IEC 42001, India's DPDP Act 2023 and the
+  EU GDPR
+- Go-to-market strategy for AI products: positioning, pricing and the route to
+  the first buyers
 - Production AI systems that are costed layer by layer before any code is written
 - Measuring model and system behaviour after deployment rather than at benchmark time
 - Responsible AI: authored The Architect's Handbook: Engineering Responsible AI
@@ -36,7 +45,7 @@
 
 - https://shreyanbasuray.com/ - overview, current work, selected case studies
 - https://shreyanbasuray.com/work/ - four production AI case studies in detail
-- https://shreyanbasuray.com/consulting/ - seven engagement types and how they run
+- https://shreyanbasuray.com/consulting/ - eight engagement types and how they run
 - https://shreyanbasuray.com/writing/ - articles, papers, book and policy work
 - https://shreyanbasuray.com/about/ - background and working principles
 

@@ -1,6 +1,6 @@
 # shreyanbasuray.com
 
-Personal site of Shreyan Basu Ray — machine learning engineer.
+Personal site of Shreyan Basu Ray, applied ML engineer and independent advisor on AI product evaluation and go-to-market.
 
 Static site, no build step required to serve. Deployed to the apex domain
 `shreyanbasuray.com` (see `CNAME`).

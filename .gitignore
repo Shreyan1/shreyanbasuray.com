@@ -12,3 +12,9 @@ Thumbs.db
 id_rsa*
 .claude/
 *source-material*
+
+# design-system authoring material, not deploy output
+DesignSystem/
+
+# local working reports, never deployed
+reports/
