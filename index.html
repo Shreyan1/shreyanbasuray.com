@@ -172,7 +172,7 @@
       </div>
       <div style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .38s both;display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
         <a class="taplink hv4" href="#brief" style="background:#F7F3EA;color:#1B2BAE;padding:14px 26px;font-size:16px;font-weight:600;border-radius:2px;">Consult me now&nbsp;→</a>
-        <a class="taplink hv5" href="/consulting/#process" style="border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:14px 26px;font-size:16px;font-weight:500;border-radius:2px;">How I consult</a>
+        <a class="taplink hv5" href="/partners/" style="border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:14px 26px;font-size:16px;font-weight:500;border-radius:2px;">Be a Partner</a>
       </div>
     </div>
     <div class="hero-portrait" style="width:clamp(280px,76%,560px);">
@@ -502,7 +502,7 @@
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8EA3FF;">usually one of these</div>
       <h2 style="margin:14px 0 0;font-size:clamp(30px,4.2vw,44px);font-weight:600;letter-spacing:-.035em;line-height:1.08;max-width:22ch;color:#FDFCFF;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8EA3FF" stroke-width="1.4" style="opacity:.3;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><path d="M12 3 22 20H2Z"></path><path d="M12 10v4"></path></svg>When teams bring me in</h2>
     </div>
-    <a class="taplink hv13" href="/consulting/" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; color: #8EA3FF; font-weight: 600">how I consult and what you get →</a>
+    <a class="taplink hv5" href="/consulting/" style="border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:13px 22px;font-size:15px;font-weight:500;border-radius:2px;white-space:nowrap;">How I consult →</a>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;margin-top:22px;">
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#1D2027;border:1px solid #2C3038;border-radius:3px;padding:26px;transition:transform .2s ease,border-color .2s ease;" class="hv14">
@@ -597,29 +597,13 @@
         <input id="bf-company" type="text" placeholder="Diagnostics platform, 40 people" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
       </label>
       <div role="tablist" aria-label="What you need" style="display:flex;flex-wrap:wrap;gap:8px;">
-        <button type="button" role="tab" class="bftab" data-tab="fix" id="bftab-fix" title="A production system that is slow, wrong, or doing something you cannot explain." aria-controls="bfpane-fix" aria-selected="true">fix it</button>
-        <button type="button" role="tab" class="bftab" data-tab="evaluate" id="bftab-evaluate" title="An AI product going to alpha or launch, and you want an outside pass before it does." aria-controls="bfpane-evaluate" aria-selected="false">evaluate it</button>
+        <button type="button" role="tab" class="bftab" data-tab="evaluate" id="bftab-evaluate" title="An AI product going to alpha or launch, and you want an outside pass before it does." aria-controls="bfpane-evaluate" aria-selected="true">evaluate it</button>
         <button type="button" role="tab" class="bftab" data-tab="sell" id="bftab-sell" title="It works, and the problem now is reach and distribution." aria-controls="bfpane-sell" aria-selected="false">sell it</button>
-        <button type="button" role="tab" class="bftab" data-tab="both" id="bftab-both" title="The system needs work and so does the route to buyers." aria-controls="bfpane-both" aria-selected="false">both</button>
         <button type="button" role="tab" class="bftab" data-tab="write" id="bftab-write" title="A technical article, guide, or paper you want written properly." aria-controls="bfpane-write" aria-selected="false">write it</button>
         <button type="button" role="tab" class="bftab" data-tab="other" id="bftab-other" title="Advisory, a workshop, a talk, or something not on this list." aria-controls="bfpane-other" aria-selected="false">something else</button>
       </div>
-      <p id="bf-tabnote" style="margin:-4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">a production system that is slow, wrong, or doing something you cannot explain</p>
-      <div role="tabpanel" data-pane="fix" id="bfpane-fix" aria-labelledby="bftab-fix" style="display:grid;gap:16px;">
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">the system, and where it runs</span>
-          <textarea id="bf-fx-system" rows="2" placeholder="RAG assistant on Azure" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">the behaviour you cannot explain</span>
-          <textarea id="bf-fx-problem" rows="2" placeholder="Confident answers with no source" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">how you would know it was fixed</span>
-          <input id="bf-fx-success" type="text" placeholder="Retrieval failures caught first" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-        </label>
-      </div>
-      <div role="tabpanel" data-pane="evaluate" id="bfpane-evaluate" aria-labelledby="bftab-evaluate" style="display:none;gap:16px;" hidden>
+      <p id="bf-tabnote" style="margin:-4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">an AI product going to alpha or launch, and you want an outside pass before it does</p>
+      <div role="tabpanel" data-pane="evaluate" id="bfpane-evaluate" aria-labelledby="bftab-evaluate" style="display:grid;gap:16px;">
         <label style="display:grid;gap:6px;">
           <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">what the product does, and who has access to it today</span>
           <textarea id="bf-ev-product" rows="2" placeholder="Coding assistant, private alpha, 40 testers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
@@ -645,24 +629,6 @@
         <label style="display:grid;gap:6px;">
           <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">what you have already tried</span>
           <input id="bf-gt-tried" type="text" placeholder="Cold email, two conferences" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-        </label>
-      </div>
-      <div role="tabpanel" data-pane="both" id="bfpane-both" aria-labelledby="bftab-both" style="display:none;gap:16px;" hidden>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">the system, and where it runs</span>
-          <textarea id="bf-bo-system" rows="2" placeholder="RAG assistant on Azure" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">the behaviour you cannot explain</span>
-          <textarea id="bf-bo-problem" rows="2" placeholder="Confident answers with no source" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">who it has to reach, and how they buy today</span>
-          <textarea id="bf-bo-reach" rows="2" placeholder="Ops managers, buying via resellers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8375;">what a good outcome looks like in 90 days</span>
-          <input id="bf-bo-outcome" type="text" placeholder="Two pilots converted" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
         </label>
       </div>
       <div role="tabpanel" data-pane="write" id="bfpane-write" aria-labelledby="bftab-write" style="display:none;gap:16px;" hidden>
@@ -709,12 +675,12 @@
 <div style="margin-top:80px;background:#3D5AFE;color:#F4F2FF;">
   <div style="max-width:1140px;margin:0 auto;padding:clamp(48px,9vw,72px) clamp(20px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,5vw,40px) 56px;align-items:center;">
    <div>
-    <h2 style="margin:0;font-size:clamp(30px,4vw,46px);font-weight:600;letter-spacing:-.04em;line-height:1.06;max-width:20ch;color:#FDFCFF;">Something in production behaving oddly?</h2>
+    <h2 style="margin:0;font-size:clamp(30px,4vw,46px);font-weight:600;letter-spacing:-.04em;line-height:1.06;max-width:20ch;color:#FDFCFF;">Want an outside pass over your AI product?</h2>
     <p style="margin:18px 0 0;font-size:19px;line-height:1.6;color:#D5DAFF;max-width:50ch;">Three questions and I will tell you whether it is worth a call.</p>
     <div style="display:grid;gap:10px;margin-top:26px;max-width:46ch;">
-      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9DFFD9;">01</span><span style="font-size:17px;">What does the system do, and where does it run?</span></a>
-      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9DFFD9;">02</span><span style="font-size:17px;">What is it doing that you cannot explain?</span></a>
-      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9DFFD9;">03</span><span style="font-size:17px;">How would you know it was fixed?</span></a>
+      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9DFFD9;">01</span><span style="font-size:17px;">What does the product do, and who has access to it today?</span></a>
+      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9DFFD9;">02</span><span style="font-size:17px;">What are you worried it will do in front of a user?</span></a>
+      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9DFFD9;">03</span><span style="font-size:17px;">When is it meant to launch, or is it already live?</span></a>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center;">
       <a class="taplink hv4" href="#brief" style="background:#F7F3EA;color:#1B2BAE;padding:15px 28px;font-size:17px;font-weight:600;border-radius:2px;">Answer them here →</a>
@@ -723,6 +689,10 @@
     <div style="display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.22);">
       <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9DFFD9;">or email</span>
       <a class="taplink hv17" href="mailto:basurayshreyan@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.03em;color:#FFFFFF;border-bottom:1px solid rgba(255,255,255,.4);">basurayshreyan@gmail.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:16px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9DFFD9;">agency or studio ?</span>
+      <a class="taplink hv17" href="/partners/" style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.03em;color:#FFFFFF;border-bottom:1px solid rgba(255,255,255,.4);">Be a Partner →</a>
     </div>
    </div>
    <div style="justify-self:center;width:100%;max-width:520px;background:#FEFDFA;border:1px solid #15171B;border-radius:3px;box-shadow:0 16px 38px rgba(21,23,27,.28);overflow:hidden;">
@@ -780,15 +750,13 @@
       }
       if (err) err.style.display = "none";
       const SPEC = {
-        fix: ["fix it", [["bf-fx-system", "The system, and where it runs"], ["bf-fx-problem", "The behaviour you cannot explain"], ["bf-fx-success", "How you would know it was fixed"]]],
         evaluate: ["evaluate it", [["bf-ev-product", "What the product does, and who has access to it today"], ["bf-ev-worry", "What you are worried it will do in front of a user"], ["bf-ev-launch", "When it is meant to launch"]]],
         sell: ["sell it", [["bf-gt-built", "What you have built, and who uses it today"], ["bf-gt-reach", "Who it has to reach, and how they buy today"], ["bf-gt-tried", "What you have already tried"]]],
-        both: ["both", [["bf-bo-system", "The system, and where it runs"], ["bf-bo-problem", "The behaviour you cannot explain"], ["bf-bo-reach", "Who it has to reach, and how they buy today"], ["bf-bo-outcome", "What a good outcome looks like in 90 days"]]],
         write: ["write it", [["bf-wr-topic", "The topic, and who it is for"], ["bf-wr-where", "Where it runs, and roughly how long"], ["bf-wr-when", "When you need it"]]],
         other: ["something else", [["bf-ot-what", "What you have in mind"], ["bf-ot-want", "What you would want from me"]]],
       };
-      const tab = window.__bfTab || "fix";
-      const spec = SPEC[tab] || SPEC.fix;
+      const tab = window.__bfTab || "evaluate";
+      const spec = SPEC[tab] || SPEC.evaluate;
       const lines = [
         "Name: " + v("bf-name"),
         "Company: " + v("bf-company"),
@@ -802,7 +770,7 @@
       const body = lines.join("\n").trim();
       const url = mode === "whatsapp"
         ? "https://api.whatsapp.com/send/?phone=919830152522&text=" + encodeURIComponent(body) + "&type=phone_number&app_absent=0"
-        : "mailto:basurayshreyan@gmail.com?subject=" + encodeURIComponent("Brief / " + (SPEC[window.__bfTab || "fix"] || SPEC.fix)[0] + (v("bf-company") ? " / " + v("bf-company") : "")) + "&body=" + encodeURIComponent(body);
+        : "mailto:basurayshreyan@gmail.com?subject=" + encodeURIComponent("Brief / " + (SPEC[window.__bfTab || "evaluate"] || SPEC.evaluate)[0] + (v("bf-company") ? " / " + v("bf-company") : "")) + "&body=" + encodeURIComponent(body);
       if (mode === "whatsapp") window.open(url, "_blank", "noopener");
       else {
         window.location.href = url;
@@ -861,10 +829,8 @@ function boot(){
     });
 
     const notes = {
-      fix: "a production system that is slow, wrong, or doing something you cannot explain",
       evaluate: "an AI product going to alpha or launch, and you want an outside pass before it does",
       sell: "it works, and the problem now is reach and distribution",
-      both: "the system needs work and so does the route to buyers",
       write: "a technical article, guide, or paper you want written properly",
       other: "advisory, a workshop, a talk, or something not on this list",
     };
@@ -885,13 +851,13 @@ function boot(){
     const showNote = key => { if (note && notes[key]) note.textContent = notes[key]; };
     tabs.forEach(t => {
       const key = t.getAttribute("data-tab");
-      const restore = () => showNote(window.__bfTab || "fix");
+      const restore = () => showNote(window.__bfTab || "evaluate");
       t.addEventListener("mouseenter", () => showNote(key));
       t.addEventListener("focus", () => showNote(key));
       t.addEventListener("mouseleave", restore);
       t.addEventListener("blur", restore);
     });
-    if (tabs.length) pick(window.__bfTab || "fix");
+    if (tabs.length) pick(window.__bfTab || "evaluate");
 }
 if(document.readyState!=='loading'){boot();}else{document.addEventListener('DOMContentLoaded',boot);}
 })();
