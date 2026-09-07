@@ -237,75 +237,76 @@
     </div>
     <p style="margin:14px 0 26px;font-size:17px;line-height:1.65;color:#4C4841;max-width:62ch;">Specialists I trust for the parts beyond me. I own it for you, so your product ships ready for the market at the standard it deserves.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(268px,100%),1fr));gap:24px 18px;">
+    <style>
+      .pnr-panel{background:#FEFDFA;border:1px solid #E8E2D4;border-radius:4px;box-shadow:0 8px 24px rgba(21,23,27,.08);overflow:hidden;}
+      .pnr-grid{display:grid;grid-template-columns:1fr;}
+      .pnr-col{padding:22px clamp(18px,2.4vw,26px);}
+      .pnr-col + .pnr-col{border-top:1px solid #EAE4D6;}
+      @media(min-width:780px){.pnr-grid{grid-template-columns:repeat(3,1fr);}.pnr-col + .pnr-col{border-top:0;border-left:1px solid #EAE4D6;}}
+      .pnr-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
+      .pnr-cat{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3D5AFE;}
+      .pnr-idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#C0BAAB;}
+      .pnr-rule{height:1px;background:#E8E2D4;margin:11px 0 6px;}
+      .pnr-row{display:flex;align-items:center;gap:13px;padding:11px 10px;margin:0 -10px;border-radius:9px;text-decoration:none;transition:background .16s ease;}
+      .pnr-row:hover,.pnr-row:focus-visible{background:#F4EFE3;}
+      .pnr-logo{flex:0 0 auto;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #ECE6D7;border-radius:11px;box-sizing:border-box;padding:7px;overflow:hidden;}
+      .pnr-photo{padding:0;}
+      .pnr-photo img{width:100%;height:100%;object-fit:cover;}
+      .pnr-meta{min-width:0;flex:1;}
+      .pnr-name{display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#15171B;}
+      .pnr-tag{display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8A8375;}
+      .pnr-dom{display:block;margin-top:3px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+      .pnr-arr{flex:0 0 auto;margin-left:4px;color:#BFC8E8;transition:transform .16s ease,color .16s ease;}
+      .pnr-row:hover .pnr-arr,.pnr-row:focus-visible .pnr-arr{transform:translate(2px,-2px);color:#3D5AFE;}
+    </style>
 
-      <!-- Legal -->
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;">
-        <div style="display:flex;align-items:center;gap:12px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3D5AFE;">Legal</span>
-          <span style="flex:1;height:1px;background:#E2DCCE;"></span>
-        </div>
-        <div style="display:grid;gap:10px;margin-top:14px;">
-          <a href="https://www.linkedin.com/company/gtg-advisors-llp/" target="_blank" rel="noopener noreferrer" class="hv14" style="display:flex;align-items:center;gap:14px;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:13px 15px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,border-color .18s ease;text-decoration:none;">
-            <span style="flex:0 0 auto;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #EDE7D8;border-radius:8px;padding:8px;box-sizing:border-box;overflow:hidden;"><picture><source srcset="/assets/partners/gtg.webp" type="image/webp"><img src="/assets/partners/gtg.png" alt="GTG Advisors logo" width="240" height="216" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></picture></span>
-            <span style="min-width:0;">
-              <span style="display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#15171B;">GTG Advisors</span>
-              <span style="display:block;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">linkedin.com/gtg-advisors ↗</span>
-            </span>
+    <div class="pnr-panel" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;">
+      <div class="pnr-grid">
+
+        <!-- Legal -->
+        <div class="pnr-col">
+          <div class="pnr-head"><span class="pnr-cat">Legal</span><span class="pnr-idx">01</span></div>
+          <div class="pnr-rule"></div>
+          <a class="pnr-row" href="https://www.linkedin.com/company/gtg-advisors-llp/" target="_blank" rel="noopener noreferrer">
+            <span class="pnr-logo"><picture><source srcset="/assets/partners/gtg.webp" type="image/webp"><img src="/assets/partners/gtg.png" alt="GTG Advisors logo" width="240" height="216" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></picture></span>
+            <span class="pnr-meta"><span class="pnr-name">GTG Advisors</span><span class="pnr-dom">linkedin.com/gtg-advisors</span></span>
+            <svg class="pnr-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
           </a>
         </div>
+
+        <!-- Marketing -->
+        <div class="pnr-col">
+          <div class="pnr-head"><span class="pnr-cat">Marketing</span><span class="pnr-idx">02</span></div>
+          <div class="pnr-rule"></div>
+          <a class="pnr-row" href="https://limurse.ai/?utm_source=shreyanbasuray.com&amp;utm_medium=referral&amp;utm_campaign=website_listing" target="_blank" rel="noopener noreferrer">
+            <span class="pnr-logo"><picture><source srcset="/assets/partners/limurse.webp" type="image/webp"><img src="/assets/partners/limurse.jpg" alt="Limurse logo" width="240" height="240" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;border-radius:5px;"></picture></span>
+            <span class="pnr-meta"><span class="pnr-name">Limurse</span><span class="pnr-tag">Brand building</span><span class="pnr-dom">limurse.ai</span></span>
+            <svg class="pnr-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+          </a>
+          <a class="pnr-row" href="https://bhavyam-arora.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <span class="pnr-logo pnr-photo"><picture><source srcset="/assets/partners/bhavyam.webp" type="image/webp"><img src="/assets/partners/bhavyam.jpg" alt="Bhavyam Arora" width="480" height="320" loading="lazy" decoding="async" style="display:block;object-position:50% 22%;"></picture></span>
+            <span class="pnr-meta"><span class="pnr-name">Bhavyam Arora</span><span class="pnr-tag">GTM execution</span><span class="pnr-dom">bhavyam-arora.vercel.app</span></span>
+            <svg class="pnr-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+          </a>
+        </div>
+
+        <!-- Tech -->
+        <div class="pnr-col">
+          <div class="pnr-head"><span class="pnr-cat">Tech</span><span class="pnr-idx">03</span></div>
+          <div class="pnr-rule"></div>
+          <a class="pnr-row" href="https://www.arcautomations.in/" target="_blank" rel="noopener noreferrer">
+            <span class="pnr-logo"><picture><source srcset="/assets/partners/arc.webp" type="image/webp"><img src="/assets/partners/arc.png" alt="Arc Automations logo" width="300" height="300" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></picture></span>
+            <span class="pnr-meta"><span class="pnr-name">Arc Automations</span><span class="pnr-dom">arcautomations.in</span></span>
+            <svg class="pnr-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+          </a>
+          <a class="pnr-row" href="https://weirdlabs.in" target="_blank" rel="noopener noreferrer">
+            <span class="pnr-logo"><picture><source srcset="/assets/partners/weirdlabs.webp" type="image/webp"><img src="/assets/partners/weirdlabs.jpg" alt="Weird Labs logo" width="300" height="222" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></picture></span>
+            <span class="pnr-meta"><span class="pnr-name">Weird Labs</span><span class="pnr-dom">weirdlabs.in</span></span>
+            <svg class="pnr-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+          </a>
+        </div>
+
       </div>
-
-      <!-- Marketing -->
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;">
-        <div style="display:flex;align-items:center;gap:12px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3D5AFE;">Marketing</span>
-          <span style="flex:1;height:1px;background:#E2DCCE;"></span>
-        </div>
-        <div style="display:grid;gap:10px;margin-top:14px;">
-          <a href="https://limurse.ai/?utm_source=shreyanbasuray.com&amp;utm_medium=referral&amp;utm_campaign=website_listing" target="_blank" rel="noopener noreferrer" class="hv14" style="display:flex;align-items:center;gap:14px;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:13px 15px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,border-color .18s ease;text-decoration:none;">
-            <span style="flex:0 0 auto;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #EDE7D8;border-radius:8px;padding:6px;box-sizing:border-box;overflow:hidden;"><picture><source srcset="/assets/partners/limurse.webp" type="image/webp"><img src="/assets/partners/limurse.jpg" alt="Limurse logo" width="240" height="240" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;border-radius:4px;"></picture></span>
-            <span style="min-width:0;">
-              <span style="display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#15171B;">Limurse</span>
-              <span style="display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8A8375;">Brand building</span>
-              <span style="display:block;margin-top:3px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">limurse.ai ↗</span>
-            </span>
-          </a>
-          <a href="https://bhavyam-arora.vercel.app/" target="_blank" rel="noopener noreferrer" class="hv14" style="display:flex;align-items:center;gap:14px;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:13px 15px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,border-color .18s ease;text-decoration:none;">
-            <span style="flex:0 0 auto;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #EDE7D8;border-radius:8px;box-sizing:border-box;overflow:hidden;"><picture><source srcset="/assets/partners/bhavyam.webp" type="image/webp"><img src="/assets/partners/bhavyam.jpg" alt="Bhavyam Arora" width="480" height="320" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;"></picture></span>
-            <span style="min-width:0;">
-              <span style="display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#15171B;">Bhavyam Arora</span>
-              <span style="display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8A8375;">GTM execution</span>
-              <span style="display:block;margin-top:3px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">bhavyam-arora.vercel.app ↗</span>
-            </span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Tech -->
-      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;">
-        <div style="display:flex;align-items:center;gap:12px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3D5AFE;">Tech</span>
-          <span style="flex:1;height:1px;background:#E2DCCE;"></span>
-        </div>
-        <div style="display:grid;gap:10px;margin-top:14px;">
-          <a href="https://www.arcautomations.in/" target="_blank" rel="noopener noreferrer" class="hv14" style="display:flex;align-items:center;gap:14px;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:13px 15px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,border-color .18s ease;text-decoration:none;">
-            <span style="flex:0 0 auto;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #EDE7D8;border-radius:8px;padding:6px;box-sizing:border-box;overflow:hidden;"><picture><source srcset="/assets/partners/arc.webp" type="image/webp"><img src="/assets/partners/arc.png" alt="Arc Automations logo" width="300" height="300" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></picture></span>
-            <span style="min-width:0;">
-              <span style="display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#15171B;">Arc Automations</span>
-              <span style="display:block;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">arcautomations.in ↗</span>
-            </span>
-          </a>
-          <a href="https://weirdlabs.in" target="_blank" rel="noopener noreferrer" class="hv14" style="display:flex;align-items:center;gap:14px;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:13px 15px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,border-color .18s ease;text-decoration:none;">
-            <span style="flex:0 0 auto;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #EDE7D8;border-radius:8px;padding:7px;box-sizing:border-box;overflow:hidden;"><picture><source srcset="/assets/partners/weirdlabs.webp" type="image/webp"><img src="/assets/partners/weirdlabs.jpg" alt="Weird Labs logo" width="300" height="222" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></picture></span>
-            <span style="min-width:0;">
-              <span style="display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#15171B;">Weird Labs</span>
-              <span style="display:block;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">weirdlabs.in ↗</span>
-            </span>
-          </a>
-        </div>
-      </div>
-
     </div>
 
     <div style="margin-top:24px;">
