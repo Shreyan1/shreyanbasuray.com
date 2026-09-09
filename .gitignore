@@ -18,3 +18,6 @@ DesignSystem/
 
 # local working reports, never deployed
 reports/
+
+# social/promo poster design files, not part of the deploy
+poster-variants/
