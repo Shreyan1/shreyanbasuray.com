@@ -29,7 +29,7 @@
 - Responsible AI: authored The Architect's Handbook: Engineering Responsible AI
 - C-RAI, a certification framework for responsible AI sent to MeitY and NASSCOM
 - Agent Complexity Theory, a working paper on choosing agent architectures before building
-- Founder of Claude Developers India (600+ builders)
+- Founder of Claude Developers India (820+ builders)
 - Author of 17+ technical articles for Weights & Biases
 
 ## Representative results
