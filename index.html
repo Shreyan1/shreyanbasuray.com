@@ -22,8 +22,8 @@
 <meta property="og:image:alt" content="Shreyan Basu Ray, applied ML engineer and AI product advisor">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@theengineerboy1">
-<meta name="twitter:creator" content="@theengineerboy1">
+<meta name="twitter:site" content="@shreyanbr">
+<meta name="twitter:creator" content="@shreyanbr">
 <meta name="twitter:title" content="Shreyan Basu Ray | Voice AI Auditor &amp; AI Product Advisor">
 <meta name="twitter:description" content="I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.">
 <meta name="twitter:image" content="https://shreyanbasuray.com/assets/og.jpg">
@@ -42,7 +42,7 @@
   a:hover{color:#1B36C9;}
   @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-  .bftab{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;padding:10px 14px;border:1px solid #DDD6C6;border-radius:2px;background:#FEFDFA;color:#4C4841;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;line-height:1.2;}
+  .bftab{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;padding:10px 14px;border:1px solid #DDD6C6;border-radius:2px;background:#FEFDFA;color:#4C4841;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;line-height:1.2;}
   .bftab:hover{border-color:#F0F2FF;color:#3D5AFE;transform:translateY(-2px)}
   .bftab[aria-selected="true"]{background:#3D5AFE;border-color:#3D5AFE;color:#FFFFFF;transform:none}
   /* --- mobile hygiene (WCAG 2.5.8 targets, iOS text inflation, no sideways scroll) --- */
@@ -74,18 +74,16 @@
   input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#A9A395}
   input:focus,textarea:focus,select:focus{border-color:#3D5AFE;outline:none;box-shadow:0 0 0 3px rgba(61,90,254,.14)}
   /* --- hero: portrait sits beside the headline, centred on it, on narrow screens --- */
-  .hero-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"pill portrait" "head portrait" "body portrait";align-items:end;column-gap:clamp(28px,3vw,56px);row-gap:0;}
-  .hero-pill{grid-area:pill;min-width:0;}
+  .hero-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"head portrait" "body portrait";align-items:end;column-gap:clamp(28px,3vw,56px);row-gap:0;}
   .hero-head{grid-area:head;min-width:0;align-self:end;}
   .hero-body{grid-area:body;min-width:0;}
   .hero-portrait{grid-area:portrait;min-width:0;align-self:end;}
   @media (max-width:820px){
-    .hero-grid{grid-template-columns:minmax(0,1fr) clamp(84px,26vw,148px);grid-template-areas:"pill pill" "head portrait" "body body";align-items:start;column-gap:18px;row-gap:0;}
-    .hero-pill{align-self:start;}
+    .hero-grid{grid-template-columns:minmax(0,1fr) clamp(84px,26vw,148px);grid-template-areas:"head portrait" "body body";align-items:start;column-gap:18px;row-gap:0;}
     .hero-head{align-self:center;}
     .hero-head h1{font-size:clamp(24px,7.4vw,48px) !important;overflow-wrap:break-word;}
     .hero-portrait{align-self:center;justify-self:end;width:100% !important;}
-    .hero-portrait p{font-size:10px !important;line-height:1.3 !important;max-width:100% !important;margin-top:7px !important;}
+    .hero-portrait p{font-size:12px !important;line-height:1.3 !important;max-width:100% !important;margin-top:7px !important;}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
   .mq{animation:slide 42s linear infinite;}
@@ -130,27 +128,37 @@
   @keyframes vtOut{to{opacity:0}}
   @keyframes vtIn{from{opacity:0;transform:translateY(8px)}}
   @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none !important}}
+  /* floating WhatsApp button: bottom right on every page, held still across page transitions */
+  .wafab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:50;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px 0 14px;box-sizing:border-box;border-radius:2px;background:#15171B;color:#FFFFFF;border:1px solid rgba(255,255,255,.3);box-shadow:0 10px 26px rgba(21,23,27,.3);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;view-transition-name:wa-fab;transition:transform .25s ease,opacity .25s ease,visibility .25s,background-color .18s ease,box-shadow .18s ease}
+  .wafab svg{flex:0 0 auto;color:#25D366;transition:color .18s ease}
+  .wafab.is-away{opacity:0;visibility:hidden;transform:translateY(12px)}
+  .wafab:hover{color:#FFFFFF;background:#3D5AFE;transform:translateY(-2px);box-shadow:0 14px 30px rgba(21,23,27,.34)}
+  .wafab:hover svg{color:#FFFFFF}
+  @media (max-width:520px){
+    .wafab{width:52px;min-height:52px;padding:0;justify-content:center}
+    .wafab-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  }
+  @media print{.wafab{display:none}}
+  @media (min-width:821px) and (max-width:1140px){.navdesk > div + div{border-left:0 !important;padding-left:0 !important}}
+  @media (max-width:520px){.herocta > a{flex:1 1 100%;justify-content:center}}
   /* mobile menu */
   @keyframes navIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
   .navchk:checked ~ .navpanel{animation:navIn .24s cubic-bezier(.22,.7,.2,1)}
   .navlink[aria-current="page"] span{color:#FFC300}
-  /* footer links: brand blue is too dark on ink, use the light blue */
-  .flink{color:#8EA3FF}
-  .flink:hover{color:#FFFFFF}
 </style>
 <style>.hv1:hover{background:#FFFFFF !important;color:#3D5AFE !important;border-color:#FFFFFF !important}.hv1:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important;border-color:#FFFFFF !important}.hv2:hover{background:#FFFFFF !important;color:#3D5AFE !important}.hv2:focus-visible{background:#FFFFFF !important;color:#3D5AFE !important}.hv3:hover{background:rgba(255,255,255,.14) !important;color:#FFFFFF !important}.hv3:focus-visible{background:rgba(255,255,255,.14) !important;color:#FFFFFF !important}.hv4:hover{background:#FFFFFF !important}.hv4:focus-visible{background:#FFFFFF !important}.hv5:hover{background:rgba(255,255,255,.12) !important}.hv5:focus-visible{background:rgba(255,255,255,.12) !important}.hv6:hover{transform:translateY(-3px) !important;box-shadow:0 12px 26px rgba(21,23,27,.11) !important}.hv6:focus-visible{transform:translateY(-3px) !important;box-shadow:0 12px 26px rgba(21,23,27,.11) !important}.hv7:hover{background:#3D5AFE !important;color:#FFFFFF !important;border-color:#3D5AFE !important}.hv7:focus-visible{background:#3D5AFE !important;color:#FFFFFF !important;border-color:#3D5AFE !important}.hv8:hover{transform:translateY(-3px) !important;box-shadow:0 12px 28px rgba(21,23,27,.11) !important}.hv8:focus-visible{transform:translateY(-3px) !important;box-shadow:0 12px 28px rgba(21,23,27,.11) !important}.hv9:hover{color:#3D5AFE !important}.hv9:focus-visible{color:#3D5AFE !important}.hv10:hover{background:#F2EDE1 !important}.hv10:focus-visible{background:#F2EDE1 !important}.hv11:hover{transform:translateY(-3px) !important;box-shadow:0 16px 34px rgba(21,23,27,.2) !important}.hv11:focus-visible{transform:translateY(-3px) !important;box-shadow:0 16px 34px rgba(21,23,27,.2) !important}.hv12:hover{background:#1B36C9 !important}.hv12:focus-visible{background:#1B36C9 !important}.hv13:hover{color:#FFFFFF !important}.hv13:focus-visible{color:#FFFFFF !important}.hv14:hover{transform:translateY(-4px) !important;border-color:#3D5AFE !important}.hv14:focus-visible{transform:translateY(-4px) !important;border-color:#3D5AFE !important}.hv15:hover{background:#EEF1FF !important}.hv15:focus-visible{background:#EEF1FF !important}.hv16:hover{background:rgba(255,255,255,.13) !important}.hv16:focus-visible{background:rgba(255,255,255,.13) !important}.hv17:hover{border-color:#FFFFFF !important}.hv17:focus-visible{border-color:#FFFFFF !important}.hvli:hover{background:#EEF1FF !important;color:#1B2BAE !important}.hvli:focus-visible{background:#EEF1FF !important;color:#1B2BAE !important}</style>
 <style>
   /* engagement scale: bar height = depth of engagement, axis = company size */
   .esc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;}
   .esc-seg{display:flex;flex-direction:column;min-width:0;}
-  .esc-cap{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;line-height:1.5;color:#8F8B83;margin-bottom:10px;padding-right:14px;min-height:3em;}
+  .esc-cap{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;line-height:1.5;color:#8F8B83;margin-bottom:10px;padding-right:14px;min-height:3em;}
   .esc-barwrap{height:190px;display:flex;flex-direction:column;justify-content:flex-end;padding-right:14px;}
   .esc-bar{border-radius:2px 2px 0 0;height:var(--d);animation:escGrow .9s cubic-bezier(.22,.7,.2,1) both;transform-origin:bottom;}
   .esc-info{border-top:1px solid #3A4252;padding:14px 14px 0 0;}
   .esc-name{font-size:17px;font-weight:600;letter-spacing:-.015em;color:#FDFCFF;line-height:1.25;}
-  .esc-kick{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#8EA3FF;margin-top:6px;}
+  .esc-kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8EA3FF;margin-top:6px;}
   .esc-desc{margin:10px 0 0;font-size:14.5px;line-height:1.55;color:#A6A29A;}
-  .esc-axislabels{display:flex;justify-content:space-between;margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8F8B83;}
+  .esc-axislabels{display:flex;justify-content:space-between;margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8F8B83;}
   @keyframes escGrow{from{transform:scaleY(.15);opacity:0}to{transform:scaleY(1);opacity:1}}
   @media(max-width:720px){
     .esc{grid-template-columns:minmax(0,1fr);gap:26px;}
@@ -163,7 +171,7 @@
   }
   @media(prefers-reduced-motion:reduce){.esc-bar{animation:none}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","mainEntityOfPage":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":["Applied Machine Learning Engineer","AI Product Advisor","Responsible AI Consultant","Voice AI Auditor"],"email":"mailto:hello@shreyanbasuray.com","description":"Advises founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market strategy grounded in what the product can honestly claim.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems","AI red teaming","Adversarial testing of LLM applications","Prompt injection","Jailbreak resistance testing","AI assurance","AI product positioning","Go-to-market strategy for AI products","OWASP Top 10 for LLM Applications","MITRE ATLAS","NIST AI Risk Management Framework","ISO/IEC 42001","DPDP Act 2023","Voice AI agents","Voice agent evaluation","Conversational AI diagnostics","Telephony and speech audio analysis"],"sameAs":["https://github.com/Shreyan1","https://www.linkedin.com/in/shreyanbasuray","https://x.com/theengineerboy1","https://orcid.org/0000-0002-2641-8048","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | Voice AI Auditor & AI Product Advisor","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"mainEntity":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","mainEntityOfPage":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":["Applied Machine Learning Engineer","AI Product Advisor","Responsible AI Consultant","Voice AI Auditor"],"email":"mailto:hello@shreyanbasuray.com","description":"Advises founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market strategy grounded in what the product can honestly claim.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems","AI red teaming","Adversarial testing of LLM applications","Prompt injection","Jailbreak resistance testing","AI assurance","AI product positioning","Go-to-market strategy for AI products","OWASP Top 10 for LLM Applications","MITRE ATLAS","NIST AI Risk Management Framework","ISO/IEC 42001","DPDP Act 2023","Voice AI agents","Voice agent evaluation","Conversational AI diagnostics","Telephony and speech audio analysis"],"sameAs":["https://github.com/Shreyan1","https://www.linkedin.com/in/shreyanbasuray","https://x.com/shreyanbr","https://orcid.org/0000-0002-2641-8048","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | Voice AI Auditor & AI Product Advisor","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"mainEntity":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"}]}</script>
 </head>
 <body>
 <div style="background:#F7F3EA;color:#15171B;font-family:Outfit,system-ui,sans-serif;overflow-x:clip;">
@@ -183,16 +191,16 @@
         <a href="/about/" class="hit hv1" style="color: #EDF0FF; padding: 9px 11px; border-radius: 2px; border: 1px solid rgba(255,255,255,.18); background-color: #000000">/about</a>
       </div>
       <div style="display: flex; gap: 8px; align-items: center; padding-left: 20px; border-left: 3px solid rgba(255,255,255,.7); flex-direction: row; justify-content: flex-start">
-        <a href="https://www.linkedin.com/in/shreyanbasuray" class="hit hvli" aria-label="Connect on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px;border-radius:2px;background:#FFFFFF;color:#3D5AFE;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(10,15,40,.18);" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/shreyanbasuray" class="hit hvli" aria-label="Connect on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px;border-radius:2px;background:#FFFFFF;color:#3D5AFE;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(10,15,40,.18);" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM5 13.3H2.7V6.1H5v7.2zM3.85 5.1a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM13.3 13.3H11V9.5c0-.9-.32-1.52-1.13-1.52-.62 0-.99.42-1.15.82-.06.15-.08.35-.08.55v3.95H6.35s.03-6.4 0-7.2h2.29v1.02c.3-.47.85-1.14 2.06-1.14 1.5 0 2.6.98 2.6 3.08v4.24z"></path></svg>LinkedIn
         </a>
-        <a href="https://github.com/Shreyan1" class="hit hv2" aria-label="GitHub" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FFFFFF;" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/Shreyan1" class="hit hvli" aria-label="GitHub" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid #FFFFFF;border-radius:2px;background:#FFFFFF;color:#000000;box-shadow:0 2px 8px rgba(10,15,40,.18);" target="_blank" rel="noopener noreferrer">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"></path></svg>
         </a>
-        <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" class="hit hv2" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FFFFFF;" target="_blank" rel="noopener noreferrer">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.02 0C3.7 0 .2 3.5.2 7.82c0 1.38.36 2.72 1.04 3.9L0 16l4.4-1.16a7.8 7.8 0 0 0 3.62.9c4.32 0 7.82-3.5 7.82-7.82S12.34 0 8.02 0zm4.6 11.06c-.2.55-1.16 1.06-1.6 1.1-.44.05-.86.22-2.9-.6-2.46-.99-4-3.5-4.12-3.66-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.84-2 .22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.4l.75 1.8c.06.13.1.28.01.45l-.28.42c-.09.12-.19.25-.08.44.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.95.19.1.3.08.42-.05l.6-.7c.15-.19.28-.14.47-.07l1.7.8c.19.09.32.13.37.21.05.08.05.48-.15 1.03z"></path></svg>
+        <a href="https://x.com/shreyanbr" class="hit hvli" aria-label="Shreyan on X" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid #FFFFFF;border-radius:2px;background:#FFFFFF;color:#000000;box-shadow:0 2px 8px rgba(10,15,40,.18);" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.25 6.93zm-1.29 19.5h2.04L6.49 3.24H4.3z"></path></svg>
         </a>
-        <a href="mailto:hello@shreyanbasuray.com" class="hit hv2" aria-label="Email" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FFFFFF;">
+        <a href="mailto:hello@shreyanbasuray.com" class="hit hvli" aria-label="Email" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid #FFFFFF;border-radius:2px;background:#FFFFFF;color:#000000;box-shadow:0 2px 8px rgba(10,15,40,.18);">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.2" y="3" width="13.6" height="10" rx="1"></rect><path d="M1.6 3.8 8 8.6l6.4-4.8"></path></svg>
         </a>
       </div>
@@ -212,20 +220,15 @@
         <a href="/about/" class="navlink">/about<span aria-hidden="true">→</span></a>
         <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:18px;">
           <a href="https://www.linkedin.com/in/shreyanbasuray" class="hvli" aria-label="Connect on LinkedIn" style="display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 18px;border-radius:2px;background:#FFFFFF;color:#3D5AFE;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.05em;font-weight:700;white-space:nowrap;" target="_blank" rel="noopener noreferrer"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM5 13.3H2.7V6.1H5v7.2zM3.85 5.1a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM13.3 13.3H11V9.5c0-.9-.32-1.52-1.13-1.52-.62 0-.99.42-1.15.82-.06.15-.08.35-.08.55v3.95H6.35s.03-6.4 0-7.2h2.29v1.02c.3-.47.85-1.14 2.06-1.14 1.5 0 2.6.98 2.6 3.08v4.24z"></path></svg>LinkedIn</a>
-        <a href="https://github.com/Shreyan1" aria-label="GitHub" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"></path></svg></a>
-          <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" aria-label="WhatsApp" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.02 0C3.7 0 .2 3.5.2 7.82c0 1.38.36 2.72 1.04 3.9L0 16l4.4-1.16a7.8 7.8 0 0 0 3.62.9c4.32 0 7.82-3.5 7.82-7.82S12.34 0 8.02 0zm4.6 11.06c-.2.55-1.16 1.06-1.6 1.1-.44.05-.86.22-2.9-.6-2.46-.99-4-3.5-4.12-3.66-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.84-2 .22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.4l.75 1.8c.06.13.1.28.01.45l-.28.42c-.09.12-.19.25-.08.44.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.95.19.1.3.08.42-.05l.6-.7c.15-.19.28-.14.47-.07l1.7.8c.19.09.32.13.37.21.05.08.05.48-.15 1.03z"></path></svg></a>
-          <a href="mailto:hello@shreyanbasuray.com" aria-label="Email" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:2px;color:#FFFFFF;"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.2" y="3" width="13.6" height="10" rx="1"></rect><path d="M1.6 3.8 8 8.6l6.4-4.8"></path></svg></a>
+        <a class="hvli" href="https://github.com/Shreyan1" aria-label="GitHub" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #FFFFFF;border-radius:2px;background:#FFFFFF;color:#000000;"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"></path></svg></a>
+          <a class="hvli" href="https://x.com/shreyanbr" aria-label="Shreyan on X" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #FFFFFF;border-radius:2px;background:#FFFFFF;color:#000000;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.25 6.93zm-1.29 19.5h2.04L6.49 3.24H4.3z"></path></svg></a>
+          <a class="hvli" href="mailto:hello@shreyanbasuray.com" aria-label="Email" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #FFFFFF;border-radius:2px;background:#FFFFFF;color:#000000;"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.2" y="3" width="13.6" height="10" rx="1"></rect><path d="M1.6 3.8 8 8.6l6.4-4.8"></path></svg></a>
         </div>
       </div>
     </div>
 
 <!-- ============ HERO ============ -->
   <div class="hero-grid" style="max-width:1140px;margin:0 auto;padding:clamp(36px,7vw,52px) clamp(20px,5vw,48px) clamp(48px,8vw,76px);">
-    <div class="hero-pill">
-      <a class="hit hv3" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" style="display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#F0F2FF;border:1px solid rgba(255,255,255,.35);padding:7px 13px;border-radius:2px;margin-bottom:26px;" target="_blank" rel="noopener noreferrer">
-        <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(157, 255, 217); display: inline-block;"></span>schedule a meet →
-      </a>
-    </div>
     <div class="hero-head">
       <h1 style="animation: fadeUp .9s cubic-bezier(.22,.7,.2,1) .16s both; margin: 0; font-size: clamp(38px,6vw,66px); line-height: 1.02; letter-spacing: -.04em; font-weight: 600; max-width: 18ch; color: #FDFCFF; text-align: left; text-transform: none; text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15)">Launch-ready is a claim you have to earn.</h1>
     </div>
@@ -240,7 +243,7 @@
         <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#F0F2FF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;">technical author @W&amp;B</span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#F0F2FF;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:5px 9px;display:inline-flex;align-items:center;white-space:nowrap;">community builder</span>
       </div>
-      <div style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .38s both;display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
+      <div class="herocta" style="animation:fadeUp .9s cubic-bezier(.22,.7,.2,1) .38s both;display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
         <a class="taplink hv4" href="#brief" style="background:#F7F3EA;color:#1B2BAE;padding:14px 26px;font-size:16px;font-weight:600;border-radius:2px;">Consult me now&nbsp;→</a>
         <a class="taplink hv5" href="/partners/" style="border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:14px 26px;font-size:16px;font-weight:500;border-radius:2px;">Be a Partner</a>
       </div>
@@ -267,17 +270,17 @@
     </div>
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;isolation:isolate;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
       <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="820">820</span><span style="color:#3D5AFE;">+</span></div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">builders in claude developers india ✦ <a class="taplink cardlink" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer">join the group →</a></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">builders in claude developers india ✦ <a class="taplink cardlink" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%27d%20like%20to%20join%20Claude%20Developers%20India.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer">ask to join →</a></div>
       <picture><source srcset="/assets/claude-mark.webp" type="image/webp"><img src="/assets/claude-mark.png" alt="" aria-hidden="true" width="118" height="118" decoding="async" style="position:absolute;right:-30px;bottom:-32px;width:118px;height:118px;opacity:.9;z-index:-1;pointer-events:none;"></picture>
     </div>
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
-      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;">Published Book</div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;"><a class="taplink cardlink" href="https://amzn.in/d/c3pgkTh" target="_blank" rel="noopener noreferrer">The Architect's Handbook: Engineering Responsible AI →</a></div>
+      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;">1</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">published book ✦ <a class="taplink cardlink" href="https://amzn.in/d/c3pgkTh" target="_blank" rel="noopener noreferrer">The Architect's Handbook →</a></div>
     </div>
   </div>
 
 <!-- ============ WORK ============ -->
-  <div id="work" style="margin-top:64px;">
+  <div id="work" style="margin-top:80px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5"></rect><rect x="3" y="11" width="12" height="4.5"></rect><rect x="3" y="18" width="7" height="3"></rect></svg>What I've shipped</h2>
       <a class="taplink" href="/work/" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 600">all cases →</a>
@@ -295,7 +298,7 @@
         </div>
       </div>
       <div data-costs="" style="background:#F7F3EA;border:1px solid #E8E2D4;border-radius:2px;padding:22px 24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#716B5F;padding-bottom:10px;border-bottom:1px solid #E2DCCE;">per-minute variable cost</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#716B5F;padding-bottom:10px;border-bottom:1px solid #E2DCCE;">per-minute variable cost</div>
         <div class="crow" style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;padding:9px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">STT, Google standard</span><span style="color:#15171B;">$0.024</span></div>
         <div class="crow" style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;padding:9px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">LLM, Gemini 2.0 Flash</span><span style="color:#15171B;">$0.0001125</span></div>
         <div class="crow" style="display:flex;justify-content:space-between;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;padding:9px 0;border-bottom:1px solid #EAE5D8;"><span style="color:#4C4841;">TTS, Neural2 / HD</span><span style="color:#15171B;">$0.000008</span></div>
@@ -304,7 +307,7 @@
           <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">total</span>
           <span style="font-size:22px;font-weight:600;letter-spacing:-.02em;">$<span data-count="0.02414" data-decimals="5">0.02414</span></span>
         </div>
-        <p style="margin:6px 0 0;text-align:right;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;">₹<span data-count="2.29" data-decimals="2">2.29</span> at ₹95/USD</p>
+        <p style="margin:6px 0 0;text-align:right;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;">₹<span data-count="2.29" data-decimals="2">2.29</span> at ₹95/USD</p>
       </div>
     </div>
 
@@ -313,28 +316,28 @@
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">risk intelligence ✦ fintech</div>
         <h3 style="margin:12px 0 0;font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1.2;">The metric was measuring the wrong thing</h3>
         <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#4C4841;">The reported distress rate was climbing, 21% to 27% year over year, and it read like a market signal. It was 187 spurious labels from companies that had simply not filed their accounts. I traced it to the label definition rather than to the model, and added a reportability gate that holds the rate inside a point.</p>
-        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">92.155% on current-year distress flagging ✦ SHAP attached to every prediction</p>
+        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">92.155% on current-year distress flagging ✦ SHAP attached to every prediction</p>
         <a class="taplink hv7 cardlink" href="/work/" style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid #C9D0FF;color:#3D5AFE;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;">read in detail →</a>
       </div>
       <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:28px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">natural language to SQL ✦ facilities SaaS</div>
         <h3 style="margin:12px 0 0;font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1.2;">₹95,000 a month for bad answers</h3>
         <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#4C4841;">A facilities management platform was paying a vendor copilot to answer questions about their own data badly. I modelled the unit economics layer by layer before writing code: the cheapest model for intent routing, semantic table selection so only relevant schemas reach the LLM, three tiers of cache.</p>
-        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">₹95,000 to ₹35,000 a month ✦ post-deployment spend tracked the model</p>
+        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">₹95,000 to ₹35,000 a month ✦ post-deployment spend tracked the model</p>
         <a class="taplink hv7 cardlink" href="/work/" style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid #C9D0FF;color:#3D5AFE;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;">read in detail →</a>
       </div>
       <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:28px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">independent evaluation ✦ AI coding agent</div>
         <h3 style="margin:12px 0 0;font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1.2;">An outside pass before it shipped</h3>
         <p style="margin:13px 0 0;font-size:16px;line-height:1.62;color:#4C4841;">An AI coding agent in private alpha brought me in to evaluate the product before wider release. I ran it across six tracks, from static review and security pentest to LLM red-teaming and capability evaluation, each scored against rubrics the industry already recognises, from OWASP LLM Top 10 to CWE, MITRE ATLAS and SWE-bench.</p>
-        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">18 findings, ranked and reproducible ✦ the attacks it was built to stop held, the gaps were architectural</p>
+        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">18 findings, ranked and reproducible ✦ the attacks it was built to stop held, the gaps were architectural</p>
         <a class="taplink hv7 cardlink" href="/work/" style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid #C9D0FF;color:#3D5AFE;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;">read in detail →</a>
       </div>
     </div>
   </div>
 
 <!-- ============ PARTNERS ============ -->
-  <div style="margin-top:64px;">
+  <div style="margin-top:80px;">
     <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><circle cx="9" cy="8" r="3.1"></circle><path d="M3.4 20c0-3.5 2.5-5.8 5.6-5.8s5.6 2.3 5.6 5.8"></path><circle cx="17.4" cy="9.2" r="2.3"></circle><path d="M16 14.4c2.7.1 4.9 2.1 4.9 5.6"></path></svg>Partners I bring in</h2>
       <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">✦ marketing · tech · legal</span>
@@ -342,23 +345,23 @@
     <p style="margin:14px 0 26px;font-size:17px;line-height:1.65;color:#4C4841;">Specialists I trust for the parts beyond me. I own it for you, so your product ships ready for the market at the standard it deserves.</p>
 
     <style>
-      .pnr-panel{background:#FEFDFA;border:1px solid #E8E2D4;border-radius:4px;box-shadow:0 8px 24px rgba(21,23,27,.08);overflow:hidden;}
+      .pnr-panel{background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;box-shadow:0 8px 24px rgba(21,23,27,.08);overflow:hidden;}
       .pnr-grid{display:grid;grid-template-columns:1fr;}
       .pnr-col{padding:22px clamp(18px,2.4vw,26px);}
       .pnr-col + .pnr-col{border-top:1px solid #EAE4D6;}
-      @media(min-width:780px){.pnr-grid{grid-template-columns:repeat(3,1fr);}.pnr-col + .pnr-col{border-top:0;border-left:1px solid #EAE4D6;}}
+      @media(min-width:780px){.pnr-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.pnr-col + .pnr-col{border-top:0;border-left:1px solid #EAE4D6;}}
       .pnr-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
       .pnr-cat{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3D5AFE;}
-      .pnr-idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#7A7466;}
+      .pnr-idx{font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A7466;}
       .pnr-rule{height:1px;background:#E8E2D4;margin:11px 0 6px;}
-      .pnr-row{display:flex;align-items:center;gap:13px;padding:11px 10px;margin:0 -10px;border-radius:9px;text-decoration:none;transition:background .16s ease;}
+      .pnr-row{display:flex;align-items:center;gap:13px;padding:11px 10px;margin:0 -10px;border-radius:2px;text-decoration:none;transition:background .16s ease;}
       .pnr-row:hover,.pnr-row:focus-visible{background:#F4EFE3;}
-      .pnr-logo{flex:0 0 auto;width:58px;height:58px;display:block;background:#FFFFFF;border:1px solid #ECE6D7;border-radius:11px;box-sizing:border-box;overflow:hidden;}
+      .pnr-logo{flex:0 0 auto;width:58px;height:58px;display:block;background:#FFFFFF;border:1px solid #ECE6D7;border-radius:3px;box-sizing:border-box;overflow:hidden;}
       .pnr-logo img{width:100%;height:100%;object-fit:cover;display:block;}
       .pnr-meta{min-width:0;flex:1;}
       .pnr-name{display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#15171B;}
-      .pnr-tag{display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#716B5F;}
-      .pnr-dom{display:block;margin-top:3px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+      .pnr-tag{display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#716B5F;}
+      .pnr-dom{display:block;margin-top:3px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#3D5AFE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
       .pnr-arr{flex:0 0 auto;margin-left:4px;color:#BFC8E8;transition:transform .16s ease,color .16s ease;}
       .pnr-row:hover .pnr-arr,.pnr-row:focus-visible .pnr-arr{transform:translate(2px,-2px);color:#3D5AFE;}
     </style>
@@ -418,7 +421,7 @@
     </div>
 
     <div style="margin-top:16px;">
-      <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#716B5F;line-height:1.6;">✦ my partners work end to end under my advisory brief, and I take care of the outcome</p>
+      <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#716B5F;line-height:1.6;">✦ my partners work end to end under my advisory brief, and I take care of the outcome</p>
       <a class="taplink hv9" href="/partners/" style="display:inline-block;margin-top:11px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;font-weight:600;color:#3D5AFE;">how partnering works →</a>
     </div>
   </div>
@@ -426,7 +429,7 @@
 </div>
 
 <!-- ============ WHO I WORK WITH ============ -->
-<div style="margin-top:84px;background:#15171B;color:#F2EFE7;">
+<div style="margin-top:80px;background:#15171B;color:#F2EFE7;">
  <div style="max-width:1140px;margin:0 auto;padding:76px clamp(20px,5vw,48px) 84px;">
   <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8EA3FF;">where I fit</div>
   <h2 style="margin:14px 0 0;font-size:clamp(30px,4.2vw,44px);font-weight:600;letter-spacing:-.035em;line-height:1.08;max-width:22ch;color:#FDFCFF;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8EA3FF" stroke-width="1.4" style="opacity:.3;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20c0-3.1 2.7-5.2 6-5.2s6 2.1 6 5.2"></path><path d="M16.5 5.6a3.2 3.2 0 0 1 0 6.1M18 14.9c2.1.6 3.5 2.4 3.5 4.6"></path></svg>Who I work with</h2>
@@ -480,7 +483,7 @@
 
 <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px);">
 <!-- ============ OPEN SOURCE ============ -->
-  <div style="margin-top:76px;">
+  <div style="margin-top:80px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M6 8.5v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2M12 12.5v3"></path></svg>Built for the Opensource</h2>
       <a class="taplink" href="https://github.com/Shreyan1" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 600" target="_blank" rel="noopener noreferrer">github →</a>
@@ -490,11 +493,11 @@
       <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:30px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
         <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
           <h3 style="margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><a class="taplink hv9 cardlink" href="https://github.com/Shreyan1/cc-habits" style="color:#15171B;" target="_blank" rel="noopener noreferrer">cc-habits ↗</a></h3>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;border:1px solid #C9D0FF;padding:4px 8px;border-radius:2px;">open source</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;border:1px solid #C9D0FF;padding:4px 8px;border-radius:2px;">open source</span>
         </div>
         <p style="margin:8px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#716B5F;">developers across nine coding tools</p>
         <p style="margin:15px 0 0;font-size:16px;line-height:1.62;color:#4C4841;">A tool-agnostic memory layer that learns a developer's habits from real edits and writes them into whichever coding agent they are using, so your context follows you between tools instead of starting cold every session. Hardened against symlink races, Unicode sanitiser bypass and indirect prompt injection.</p>
-        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">install from npm ✦ security audit public in the repo</p>
+        <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">install from npm ✦ security audit public in the repo</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;">
           <a href="https://www.npmjs.com/package/cc-habits" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #C9D0FF;color:#3D5AFE;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;" target="_blank" rel="noopener noreferrer" class="hv7 cardraise"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 3h16v10H8.6V5.4H6.2V13H0z"></path></svg>npm install</a>
           <a class="taplink hv10 cardraise" href="https://github.com/Shreyan1/cc-habits" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #DDD6C6;color:#4C4841;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;" target="_blank" rel="noopener noreferrer">repo →</a>
@@ -505,15 +508,15 @@
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
             <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;"><a class="taplink hv9 cardlink" href="https://github.com/Shreyan1/QuantumAI-Noob2Pro" style="color:#15171B;" target="_blank" rel="noopener noreferrer">QuantumAI-Noob2Pro ↗</a></h3>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">quantum ml</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">quantum ml</span>
           </div>
           <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A hands-on path through quantum machine learning that is honest about where it helps and where it does not, including problems set so the expected answer is that the quantum method loses to a classical one. Built to learn from, not to sell quantum.</p>
-          <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;letter-spacing:.03em;">MIT ✦ running since december 2024</p>
+          <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;">MIT ✦ running since december 2024</p>
         </div>
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
             <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;"><a class="taplink hv9 cardlink" href="https://github.com/Shreyan1" style="color:#15171B;" target="_blank" rel="noopener noreferrer">Watermark robustness research ↗</a></h3>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">adversarial</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">adversarial</span>
           </div>
           <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A study of how well text watermarks survive once content is paraphrased and regenerated, so a team can judge whether a watermark is worth relying on. Carries an explicit responsible-use note citing EU AI Act Article 50(2).</p>
         </div>
@@ -522,7 +525,7 @@
   </div>
 
 <!-- ============ RESEARCH ============ -->
-  <div style="margin-top:76px;">
+  <div style="margin-top:80px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><rect x="4" y="3" width="16" height="18"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>Research I've published</h2>
       <a class="taplink" href="https://scholar.google.com/citations?user=vih7SfEAAAAJ&amp;hl=en" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 600" target="_blank" rel="noopener noreferrer">google scholar →</a>
@@ -530,11 +533,11 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(32px,5vw,56px) clamp(24px,4vw,46px);margin-top:22px;">
       <div style="display:grid;gap:clamp(32px,5vw,56px);align-content:start;">
         <a href="/papers/agent-complexity-theory.pdf" target="_blank" rel="noopener" style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;display:block;background:#15171B;color:#F2EFE7;border-radius:3px;padding:32px;box-shadow:0 8px 24px rgba(21,23,27,.14);transition:transform .18s ease,box-shadow .18s ease;" class="hv11">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8EA3FF;">working paper ✦ july 2026</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8EA3FF;">working paper ✦ july 2026</div>
           <h3 style="margin:14px 0 0;font-size:28px;font-weight:600;letter-spacing:-.03em;line-height:1.15;">Agent Complexity Theory</h3>
           <p style="margin:12px 0 0;font-size:17px;line-height:1.6;color:#C6C2B7;">Choose an agent architecture before you build it, not after benchmarking.</p>
           <p style="margin:16px 0 0;font-size:15px;line-height:1.65;color:#A6A29A;">A computational theory that characterises an agentic workflow by the intrinsic difficulty of the task and the complexity signature of the architecture. Signatures derived for four machine families with matching lower bounds, and reconciled against ten production workflows.</p>
-          <p style="margin:18px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8F8B83;letter-spacing:.03em;line-height:1.7;">33 pages ✦ four complete case studies ✦ one documented failure case</p>
+          <p style="margin:18px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8F8B83;letter-spacing:.03em;line-height:1.7;">33 pages ✦ four complete case studies ✦ one documented failure case</p>
           <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8EA3FF;">read the paper →</p>
           <div data-docstack="" aria-hidden="true" style="position:absolute;right:-8px;bottom:-12px;width:38px;height:48px;pointer-events:none;z-index:3;">
               <div style="position:absolute;right:0;bottom:0;transition:transform .26s cubic-bezier(.22,1.1,.36,1);transform-origin:bottom right;will-change:transform;filter:drop-shadow(0 3px 6px rgba(21,23,27,.22));">
@@ -549,7 +552,7 @@
             </div>
         </a>
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 30px 24px 24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">framework</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">framework</div>
           <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv9 cardlink" href="https://drive.google.com/file/d/17glCQYFuRk1FF-QWwTnQSndOKxoWXx2U/view?usp=sharing" target="_blank" style="color:#15171B;" rel="noopener noreferrer">SafeTrust: Agentic Development in India ↗</a></h3>
           <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A framework for building and deploying agentic systems responsibly in the Indian context.</p>
           <div data-docstack="" aria-hidden="true" style="position:absolute;right:-8px;bottom:-12px;width:38px;height:48px;pointer-events:none;z-index:3;">
@@ -567,10 +570,10 @@
       </div>
       <div style="display:grid;gap:clamp(32px,5vw,56px);">
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 30px 24px 24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">peer reviewed</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">peer reviewed</div>
           <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv9 cardlink" href="https://scholar.google.com/citations?user=vih7SfEAAAAJ&amp;hl=en" style="color:#15171B;" target="_blank" rel="noopener noreferrer">Quantum Neural Networks ↗</a></h3>
           <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A book chapter on where quantum machine learning actually earns its cost against classical baselines.</p>
-          <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;line-height:1.6;">Springer Nature, with Soujanya Ray ✦ ISEM vol 65, pages 205 to 233 ✦ first online september 2025</p>
+          <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;line-height:1.6;">Springer Nature, with Soujanya Ray ✦ ISEM vol 65, pages 205 to 233 ✦ first online september 2025</p>
           <div data-docstack="" aria-hidden="true" style="position:absolute;right:-8px;bottom:-12px;width:38px;height:48px;pointer-events:none;z-index:3;">
             <div style="position:absolute;right:0;bottom:0;transition:transform .26s cubic-bezier(.22,1.1,.36,1);transform-origin:bottom right;will-change:transform;filter:drop-shadow(0 3px 6px rgba(21,23,27,.22));">
               <svg width="38" height="48" viewBox="0 0 38 48" fill="none" aria-hidden="true"><path d="M1.8 1.8h22.4L36.2 13.6V46.2H1.8Z" fill="#FFFFFF" stroke="#3D5AFE" stroke-width="1.6"></path><path d="M24.2 1.8v11.8h12" stroke="#3D5AFE" stroke-width="1.6"></path><path d="M7.5 21h18M7.5 27h18M7.5 33h12" stroke="#3D5AFE" stroke-width="1.5" opacity=".4"></path></svg>
@@ -584,10 +587,10 @@
           </div>
         </div>
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 30px 24px 24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">book</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">book</div>
           <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv9 cardlink" href="https://amzn.in/d/c3pgkTh" style="color:#15171B;" target="_blank" rel="noopener noreferrer">The Architect's Handbook: Engineering Responsible AI ↗</a></h3>
           <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A practitioner's handbook on building AI systems that can be governed, audited and explained.</p>
-          <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;line-height:1.6;">Eighty-six pages, free to read, <a class="cardraise" href="https://amzn.in/d/c3pgkTh" target="_blank" rel="noopener noreferrer">on Kindle</a> ✦ version 1.0, january 2026</p>
+          <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;line-height:1.6;">Eighty-six pages, free to read, <a class="cardraise" href="https://amzn.in/d/c3pgkTh" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px;">on Kindle</a> ✦ version 1.0, january 2026</p>
           <div data-docstack="" aria-hidden="true" style="position:absolute;right:-8px;bottom:-12px;width:38px;height:48px;pointer-events:none;z-index:3;">
             <div style="position:absolute;right:0;bottom:0;transition:transform .26s cubic-bezier(.22,1.1,.36,1);transform-origin:bottom right;will-change:transform;filter:drop-shadow(0 3px 6px rgba(21,23,27,.22));">
               <svg width="38" height="48" viewBox="0 0 38 48" fill="none" aria-hidden="true"><path d="M1.8 1.8h22.4L36.2 13.6V46.2H1.8Z" fill="#FFFFFF" stroke="#3D5AFE" stroke-width="1.6"></path><path d="M24.2 1.8v11.8h12" stroke="#3D5AFE" stroke-width="1.6"></path><path d="M7.5 21h18M7.5 27h18M7.5 33h12" stroke="#3D5AFE" stroke-width="1.5" opacity=".4"></path></svg>
@@ -601,10 +604,10 @@
           </div>
         </div>
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 30px 24px 24px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">policy</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3D5AFE;">policy</div>
           <h3 style="margin:10px 0 0;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;"><a class="taplink hv9 cardlink" href="https://drive.google.com/file/d/1nkkkYy6-bbiHx3MTsoL9sN0zk2E3tVxV/view?usp=drive_link" target="_blank" style="color:#15171B;" rel="noopener noreferrer">C-RAI ↗</a></h3>
           <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A certification framework for responsible AI, proposing how Indian AI systems could be audited and labelled before deployment.</p>
-          <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#716B5F;line-height:1.6;">Sent to MeitY and NASSCOM ✦ policy draft v2, 2026</p>
+          <p style="margin:10px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;line-height:1.6;">Sent to MeitY and NASSCOM ✦ policy draft v2, 2026</p>
           <div data-docstack="" aria-hidden="true" style="position:absolute;right:-8px;bottom:-12px;width:38px;height:48px;pointer-events:none;z-index:3;">
             <div style="position:absolute;right:0;bottom:0;transition:transform .26s cubic-bezier(.22,1.1,.36,1);transform-origin:bottom right;will-change:transform;filter:drop-shadow(0 3px 6px rgba(21,23,27,.22));">
               <svg width="38" height="48" viewBox="0 0 38 48" fill="none" aria-hidden="true"><path d="M1.8 1.8h22.4L36.2 13.6V46.2H1.8Z" fill="#FFFFFF" stroke="#3D5AFE" stroke-width="1.6"></path><path d="M24.2 1.8v11.8h12" stroke="#3D5AFE" stroke-width="1.6"></path><path d="M7.5 21h18M7.5 27h18M7.5 33h12" stroke="#3D5AFE" stroke-width="1.5" opacity=".4"></path></svg>
@@ -622,7 +625,7 @@
   </div>
 
 <!-- ============ WRITING ============ -->
-  <div style="margin-top:76px;">
+  <div style="margin-top:80px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><path d="M3 5h18M3 10h14M3 15h16M3 20h9"></path></svg>Articles I've written</h2>
       <a class="taplink" href="https://wandb.ai/basurayshreyan" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 600" target="_blank" rel="noopener noreferrer">all 17 →</a>
@@ -650,7 +653,7 @@
 </div>
 
 <!-- ============ MARQUEE ============ -->
-<div style="margin-top:76px;border-top:1px solid #E2DCCE;border-bottom:1px solid #E2DCCE;background:#F2EDE1;overflow:hidden;padding:18px 0;">
+<div style="margin-top:80px;border-top:1px solid #E2DCCE;border-bottom:1px solid #E2DCCE;background:#F2EDE1;overflow:hidden;padding:18px 0;">
   <div class="mq" style="display:flex;gap:0;width:max-content;">
     <span style="font-family:Outfit,sans-serif;font-size:clamp(19px,2.2vw,26px);font-weight:600;letter-spacing:-.02em;color:#15171B;white-space:nowrap;padding-right:38px;">Agent Complexity Theory <span style="color:#3D5AFE;">✦</span> cc-habits <span style="color:#3D5AFE;">✦</span> Physical AI <span style="color:#3D5AFE;">✦</span> Claude Developers India <span style="color:#3D5AFE;">✦</span> C-RAI <span style="color:#3D5AFE;">✦</span></span>
     <span aria-hidden="true" style="font-family:Outfit,sans-serif;font-size:clamp(19px,2.2vw,26px);font-weight:600;letter-spacing:-.02em;color:#15171B;white-space:nowrap;padding-right:38px;">Agent Complexity Theory <span style="color:#3D5AFE;">✦</span> cc-habits <span style="color:#3D5AFE;">✦</span> Physical AI <span style="color:#3D5AFE;">✦</span> Claude Developers India <span style="color:#3D5AFE;">✦</span> C-RAI <span style="color:#3D5AFE;">✦</span></span>
@@ -658,7 +661,7 @@
 </div>
 
 <!-- ============ COMMUNITY ============ -->
-<div style="max-width:1140px;margin:0 auto;padding:72px clamp(20px,5vw,48px) 0;">
+<div style="max-width:1140px;margin:0 auto;padding:80px clamp(20px,5vw,48px) 0;">
   <div class="cgrid" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,30px) 40px;align-items:start;">
     <div style="padding:0 6px;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="10" r="2.5"></circle><path d="M2.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5M15 20c0-2.2 1.4-3.8 3.5-3.8"></path></svg>The dev community</h2>
@@ -666,7 +669,7 @@
       <p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I founded Claude Developers India, a WhatsApp community of 820+ builders, and I keep it active. I run "Show Your Products, Brainstorm and Validate", online calls where members demo what they are building to each other and get feedback. Each session also brings in a guest speaker or two for a short talk.</p>
       <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I also mentor at hackathons, most recently Code Wizards 2.0 at SRM University, Ghaziabad Campus.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;">
-        <a class="taplink hv12" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" style="display:inline-flex;align-items:center;gap:8px;background:#3D5AFE;color:#FFFFFF;padding:12px 20px;font-size:15px;font-weight:500;border-radius:2px;" target="_blank" rel="noopener noreferrer">Join the community on WhatsApp →</a>
+        <a class="taplink hv12" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%27d%20like%20to%20join%20Claude%20Developers%20India.&amp;type=phone_number&amp;app_absent=0" style="display:inline-flex;align-items:center;gap:8px;background:#3D5AFE;color:#FFFFFF;padding:12px 20px;font-size:15px;font-weight:500;border-radius:2px;" target="_blank" rel="noopener noreferrer">Ask to join on WhatsApp →</a>
         <a href="https://luma.com/user/shreyan" style="display:inline-flex;align-items:center;border:1px solid #CFC8B8;color:#15171B;padding:12px 20px;font-size:15px;font-weight:500;border-radius:2px;" target="_blank" rel="noopener noreferrer" class="hv10">Upcoming sessions</a>
       </div>
     </div>
@@ -700,113 +703,14 @@
   </div>
 </div>
 
-<!-- ============ BRIEF FORM ============ -->
-<div id="brief" style="max-width:1140px;margin:0 auto;padding:84px clamp(20px,5vw,48px) 0;">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(28px,4vw,40px) 56px;align-items:start;">
-    <div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3D5AFE;">start here ✦ two minutes</div>
-      <h2 style="margin:14px 0 0;font-size:clamp(28px,3.6vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.1;max-width:20ch;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3D5AFE" stroke-width="1.4" style="opacity:.3;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><path d="M9 15 15 9M15 9h-4M15 9v4"></path></svg>Tell me what you need</h2>
-      <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:44ch;">Pick the closest fit. The questions change with it, and none of them take long. It goes straight to my inbox, nothing else.</p>
-      <p style="margin:16px 0 0;font-size:16px;line-height:1.65;color:#6B6659;max-width:44ch;">Prefer to talk first?<br><a class="taplink" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer">Message me on WhatsApp</a>.</p>
-    </div>
-    <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:clamp(20px,4vw,30px);box-shadow:0 8px 24px rgba(21,23,27,.08);display:grid;gap:16px;">
-      <label style="display:grid;gap:6px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">your name <span style="color:#B4441F;">*</span></span>
-        <input id="bf-name" type="text" required aria-required="true" autocomplete="name" placeholder="Priya Menon" style="font-family: Outfit,sans-serif; font-size: 16px; padding: 11px 13px; border: 1px solid #DDD6C6; border-radius: 2px; background: #F7F3EA; color: #15171B; box-sizing: border-box; width: 100%; border-color: #DDD6C6">
-      </label>
-      <label style="display:grid;gap:6px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">company, and what it does</span>
-        <input id="bf-company" type="text" placeholder="Diagnostics platform, 40 people" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-      </label>
-      <div role="tablist" aria-label="What you need" style="display:flex;flex-wrap:wrap;gap:8px;">
-        <button type="button" role="tab" class="bftab" data-tab="evaluate" id="bftab-evaluate" title="An AI product going to alpha or launch, and you want an outside pass before it does." aria-controls="bfpane-evaluate" aria-selected="true">evaluate it</button>
-        <button type="button" role="tab" class="bftab" data-tab="sell" id="bftab-sell" title="It works, and the problem now is reach and distribution." aria-controls="bfpane-sell" aria-selected="false">sell it</button>
-        <button type="button" role="tab" class="bftab" data-tab="write" id="bftab-write" title="A technical article, guide, or paper you want written properly." aria-controls="bfpane-write" aria-selected="false">write it</button>
-        <button type="button" role="tab" class="bftab" data-tab="other" id="bftab-other" title="Advisory, a workshop, a talk, or something not on this list." aria-controls="bfpane-other" aria-selected="false">something else</button>
-      </div>
-      <p id="bf-tabnote" style="margin:-4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">an AI product going to alpha or launch, and you want an outside pass before it does</p>
-      <div role="tabpanel" data-pane="evaluate" id="bfpane-evaluate" aria-labelledby="bftab-evaluate" style="display:grid;gap:16px;">
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what the product does, and who has access to it today</span>
-          <textarea id="bf-ev-product" rows="2" placeholder="Coding assistant, private alpha, 40 testers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you are worried it will do in front of a user</span>
-          <textarea id="bf-ev-worry" rows="2" placeholder="Leaks its system prompt, or mishandles a crisis message" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">when it is meant to launch</span>
-          <input id="bf-ev-launch" type="text" placeholder="Public beta in six weeks" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-        </label>
-      </div>
-      <div role="tabpanel" data-pane="sell" id="bfpane-sell" aria-labelledby="bftab-sell" style="display:none;gap:16px;" hidden>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you have built, and who uses it today</span>
-          <textarea id="bf-gt-built" rows="2" placeholder="Scheduling agent, 11 paying clinics" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">who it has to reach, and how they buy today</span>
-          <textarea id="bf-gt-reach" rows="2" placeholder="Ops managers, buying via resellers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you have already tried</span>
-          <input id="bf-gt-tried" type="text" placeholder="Cold email, two conferences" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-        </label>
-      </div>
-      <div role="tabpanel" data-pane="write" id="bfpane-write" aria-labelledby="bftab-write" style="display:none;gap:16px;" hidden>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">the topic, and who it is for</span>
-          <textarea id="bf-wr-topic" rows="2" placeholder="Agent evals, for ML engineers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">where it runs, and roughly how long</span>
-          <input id="bf-wr-where" type="text" placeholder="Our blog, 2000 words" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">when you need it</span>
-          <input id="bf-wr-when" type="text" placeholder="End of next month" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-        </label>
-      </div>
-      <div role="tabpanel" data-pane="other" id="bfpane-other" aria-labelledby="bftab-other" style="display:none;gap:16px;" hidden>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you have in mind</span>
-          <textarea id="bf-ot-what" rows="2" placeholder="Two-day workshop on cost modelling" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
-        </label>
-        <label style="display:grid;gap:6px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you would want from me</span>
-          <input id="bf-ot-want" type="text" placeholder="Leave the team able to redo it" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-        </label>
-      </div>
-      <label style="display:grid;gap:6px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">your email <span style="color:#B4441F;">*</span></span>
-        <input id="bf-email" type="email" required aria-required="true" autocomplete="email" placeholder="you@company.com" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-      </label>
-      <label style="display:grid;gap:6px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">your mobile number <span style="color:#B4441F;">*</span></span>
-        <input id="bf-phone" type="tel" required aria-required="true" autocomplete="tel" placeholder="+91 98301 52522" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
-      </label>
-      <button type="button" onclick="sendBrief()" style="margin-top:4px;background:#3D5AFE;color:#FFFFFF;border:0;padding:15px 22px;font-family:Outfit,sans-serif;font-size:16px;font-weight:600;border-radius:2px;cursor:pointer;" class="hv12">Send it on WhatsApp →</button>
-      <button type="button" onclick="sendBriefEmail()" style="background:transparent;color:#3D5AFE;border:1px solid #C9D0FF;padding:13px 22px;font-family:Outfit,sans-serif;font-size:15px;font-weight:500;border-radius:2px;cursor:pointer;" class="hv15">Send it as email instead</button>
-      <p id="bf-err" role="alert" style="margin:0;display:none;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#B4441F;line-height:1.6;"></p>
-      <p id="bf-fallback" style="margin:0;display:none;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#6B6659;line-height:1.7;">no mail app opened ? → write to <a href="mailto:hello@shreyanbasuray.com" style="color:#3D5AFE;text-decoration:underline;">hello@shreyanbasuray.com</a> directly. your answers are still in the form above.</p>
-    </div>
-  </div>
-</div>
-
 <!-- ============ CONTACT ============ -->
 <div style="margin-top:80px;background:#3D5AFE;color:#F4F2FF;">
   <div style="max-width:1140px;margin:0 auto;padding:clamp(48px,9vw,72px) clamp(20px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,5vw,40px) 56px;align-items:center;">
    <div>
     <h2 style="margin:0;font-size:clamp(30px,4vw,46px);font-weight:600;letter-spacing:-.04em;line-height:1.06;max-width:20ch;color:#FDFCFF;">Want an outside pass over your AI product?</h2>
     <p style="margin:18px 0 0;font-size:19px;line-height:1.6;color:#F0F2FF;max-width:50ch;">Three questions and I will tell you whether it is worth a call.</p>
-    <div style="display:grid;gap:10px;margin-top:26px;max-width:46ch;">
-      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#BFFFE6;">01</span><span style="font-size:17px;">What does the product do, and who has access to it today?</span></a>
-      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#BFFFE6;">02</span><span style="font-size:17px;">What are you worried it will do in front of a user?</span></a>
-      <a href="#brief" style="display:flex;align-items:baseline;gap:12px;padding:14px 18px;border:1px solid rgba(255,255,255,.32);border-radius:2px;color:#FDFCFF;" class="hv16"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#BFFFE6;">03</span><span style="font-size:17px;">When is it meant to launch, or is it already live?</span></a>
-    </div>
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center;">
-      <a class="taplink hv4" href="#brief" style="background:#F7F3EA;color:#1B2BAE;padding:15px 28px;font-size:17px;font-weight:600;border-radius:2px;">Answer them here →</a>
-      <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" style="border:1px solid rgba(255,255,255,.4);color:#FFFFFF;padding:15px 24px;font-size:17px;font-weight:500;border-radius:2px;" target="_blank" rel="noopener noreferrer" class="hv5">WhatsApp me</a>
+      <a class="taplink hv4" href="#brief" style="background:#F7F3EA;color:#1B2BAE;padding:15px 28px;font-size:17px;font-weight:600;border-radius:2px;">Answer them below ↓</a>
     </div>
     <div style="display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.22);">
       <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#BFFFE6;">or email</span>
@@ -823,11 +727,11 @@
        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#BFFFE6;">voice agent ✦ one turn</span>
      </div>
      <div style="padding:10px 6px 4px;">
-       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#15171B;">stt.transcribe</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#716B5F;text-align:right;">audio in</span></div>
-       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#15171B;">intent.route</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#716B5F;text-align:right;">matched</span></div>
-       <div class="trow tfail" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;background:#FDECE7;border-left:3px solid #D9432A;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#B03A22;font-weight:500;">fail</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#15171B;">rag.retrieve</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#B03A22;text-align:right;">0 rows returned</span></div>
-       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#6B6659;">llm.generate</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#716B5F;text-align:right;">answered anyway</span></div>
-       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#6B6659;">tts.speak</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#716B5F;text-align:right;">spoken to caller</span></div>
+       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#15171B;">stt.transcribe</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#716B5F;text-align:right;">audio in</span></div>
+       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#15171B;">intent.route</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#716B5F;text-align:right;">matched</span></div>
+       <div class="trow tfail" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;background:#FDECE7;border-left:3px solid #D9432A;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#B03A22;font-weight:500;">fail</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#15171B;">rag.retrieve</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#B03A22;text-align:right;">0 rows returned</span></div>
+       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#6B6659;">llm.generate</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#716B5F;text-align:right;">answered anyway</span></div>
+       <div class="trow" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px 10px 9px;border-left:3px solid transparent;"><span class="tstat" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#2E7D53;font-weight:500;">ok</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#6B6659;">tts.speak</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#716B5F;text-align:right;">spoken to caller</span></div>
      </div>
      <div style="margin:4px 16px 0;border-top:1px dashed #D8D0BE;"></div>
      <p class="tend" style="margin:0;padding:14px 16px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.8;letter-spacing:.02em;color:#4C4841;">no crash. no error raised. nothing in the dashboard.<br><span style="color:#B03A22;">the caller just gets a confident wrong answer.</span></p>
@@ -835,13 +739,104 @@
   </div>
 </div>
 
+<!-- ============ BRIEF FORM ============ -->
+<div id="brief" style="max-width:1140px;margin:0 auto;padding:80px clamp(20px,5vw,48px) 80px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(28px,4vw,40px) 56px;align-items:start;">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3D5AFE;">start here ✦ two minutes</div>
+      <h2 style="margin:14px 0 0;font-size:clamp(28px,3.6vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.1;max-width:20ch;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3D5AFE" stroke-width="1.4" style="opacity:.3;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><path d="M9 15 15 9M15 9h-4M15 9v4"></path></svg>Tell me what you need</h2>
+      <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:44ch;">Pick the closest fit. The questions change with it, and none of them take long. It goes straight to my inbox, nothing else.</p>
+    </div>
+    <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:clamp(20px,4vw,30px);box-shadow:0 8px 24px rgba(21,23,27,.08);display:grid;gap:16px;">
+      <label style="display:grid;gap:6px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">your name <span style="color:#B4441F;">*</span></span>
+        <input id="bf-name" type="text" required aria-required="true" autocomplete="name" placeholder="Priya Menon" style="font-family: Outfit,sans-serif; font-size: 16px; padding: 11px 13px; border: 1px solid #DDD6C6; border-radius: 2px; background: #F7F3EA; color: #15171B; box-sizing: border-box; width: 100%; border-color: #DDD6C6">
+      </label>
+      <label style="display:grid;gap:6px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">company, and what it does</span>
+        <input id="bf-company" type="text" placeholder="Diagnostics platform, 40 people" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+      </label>
+      <div role="tablist" aria-label="What you need" style="display:flex;flex-wrap:wrap;gap:8px;">
+        <button type="button" role="tab" class="bftab" data-tab="evaluate" id="bftab-evaluate" title="An AI product going to alpha or launch, and you want an outside pass before it does." aria-controls="bfpane-evaluate" aria-selected="true">evaluate it</button>
+        <button type="button" role="tab" class="bftab" data-tab="sell" id="bftab-sell" title="It works, and the problem now is reach and distribution." aria-controls="bfpane-sell" aria-selected="false">sell it</button>
+        <button type="button" role="tab" class="bftab" data-tab="write" id="bftab-write" title="A technical article, guide, or paper you want written properly." aria-controls="bfpane-write" aria-selected="false">write it</button>
+        <button type="button" role="tab" class="bftab" data-tab="other" id="bftab-other" title="Advisory, a workshop, a talk, or something not on this list." aria-controls="bfpane-other" aria-selected="false">something else</button>
+      </div>
+      <p id="bf-tabnote" style="margin:-4px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.03em;color:#6B6659;line-height:1.7;">an AI product going to alpha or launch, and you want an outside pass before it does</p>
+      <div role="tabpanel" data-pane="evaluate" id="bfpane-evaluate" aria-labelledby="bftab-evaluate" style="display:grid;gap:16px;">
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what the product does, and who has access to it today</span>
+          <textarea id="bf-ev-product" rows="2" placeholder="Coding assistant, private alpha, 40 testers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you are worried it will do in front of a user</span>
+          <textarea id="bf-ev-worry" rows="2" placeholder="Leaks its system prompt, or mishandles a crisis message" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">when it is meant to launch</span>
+          <input id="bf-ev-launch" type="text" placeholder="Public beta in six weeks" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+        </label>
+      </div>
+      <div role="tabpanel" data-pane="sell" id="bfpane-sell" aria-labelledby="bftab-sell" style="display:none;gap:16px;" hidden>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you have built, and who uses it today</span>
+          <textarea id="bf-gt-built" rows="2" placeholder="Scheduling agent, 11 paying clinics" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">who it has to reach, and how they buy today</span>
+          <textarea id="bf-gt-reach" rows="2" placeholder="Ops managers, buying via resellers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you have already tried</span>
+          <input id="bf-gt-tried" type="text" placeholder="Cold email, two conferences" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+        </label>
+      </div>
+      <div role="tabpanel" data-pane="write" id="bfpane-write" aria-labelledby="bftab-write" style="display:none;gap:16px;" hidden>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">the topic, and who it is for</span>
+          <textarea id="bf-wr-topic" rows="2" placeholder="Agent evals, for ML engineers" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">where it runs, and roughly how long</span>
+          <input id="bf-wr-where" type="text" placeholder="Our blog, 2000 words" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">when you need it</span>
+          <input id="bf-wr-when" type="text" placeholder="End of next month" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+        </label>
+      </div>
+      <div role="tabpanel" data-pane="other" id="bfpane-other" aria-labelledby="bftab-other" style="display:none;gap:16px;" hidden>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you have in mind</span>
+          <textarea id="bf-ot-what" rows="2" placeholder="Two-day workshop on cost modelling" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;resize:vertical;"></textarea>
+        </label>
+        <label style="display:grid;gap:6px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">what you would want from me</span>
+          <input id="bf-ot-want" type="text" placeholder="Leave the team able to redo it" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+        </label>
+      </div>
+      <label style="display:grid;gap:6px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">your email <span style="color:#B4441F;">*</span></span>
+        <input id="bf-email" type="email" required aria-required="true" autocomplete="email" placeholder="you@company.com" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+      </label>
+      <label style="display:grid;gap:6px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#716B5F;">your mobile number <span style="color:#B4441F;">*</span></span>
+        <input id="bf-phone" type="tel" required aria-required="true" autocomplete="tel" placeholder="+91 98xxx xxxxx" style="font-family:Outfit,sans-serif;font-size:16px;padding:11px 13px;border:1px solid #DDD6C6;border-radius:2px;background:#F7F3EA;color:#15171B;box-sizing:border-box;width:100%;">
+      </label>
+      <button type="button" onclick="sendBrief()" style="margin-top:4px;background:#3D5AFE;color:#FFFFFF;border:0;padding:15px 22px;font-family:Outfit,sans-serif;font-size:16px;font-weight:600;border-radius:2px;cursor:pointer;" class="hv12">Send it on WhatsApp →</button>
+      <button type="button" onclick="sendBriefEmail()" style="background:transparent;color:#3D5AFE;border:1px solid #C9D0FF;padding:13px 22px;font-family:Outfit,sans-serif;font-size:15px;font-weight:500;border-radius:2px;cursor:pointer;" class="hv15">Send it as email instead</button>
+      <p id="bf-err" role="alert" style="margin:0;display:none;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#B4441F;line-height:1.6;"></p>
+      <p id="bf-fallback" style="margin:0;display:none;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#6B6659;line-height:1.7;">no mail app opened ? → write to <a href="mailto:hello@shreyanbasuray.com" style="color:#3D5AFE;text-decoration:underline;">hello@shreyanbasuray.com</a> directly. your answers are still in the form above.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ============ FOOTER ============ -->
-<div style="background:#15171B;">
-<div style="max-width:1140px;margin:0 auto;padding:34px clamp(20px,5vw,48px) 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;">
+<div style="max-width:1140px;margin:0 auto;padding:34px clamp(20px,5vw,48px) 96px;border-top:1px solid #E2DCCE;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;">
   <div style="display: flex; flex-wrap: wrap; gap: 20px; font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 500">
     <a href="https://github.com/Shreyan1" class="flink" target="_blank" rel="noopener noreferrer">github</a>
     <a href="https://www.linkedin.com/in/shreyanbasuray" class="flink" target="_blank" rel="noopener noreferrer">linkedin</a>
-    <a href="https://x.com/theengineerboy1" class="flink" target="_blank" rel="noopener noreferrer">x</a>
+    <a href="https://x.com/shreyanbr" class="flink" target="_blank" rel="noopener noreferrer">x</a>
     <a href="https://scholar.google.com/citations?user=vih7SfEAAAAJ&amp;hl=en" class="flink" target="_blank" rel="noopener noreferrer">scholar</a>
     <a href="https://wandb.ai/basurayshreyan" class="flink" target="_blank" rel="noopener noreferrer">weights &amp; biases</a>
     <a href="https://www.npmjs.com/~shreyanbr" class="flink" target="_blank" rel="noopener noreferrer">npm</a>
@@ -849,8 +844,7 @@
     <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" class="flink" target="_blank" rel="noopener noreferrer">whatsapp</a>
     <a href="mailto:hello@shreyanbasuray.com" class="flink">email</a>
   </div>
-  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8F8B83;">reviewed august 2026</span>
-</div>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">reviewed october 2026</span>
 </div>
 
 </div>
@@ -1057,6 +1051,15 @@ function boot(){
     });
 }
 if(document.readyState!=='loading'){boot();}else{document.addEventListener('DOMContentLoaded',boot);}
+})();
+</script>
+<a class="wafab" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.02 0C3.7 0 .2 3.5.2 7.82c0 1.38.36 2.72 1.04 3.9L0 16l4.4-1.16a7.8 7.8 0 0 0 3.62.9c4.32 0 7.82-3.5 7.82-7.82S12.34 0 8.02 0zm4.6 11.06c-.2.55-1.16 1.06-1.6 1.1-.44.05-.86.22-2.9-.6-2.46-.99-4-3.5-4.12-3.66-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.84-2 .22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.4l.75 1.8c.06.13.1.28.01.45l-.28.42c-.09.12-.19.25-.08.44.11.19.5.82 1.07 1.33.73.65 1.35.86 1.54.95.19.1.3.08.42-.05l.6-.7c.15-.19.28-.14.47-.07l1.7.8c.19.09.32.13.37.21.05.08.05.48-.15 1.03z"></path></svg><span class="wafab-label">WhatsApp me</span></a>
+<script>
+(function(){
+  var fab = document.querySelector(".wafab"), hero = document.querySelector("h1");
+  if (!fab || !hero || !("IntersectionObserver" in window)) return;
+  fab.classList.add("is-away");
+  new IntersectionObserver(function(entries){ fab.classList.toggle("is-away", entries[0].isIntersecting); }).observe(hero);
 })();
 </script>
 <script>
