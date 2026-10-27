@@ -29,7 +29,12 @@
 - Responsible AI: authored The Architect's Handbook: Engineering Responsible AI
 - C-RAI, a certification framework for responsible AI sent to MeitY and NASSCOM
 - Agent Complexity Theory, a working paper on choosing agent architectures before building
-- Founder of Claude Developers India (820+ builders)
+- Machine Unlearning for Responsible AI, an open-access course on making a trained
+  model forget someone's data and proving that it did: 22 runnable notebooks,
+  explainers, quizzes, badges and a certificate
+  (https://machine-unlearning.shreyanbasuray.com/, source:
+  https://github.com/Shreyan1/machine-unlearning-course)
+- Founder of Claude Developers India (880+ builders)
 - Author of 17+ technical articles for Weights & Biases
 
 ## Representative results
@@ -46,7 +51,8 @@
 - https://shreyanbasuray.com/ - overview, current work, selected case studies
 - https://shreyanbasuray.com/work/ - four production AI case studies in detail
 - https://shreyanbasuray.com/consulting/ - eight engagement types and how they run
-- https://shreyanbasuray.com/writing/ - articles, papers, book and policy work
+- https://shreyanbasuray.com/writing/ - articles, papers, course, book and policy work
+- https://machine-unlearning.shreyanbasuray.com/ - the machine unlearning course
 - https://shreyanbasuray.com/about/ - background and working principles
 - https://shreyanbasuray.com/partners/ - for delivery studios and agencies: warm, already-scoped work referred from his clients, with him owning the client relationship and the outcome throughout
 

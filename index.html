@@ -171,7 +171,120 @@
   }
   @media(prefers-reduced-motion:reduce){.esc-bar{animation:none}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","mainEntityOfPage":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":["Applied Machine Learning Engineer","AI Product Advisor","Responsible AI Consultant","Voice AI Auditor"],"email":"mailto:hello@shreyanbasuray.com","description":"Advises founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market strategy grounded in what the product can honestly claim.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems","AI red teaming","Adversarial testing of LLM applications","Prompt injection","Jailbreak resistance testing","AI assurance","AI product positioning","Go-to-market strategy for AI products","OWASP Top 10 for LLM Applications","MITRE ATLAS","NIST AI Risk Management Framework","ISO/IEC 42001","DPDP Act 2023","Voice AI agents","Voice agent evaluation","Conversational AI diagnostics","Telephony and speech audio analysis"],"sameAs":["https://github.com/Shreyan1","https://www.linkedin.com/in/shreyanbasuray","https://x.com/shreyanbr","https://orcid.org/0000-0002-2641-8048","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | Voice AI Auditor & AI Product Advisor","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"mainEntity":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"}]}</script>
+<style>
+  /* machine unlearning course: a quest board. The ladder is explored rung by rung, and seeing every rung unlocks a badge */
+  .mu{position:relative;overflow:hidden;isolation:isolate;background:#15171B;color:#F2EFE7;border-radius:3px;padding:clamp(24px,4vw,40px);box-shadow:0 8px 24px rgba(21,23,27,.14);margin-top:22px;}
+  .mu::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(142,163,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(142,163,255,.07) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(115deg,transparent 30%,#000 75%);-webkit-mask-image:linear-gradient(115deg,transparent 30%,#000 75%);}
+  .mu-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(28px,4vw,52px);align-items:start;}
+  .mu-kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8EA3FF;display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+  .mu-new{background:#FFC300;color:#15171B;font-weight:700;padding:3px 7px;border-radius:2px;letter-spacing:.12em;}
+  .mu h3{margin:14px 0 0;font-size:clamp(26px,3.2vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1.1;}
+  .mu h3 a{color:#FDFCFF;}
+  .mu h3 a:hover{color:#FFC300;}
+  .mu-lead{margin:12px 0 0;font-size:18px;line-height:1.55;color:#C6C2B7;}
+  .mu-body{margin:14px 0 0;font-size:15.5px;line-height:1.65;color:#A6A29A;}
+  .mu-body b{color:#F2EFE7;font-weight:600;}
+  .mu-loop{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;padding:0;list-style:none;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+  .mu-loop li{display:inline-flex;align-items:center;gap:6px;color:#DCD8CE;}
+  .mu-loop li + li::before{content:"→";color:#6E6A62;}
+  .mu-loop li:last-child{color:#FFC300;}
+  .mu-hud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:22px;}
+  .mu-stat{border:1px solid #333944;border-radius:2px;padding:12px 12px 11px;background:rgba(255,255,255,.02);}
+  .mu-stat b{display:block;font-size:26px;font-weight:600;letter-spacing:-.03em;color:#FDFCFF;line-height:1.1;}
+  .mu-stat .l{display:block;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#8F8B83;line-height:1.35;}
+  .mu-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .mu-btn{display:inline-flex;align-items:center;gap:9px;min-height:44px;box-sizing:border-box;padding:0 18px;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;border:1px solid #4A5160;color:#F2EFE7;transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;}
+  .mu-btn:hover{color:#FFFFFF;border-color:#F2EFE7;transform:translateY(-2px);}
+  .mu-btn--go{background:#FFC300;border-color:#FFC300;color:#15171B;box-shadow:0 4px 0 #B88A00;}
+  .mu-btn--go:hover{background:#FFD23F;border-color:#FFD23F;color:#15171B;transform:translateY(-2px);box-shadow:0 6px 0 #B88A00;}
+  .mu-btn--go:active{transform:translateY(2px);box-shadow:0 1px 0 #B88A00;}
+  .mu-fine{margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.03em;color:#8F8B83;line-height:1.7;}
+
+  /* the ladder: rung 1 at the bottom, so the list is reversed on screen but read in order */
+  .mu-board{border:1px solid #333944;border-radius:3px;padding:20px;background:rgba(10,12,16,.55);}
+  .mu-boardhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8F8B83;}
+  .mu-boardhead b{color:#FFC300;font-weight:600;}
+  .mu-xp{height:8px;margin-top:10px;background:#262B34;border-radius:1px;overflow:hidden;}
+  .mu-xp i{display:block;height:100%;width:var(--xp,0%);background:repeating-linear-gradient(90deg,#FFC300 0 10px,#FFD23F 10px 12px);transition:width .5s cubic-bezier(.22,.7,.2,1);}
+  .mu-rungs{list-style:none;margin:16px 0 0;padding:0 0 0 18px;display:flex;flex-direction:column-reverse;gap:6px;position:relative;}
+  .mu-rungs::before,.mu-rungs::after{content:"";position:absolute;top:-8px;bottom:-8px;width:3px;background:#3A4252;border-radius:1px;}
+  .mu-rungs::before{left:4px;}
+  .mu-rungs::after{right:-6px;}
+  .mu-rung{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;width:100%;min-height:48px;box-sizing:border-box;padding:8px 12px;border:1px solid #333944;border-radius:2px;background:#1C2028;color:#DCD8CE;font-family:Outfit,system-ui,sans-serif;font-size:15px;text-align:left;cursor:pointer;position:relative;transition:background .18s ease,border-color .18s ease,transform .18s ease,color .18s ease;}
+  .mu-rung:hover{border-color:#8EA3FF;transform:translateX(3px);}
+  .mu-rung[aria-pressed="true"]{background:#3D5AFE;border-color:#3D5AFE;color:#FFFFFF;}
+  .mu-rung .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8F8B83;letter-spacing:.06em;}
+  .mu-rung[aria-pressed="true"] .n{color:#FFC300;}
+  .mu-rung .t{font-weight:500;letter-spacing:-.01em;}
+  .mu-pips{display:inline-flex;gap:3px;}
+  .mu-pips i{width:6px;height:10px;background:#3A4252;border-radius:1px;}
+  .mu-pips i.on{background:#E8833A;}
+  .mu-rung[aria-pressed="true"] .mu-pips i{background:rgba(255,255,255,.3);}
+  .mu-rung[aria-pressed="true"] .mu-pips i.on{background:#FFC300;}
+  .mu-rung.seen:not([aria-pressed="true"]) .n::after{content:" ✓";color:#5FBF8A;}
+  /* the climber: a yellow token that hops to the chosen rung */
+  .mu-token{position:absolute;left:-17px;top:50%;width:14px;height:14px;margin-top:-7px;background:#FFC300;border-radius:2px;box-shadow:0 0 0 3px rgba(255,195,0,.22);opacity:0;transform:scale(.4);transition:opacity .2s ease,transform .3s cubic-bezier(.3,1.6,.5,1);}
+  .mu-rung[aria-pressed="true"] .mu-token{opacity:1;transform:none;animation:muHop .42s cubic-bezier(.3,1.6,.5,1);}
+  @keyframes muHop{0%{transform:translateY(14px) scale(.6)}60%{transform:translateY(-5px) scale(1.1)}100%{transform:none}}
+  .mu-panel{margin-top:16px;border-top:1px dashed #3A4252;padding-top:14px;min-height:150px;}
+  .mu-panel .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8EA3FF;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;}
+  .mu-panel .g{border:1px solid #4A5160;padding:2px 6px;border-radius:2px;color:#DCD8CE;}
+  .mu-panel .g.open{border-color:#E8833A;color:#FFB27A;}
+  .mu-panel p{margin:8px 0 0;font-size:15px;line-height:1.6;color:#C6C2B7;}
+  .mu-panel .f{color:#F2EFE7;}
+  .mu-panel .f::before{content:"✦ ";color:#FFC300;}
+  .mu-panel.swap{animation:muSwap .3s cubic-bezier(.22,.7,.2,1);}
+  @keyframes muSwap{from{opacity:0;transform:translateY(6px)}}
+  .mu-toast{display:flex;align-items:center;gap:12px;margin-top:14px;padding:10px 12px;border:1px solid #FFC300;border-radius:2px;background:rgba(255,195,0,.08);color:#F2EFE7;font-size:14px;line-height:1.45;}
+  .mu-toast[hidden]{display:none;}
+  .mu-toast.pop{animation:muPop .5s cubic-bezier(.3,1.6,.5,1);}
+  .mu-toast small{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#FFC300;}
+  .mu-toast a{color:#FFC300;text-decoration:underline;text-underline-offset:3px;}
+  @keyframes muPop{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:none}}
+
+  /* badge shelf: locked until earned on the course site; Top rung unlocks here */
+  .mu-shelf{margin-top:30px;border-top:1px solid #2B303A;padding-top:22px;}
+  .mu-shelfhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8F8B83;}
+  .mu-shelfhead b{color:#F2EFE7;font-weight:600;}
+  .mu-badges{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:10px;}
+  .mu-badge{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-width:0;outline-offset:4px;}
+  .mu-medal{position:relative;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--c);color:#FFFFFF;box-shadow:inset 0 -4px 0 rgba(0,0,0,.25),0 0 0 3px #15171B,0 0 0 4px var(--c);filter:grayscale(.85) brightness(.55);transition:filter .3s ease,transform .3s cubic-bezier(.3,1.6,.5,1);}
+  .mu-medal.ink{color:#15171B;}
+  .mu-medal svg{width:24px;height:24px;}
+  .mu-lock{position:absolute;right:-4px;bottom:-4px;width:20px;height:20px;border-radius:50%;background:#2B303A;color:#C6C2B7;display:grid;place-items:center;}
+  .mu-lock svg{width:11px;height:11px;}
+  .mu-badge:hover .mu-medal,.mu-badge:focus-visible .mu-medal{filter:none;transform:translateY(-3px) rotate(-6deg);}
+  .mu-badge.earned .mu-medal{filter:none;}
+  .mu-badge.earned .mu-lock{display:none;}
+  .mu-badge.earned.fresh .mu-medal{animation:muEarn .9s cubic-bezier(.3,1.6,.5,1);}
+  @keyframes muEarn{0%{transform:scale(.5) rotate(-30deg)}50%{transform:scale(1.25) rotate(8deg);box-shadow:inset 0 -4px 0 rgba(0,0,0,.25),0 0 0 3px #15171B,0 0 0 4px var(--c),0 0 26px 6px rgba(255,195,0,.55)}100%{transform:none}}
+  .mu-bname{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#A6A29A;line-height:1.3;}
+  .mu-badge.earned .mu-bname{color:#FFC300;}
+  .mu-btext{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  .mu-tip{min-height:1.6em;margin:14px 0 0;font-size:14px;color:#A6A29A;}
+  .mu-tip b{color:#F2EFE7;font-weight:600;}
+  @media (max-width:960px){.mu-badges{grid-template-columns:repeat(6,minmax(0,1fr));row-gap:16px;}}
+  @media (max-width:820px){.mu-grid{grid-template-columns:minmax(0,1fr);}}
+  @media (max-width:520px){
+    .mu-hud{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .mu-badges{grid-template-columns:repeat(4,minmax(0,1fr));}
+    .mu-cta .mu-btn{flex:1 1 100%;justify-content:center;}
+    .mu-board{padding:16px 14px;}
+  }
+
+  /* stat cards: four across, two by two on tablets, stacked on phones */
+  .statgrid{grid-template-columns:repeat(4,minmax(0,1fr));}
+  @media (max-width:960px){.statgrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media (max-width:520px){.statgrid{grid-template-columns:minmax(0,1fr);}}
+
+  /* homepage quest bar: fills as you scroll, with a checkpoint for each section heading */
+  .qbar{position:fixed;left:0;right:0;top:0;height:4px;z-index:60;pointer-events:none;}
+  .qbar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:#FFC300;transform-origin:0 50%;transform:scaleX(var(--p,0));}
+  .qbar b{position:absolute;top:-2px;width:8px;height:8px;margin-left:-4px;background:#15171B;border:1px solid #FFC300;box-sizing:border-box;transform:rotate(45deg);transition:background .2s ease,transform .3s cubic-bezier(.3,1.6,.5,1);}
+  .qbar b.hit{background:#FFC300;transform:rotate(45deg) scale(1.25);}
+  @media print{.qbar{display:none}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","mainEntityOfPage":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":["Applied Machine Learning Engineer","AI Product Advisor","Responsible AI Consultant","Voice AI Auditor"],"email":"mailto:hello@shreyanbasuray.com","description":"Advises founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market strategy grounded in what the product can honestly claim.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","Machine unlearning","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems","AI red teaming","Adversarial testing of LLM applications","Prompt injection","Jailbreak resistance testing","AI assurance","AI product positioning","Go-to-market strategy for AI products","OWASP Top 10 for LLM Applications","MITRE ATLAS","NIST AI Risk Management Framework","ISO/IEC 42001","DPDP Act 2023","Voice AI agents","Voice agent evaluation","Conversational AI diagnostics","Telephony and speech audio analysis"],"sameAs":["https://github.com/Shreyan1","https://www.linkedin.com/in/shreyanbasuray","https://x.com/shreyanbr","https://orcid.org/0000-0002-2641-8048","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | Voice AI Auditor & AI Product Advisor","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"mainEntity":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"},{"@type":"Course","@id":"https://machine-unlearning.shreyanbasuray.com/#course","name":"Machine Unlearning for Responsible AI","url":"https://machine-unlearning.shreyanbasuray.com/","description":"A hands-on course on making a trained model forget someone's data, and testing whether it really did: simple explainers, quizzes and 22 runnable notebooks, from k-NN to language models.","inLanguage":"en","isAccessibleForFree":true,"educationalLevel":"Intermediate","teaches":["Machine unlearning","Membership inference attacks","SISA training","Unlearning audits","LLM unlearning","Right to be forgotten"],"creator":{"@id":"https://shreyanbasuray.com/#person"},"provider":{"@id":"https://shreyanbasuray.com/#person"},"sameAs":["https://github.com/Shreyan1/machine-unlearning-course"],"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT19H"}}]}</script>
 </head>
 <body>
 <div style="background:#F7F3EA;color:#15171B;font-family:Outfit,system-ui,sans-serif;overflow-x:clip;">
@@ -262,20 +375,26 @@
 
 <!-- ============ STATS ============ -->
 <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px);">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:-34px;">
+  <div class="statgrid" style="display:grid;gap:16px;margin-top:-34px;">
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;isolation:isolate;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
       <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="17">17</span><span style="color:#3D5AFE;">+</span></div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">technical articles for weights &amp; biases ✦ <a class="taplink cardlink" href="https://wandb.ai/basurayshreyan" target="_blank" rel="noopener noreferrer">read them →</a></div>
       <svg width="46" height="46" viewBox="0 0 300 300" fill="#FFC300" aria-hidden="true" focusable="false" style="position:absolute;right:14px;bottom:12px;width:46px;height:46px;opacity:.92;z-index:-1;pointer-events:none;"><circle cx="57" cy="42" r="16"/><circle cx="57" cy="107" r="31"/><circle cx="57" cy="172" r="16"/><circle cx="57" cy="233" r="27"/><circle cx="150" cy="52" r="20"/><circle cx="150" cy="118" r="15"/><circle cx="150" cy="187" r="31"/><circle cx="150" cy="251" r="16"/><circle cx="243" cy="42" r="17"/><circle cx="243" cy="105" r="31"/><circle cx="243" cy="171" r="22"/><circle cx="243" cy="230" r="15"/></svg>
     </div>
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;isolation:isolate;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
-      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="820">820</span><span style="color:#3D5AFE;">+</span></div>
+      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="880">880</span><span style="color:#3D5AFE;">+</span></div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">builders in claude developers india ✦ <a class="taplink cardlink" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%27d%20like%20to%20join%20Claude%20Developers%20India.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer">ask to join →</a></div>
       <picture><source srcset="/assets/claude-mark.webp" type="image/webp"><img src="/assets/claude-mark.png" alt="" aria-hidden="true" width="118" height="118" decoding="async" style="position:absolute;right:-30px;bottom:-32px;width:118px;height:118px;opacity:.9;z-index:-1;pointer-events:none;"></picture>
     </div>
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
       <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;">1</div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">published book ✦ <a class="taplink cardlink" href="https://amzn.in/d/c3pgkTh" target="_blank" rel="noopener noreferrer">The Architect's Handbook →</a></div>
+    </div>
+    <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;isolation:isolate;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
+      <span style="position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#FFC300;color:#15171B;padding:3px 7px;border-radius:2px;">new</span>
+      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="22">22</span></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">notebooks in my machine unlearning course ✦ <a class="taplink cardlink" href="#course">play it →</a></div>
+      <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="#3D5AFE" stroke-width="1.2" aria-hidden="true" style="position:absolute;right:-18px;bottom:-22px;opacity:.14;z-index:-1;pointer-events:none;"><path d="M7 3v18M17 3v18M7 7.5h10M7 12h10M7 16.5h10"></path></svg>
     </div>
   </div>
 
@@ -482,6 +601,79 @@
 </div>
 
 <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px);">
+<!-- ============ COURSE ============ -->
+  <div id="course" style="margin-top:80px;scroll-margin-top:24px;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><path d="M7 3v18M17 3v18M7 7.5h10M7 12h10M7 16.5h10"></path></svg>A course I built</h2>
+      <a class="taplink" href="https://machine-unlearning.shreyanbasuray.com/" style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: .06em; font-weight: 600" target="_blank" rel="noopener">machine-unlearning.shreyanbasuray.com →</a>
+    </div>
+
+    <div class="mu" data-mu style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;">
+      <div class="mu-grid">
+        <div>
+          <div class="mu-kick"><span class="mu-new">new</span><span>open access ✦ explainers, quizzes, notebooks ✦ october 2026</span></div>
+          <h3><a href="https://machine-unlearning.shreyanbasuray.com/" target="_blank" rel="noopener">Machine Unlearning for Responsible AI ↗</a></h3>
+          <p class="mu-lead">Teach a trained model to forget someone's data, and prove that it did.</p>
+          <p class="mu-body">Carol wrote 40 of 1,257 training digits with a thick marker nobody else used, and the model memorised <b>her</b>. She asks to be forgotten, the company deletes her rows, and <b>nothing changes</b>: the weights already carry her. The course is about what to do next, from k-NN to language models, and it is built around the <b>gold band</b>, the range of results from models retrained without her, rather than a target of 0%.</p>
+          <ol class="mu-loop" aria-label="The five steps every problem follows">
+            <li>train</li><li>show the issue</li><li>untrain</li><li>show the result</li><li>prove it</li>
+          </ol>
+          <div class="mu-hud">
+            <div class="mu-stat"><b><span data-count="22">22</span></b><span class="l">runnable notebooks</span></div>
+            <div class="mu-stat"><b><span data-count="40">40</span></b><span class="l">practice problems</span></div>
+            <div class="mu-stat"><b><span data-count="300">300</span><span style="color:#FFC300;">+</span></b><span class="l">quiz questions</span></div>
+            <div class="mu-stat"><b><span data-count="11">11</span></b><span class="l">badges to earn</span></div>
+          </div>
+          <div class="mu-cta">
+            <a class="mu-btn mu-btn--go" href="https://machine-unlearning.shreyanbasuray.com/start-here/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"></path></svg>start the climb</a>
+            <a class="mu-btn" href="https://github.com/Shreyan1/machine-unlearning-course" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>repo</a>
+            <a class="mu-btn" href="https://colab.research.google.com/github/Shreyan1/machine-unlearning-course/blob/main/00-ReadFIRST.ipynb" target="_blank" rel="noopener noreferrer">open in colab ↗</a>
+          </div>
+          <p class="mu-fine">runs on a laptop CPU ✦ neural nets in pure NumPy ✦ a certificate for finishers</p>
+        </div>
+
+        <div class="mu-board">
+          <div class="mu-boardhead"><span>the ladder of forgetting</span><span><b data-mu-seen>1</b>/5 rungs explored</span></div>
+          <div class="mu-xp" aria-hidden="true"><i data-mu-xp style="--xp:20%"></i></div>
+          <ol class="mu-rungs" aria-label="Rungs of the Ladder of Forgetting, easiest to forget at the bottom">
+            <li><button type="button" class="mu-rung seen" aria-pressed="true" aria-controls="mu-panel" data-g="exact, free" data-p="Problem 1" data-d="The model is the data, or a sum over it. Forgetting is a delete or a subtraction, like picking the strawberries out of a fruit salad." data-f="Bit-for-bit exact: the result equals a model that never saw the data."><span class="mu-token" aria-hidden="true"></span><span class="n">01</span><span class="t">k-NN and Naive Bayes</span><span class="mu-pips" aria-label="difficulty 1 of 5"><i class="on"></i><i></i><i></i><i></i><i></i></span></button></li>
+            <li><button type="button" class="mu-rung" aria-pressed="false" aria-controls="mu-panel" data-g="exact, then approximate" data-p="Problem 2" data-d="Coupled sums. Ridge regression gets an exact rank-one downdate; logistic regression needs a Newton step, the course's first approximate method." data-f="Influence functions and certified removal come in here."><span class="mu-token" aria-hidden="true"></span><span class="n">02</span><span class="t">Linear and logistic</span><span class="mu-pips" aria-label="difficulty 2 of 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></button></li>
+            <li><button type="button" class="mu-rung" aria-pressed="false" aria-controls="mu-panel" data-g="exact, partial cost" data-p="Problems 3 and 7" data-d="Forgetting is local. Non-support vectors cost nothing, a forest retrains only the trees that saw the point, and SISA builds that locality in with shards." data-f="With a user-aware partition, SISA unlearns for about 5% of a retrain."><span class="mu-token" aria-hidden="true"></span><span class="n">03</span><span class="t">SVMs and forests</span><span class="mu-pips" aria-label="difficulty 3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></button></li>
+            <li><button type="button" class="mu-rung" aria-pressed="false" aria-controls="mu-panel" data-g="approximate, then audit" data-p="Problems 4 to 11" data-d="Every training example touches 94% of the weights, and unusual people like Carol are memorised. Forgotten becomes a band from several retrains, not a single number." data-f="Of 46 fine-tune, gradient-ascent and NegGrad+ settings, only 1 passes the audit."><span class="mu-token" aria-hidden="true"></span><span class="n">04</span><span class="t">Neural networks</span><span class="mu-pips" aria-label="difficulty 4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></button></li>
+            <li><button type="button" class="mu-rung" aria-pressed="false" aria-controls="mu-panel" data-g="open problem" data-open="" data-p="Problems 15 to 16b" data-d="Facts, not rows. A language model trained to say “(withheld)” for Dana's phone number can still be made to give it up." data-f="Refusal is not forgetting: prefix forcing or a little relearning brings it back."><span class="mu-token" aria-hidden="true"></span><span class="n">05</span><span class="t">Language models</span><span class="mu-pips" aria-label="difficulty 5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></button></li>
+          </ol>
+          <div id="mu-panel" class="mu-panel" aria-live="polite">
+            <div class="k"><span data-mu-k>rung 01 ✦ Problem 1</span><span class="g" data-mu-g>exact, free</span></div>
+            <p data-mu-d>The model is the data, or a sum over it. Forgetting is a delete or a subtraction, like picking the strawberries out of a fruit salad.</p>
+            <p class="f" data-mu-f>Bit-for-bit exact: the result equals a model that never saw the data.</p>
+          </div>
+          <div class="mu-toast" data-mu-toast hidden>
+            <span aria-hidden="true" style="font-size:22px;line-height:1;">🏆</span>
+            <span><small>achievement unlocked ✦ top rung</small>You have seen the whole ladder. <a href="https://machine-unlearning.shreyanbasuray.com/unlearning/ladder-of-forgetting/" target="_blank" rel="noopener">Now climb it for real →</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mu-shelf">
+        <div class="mu-shelfhead"><span>badges on the course site</span><span><b data-mu-earned>0</b>/11 unlocked here ✦ the rest are earned by passing quizzes</span></div>
+        <ul class="mu-badges">
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#3D5AFE;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 2 4.5 5 4.5 8.5L14 15h-4l-2.5-3.5C7.5 8 9 5 12 3z"></path><circle cx="12" cy="9" r="1.5"></circle><path d="M10 15l-1.5 4.5M14 15l1.5 4.5M12 15v6"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Lift-off</span><span class="mu-btext">Pass your first quiz</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal ink" style="--c:#FFC300;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Flawless</span><span class="mu-btext">Get every answer right on a page</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#2E7D53;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.5a3 3 0 0 0-5 2 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 5 2zM13 4.5a3 3 0 0 1 5 2 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-5 2z"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Model maker</span><span class="mu-btext">Pass every ML Basics quiz</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#1B36C9;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5l5 5-9 9H6l-2.5-2.5z"></path><path d="M9.5 9.5l5 5M10.5 18.5H20"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Eraser</span><span class="mu-btext">Pass every Unlearning Concepts quiz</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#E8833A;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v5"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Lab rat</span><span class="mu-btext">Pass every lesson quiz</span></li>
+          <li class="mu-badge" tabindex="0" data-mu-top><span class="mu-medal" style="--c:#B4441F;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v18M17 3v18M7 7.5h10M7 12h10M7 16.5h10"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Top rung</span><span class="mu-btext">Climb all five rungs of the ladder</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#6A4C93;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3l7 7-3 3-7-7z"></path><path d="M12.5 8.5L4 17l3 3 8.5-8.5M3 21h9"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Policy wonk</span><span class="mu-btext">Pass the Policies around the world quiz</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#2E7D53;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M12 5h7l2 2.5-2 2.5h-7M12 12H5l-2 2.5L5 17h7"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Decision maker</span><span class="mu-btext">Finish every scenario</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#1B36C9;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Problem solver</span><span class="mu-btext">Mark 5 practice problems as done</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#E8833A;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"></rect><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Regular</span><span class="mu-btext">Learn in 3 weeks in a row</span></li>
+          <li class="mu-badge" tabindex="0"><span class="mu-medal" style="--c:#3A4252;"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC300" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v5a5 5 0 0 1-10 0z"></path><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M12 14v3M8.5 21h7v-4h-7z"></path></svg><span class="mu-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></span><span class="mu-bname">Finisher</span><span class="mu-btext">Score 16 or more on the final test</span></li>
+        </ul>
+        <p class="mu-tip" data-mu-tip aria-live="polite">Tap or point at a badge to see how it is earned. Explore all five rungs above to unlock <b>Top rung</b> here.</p>
+      </div>
+    </div>
+  </div>
+
 <!-- ============ OPEN SOURCE ============ -->
   <div style="margin-top:80px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;">
@@ -665,8 +857,8 @@
   <div class="cgrid" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,30px) 40px;align-items:start;">
     <div style="padding:0 6px;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="10" r="2.5"></circle><path d="M2.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5M15 20c0-2.2 1.4-3.8 3.5-3.8"></path></svg>The dev community</h2>
-      <p style="margin:8px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">claude developers india ✦ 820+ builders</p>
-      <p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I founded Claude Developers India, a WhatsApp community of 820+ builders, and I keep it active. I run "Show Your Products, Brainstorm and Validate", online calls where members demo what they are building to each other and get feedback. Each session also brings in a guest speaker or two for a short talk.</p>
+      <p style="margin:8px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">claude developers india ✦ 880+ builders</p>
+      <p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I founded Claude Developers India, a WhatsApp community of 880+ builders, and I keep it active. I run "Show Your Products, Brainstorm and Validate", online calls where members demo what they are building to each other and get feedback. Each session also brings in a guest speaker or two for a short talk.</p>
       <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I also mentor at hackathons, most recently Code Wizards 2.0 at SRM University, Ghaziabad Campus.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;">
         <a class="taplink hv12" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%27d%20like%20to%20join%20Claude%20Developers%20India.&amp;type=phone_number&amp;app_absent=0" style="display:inline-flex;align-items:center;gap:8px;background:#3D5AFE;color:#FFFFFF;padding:12px 20px;font-size:15px;font-weight:500;border-radius:2px;" target="_blank" rel="noopener noreferrer">Ask to join on WhatsApp →</a>
@@ -1083,6 +1275,109 @@ if(document.readyState!=='loading'){boot();}else{document.addEventListener('DOMC
     });
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
   waiting.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  // course ladder: pick a rung to read it; seeing all five unlocks the Top rung badge
+  var box = document.querySelector("[data-mu]");
+  if (!box) return;
+  var rungs = Array.prototype.slice.call(box.querySelectorAll(".mu-rung"));
+  var panel = box.querySelector(".mu-panel"), toast = box.querySelector("[data-mu-toast]");
+  var q = function(s){ return box.querySelector(s); };
+  var seen = {0: true};
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function show(i){
+    var b = rungs[i];
+    rungs.forEach(function(r, j){ r.setAttribute("aria-pressed", j === i ? "true" : "false"); });
+    b.classList.add("seen");
+    q("[data-mu-k]").textContent = "rung 0" + (i + 1) + " ✦ " + b.getAttribute("data-p");
+    var g = q("[data-mu-g]");
+    g.textContent = b.getAttribute("data-g");
+    g.classList.toggle("open", b.hasAttribute("data-open"));
+    q("[data-mu-d]").textContent = b.getAttribute("data-d");
+    q("[data-mu-f]").textContent = b.getAttribute("data-f");
+    if (!still) { panel.classList.remove("swap"); void panel.offsetWidth; panel.classList.add("swap"); }
+    if (seen[i]) return;
+    seen[i] = true;
+    var n = Object.keys(seen).length;
+    q("[data-mu-seen]").textContent = n;
+    q("[data-mu-xp]").style.setProperty("--xp", n * 20 + "%");
+    if (n === rungs.length) unlock();
+  }
+
+  function unlock(){
+    var top = q("[data-mu-top]");
+    top.classList.add("earned", "fresh");
+    q("[data-mu-earned]").textContent = "1";
+    toast.hidden = false;
+    toast.classList.add("pop");
+    tip(top);
+  }
+
+  rungs.forEach(function(r, i){
+    r.addEventListener("click", function(){ show(i); });
+    // arrow keys climb: up goes to the next rung, down to the one below
+    r.addEventListener("keydown", function(e){
+      var d = e.key === "ArrowUp" ? 1 : e.key === "ArrowDown" ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var j = Math.max(0, Math.min(rungs.length - 1, i + d));
+      rungs[j].focus();
+      show(j);
+    });
+  });
+
+  var tipEl = q("[data-mu-tip]"), tipDefault = tipEl.innerHTML;
+  function tip(b){
+    var name = b.querySelector(".mu-bname").textContent, how = b.querySelector(".mu-btext").textContent;
+    tipEl.innerHTML = "";
+    var strong = document.createElement("b");
+    strong.textContent = name + (b.classList.contains("earned") ? " ✦ unlocked" : "");
+    tipEl.appendChild(strong);
+    tipEl.appendChild(document.createTextNode(": " + how + "."));
+  }
+  box.querySelectorAll(".mu-badge").forEach(function(b){
+    b.addEventListener("mouseenter", function(){ tip(b); });
+    b.addEventListener("focus", function(){ tip(b); });
+    b.addEventListener("mouseleave", function(){ tipEl.innerHTML = tipDefault; });
+    b.addEventListener("blur", function(){ tipEl.innerHTML = tipDefault; });
+  });
+})();
+</script>
+<div class="qbar" aria-hidden="true"><i></i></div>
+<script>
+(function(){
+  // quest bar: fills with the scroll, and each section heading is a checkpoint that lights when you pass it
+  var bar = document.querySelector(".qbar");
+  if (!bar) return;
+  var fill = bar.querySelector("i");
+  var heads = Array.prototype.slice.call(document.querySelectorAll("h2"));
+  var marks = heads.map(function(){ var b = document.createElement("b"); bar.appendChild(b); return b; });
+  var at = [];
+  function measure(){
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    at = heads.map(function(h, i){
+      var y = h.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.6;
+      var p = Math.max(0, Math.min(1, y / max));
+      marks[i].style.left = (p * 100) + "%";
+      return p;
+    });
+    update();
+  }
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var p = Math.min(1, window.scrollY / max);
+    fill.style.setProperty("--p", p);
+    at.forEach(function(a, i){ marks[i].classList.toggle("hit", p >= a - 0.001); });
+  }
+  window.addEventListener("scroll", function(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener("resize", measure);
+  window.addEventListener("load", measure);
+  measure();
 })();
 </script>
 </body>
