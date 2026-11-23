@@ -172,6 +172,10 @@
   @media(prefers-reduced-motion:reduce){.esc-bar{animation:none}}
 </style>
 <style>
+  .wip-pill{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;border:1px solid #C9D0FF;padding:4px 8px;border-radius:2px;}
+  .wip-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:#3D5AFE;animation:wipPulse 1.8s ease-in-out infinite;}
+  @keyframes wipPulse{0%,100%{opacity:1;}50%{opacity:.25;}}
+  @media (prefers-reduced-motion: reduce){.wip-pill::before{animation:none;}}
   /* machine unlearning course: a quest board. The ladder is explored rung by rung, and seeing every rung unlocks a badge */
   .mu{position:relative;overflow:hidden;isolation:isolate;background:#15171B;color:#F2EFE7;border-radius:3px;padding:clamp(24px,4vw,40px);box-shadow:0 8px 24px rgba(21,23,27,.14);margin-top:22px;}
   .mu::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(142,163,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(142,163,255,.07) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(115deg,transparent 30%,#000 75%);-webkit-mask-image:linear-gradient(115deg,transparent 30%,#000 75%);}
@@ -273,7 +277,8 @@
   }
 
   /* stat cards: four across, two by two on tablets, stacked on phones */
-  .statgrid{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .statgrid{grid-template-columns:repeat(5,minmax(0,1fr));}
+  @media (max-width:1100px){.statgrid{grid-template-columns:repeat(3,minmax(0,1fr));}}
   @media (max-width:960px){.statgrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
   @media (max-width:520px){.statgrid{grid-template-columns:minmax(0,1fr);}}
 
@@ -284,13 +289,14 @@
   .qbar b.hit{background:#FFC300;transform:rotate(45deg) scale(1.25);}
   @media print{.qbar{display:none}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","mainEntityOfPage":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":["Applied Machine Learning Engineer","AI Product Advisor","Responsible AI Consultant","Voice AI Auditor"],"email":"mailto:hello@shreyanbasuray.com","description":"Advises founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market strategy grounded in what the product can honestly claim.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","Machine unlearning","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems","AI red teaming","Adversarial testing of LLM applications","Prompt injection","Jailbreak resistance testing","AI assurance","AI product positioning","Go-to-market strategy for AI products","OWASP Top 10 for LLM Applications","MITRE ATLAS","NIST AI Risk Management Framework","ISO/IEC 42001","DPDP Act 2023","Voice AI agents","Voice agent evaluation","Conversational AI diagnostics","Telephony and speech audio analysis"],"sameAs":["https://github.com/Shreyan1","https://www.linkedin.com/in/shreyanbasuray","https://x.com/shreyanbr","https://orcid.org/0000-0002-2641-8048","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | Voice AI Auditor & AI Product Advisor","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"mainEntity":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"},{"@type":"Course","@id":"https://machine-unlearning.shreyanbasuray.com/#course","name":"Machine Unlearning for Responsible AI","url":"https://machine-unlearning.shreyanbasuray.com/","description":"A hands-on course on making a trained model forget someone's data, and testing whether it really did: simple explainers, quizzes and 22 runnable notebooks, from k-NN to language models.","inLanguage":"en","isAccessibleForFree":true,"educationalLevel":"Intermediate","teaches":["Machine unlearning","Membership inference attacks","SISA training","Unlearning audits","LLM unlearning","Right to be forgotten"],"creator":{"@id":"https://shreyanbasuray.com/#person"},"provider":{"@id":"https://shreyanbasuray.com/#person"},"sameAs":["https://github.com/Shreyan1/machine-unlearning-course"],"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT19H"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shreyanbasuray.com/#person","name":"Shreyan Basu Ray","alternateName":["Shreyan Basu","Shreyan Ray","shreyanbasuray"],"givenName":"Shreyan","familyName":"Basu Ray","url":"https://shreyanbasuray.com/","mainEntityOfPage":"https://shreyanbasuray.com/","image":"https://shreyanbasuray.com/assets/portrait-real.jpg","jobTitle":["Applied Machine Learning Engineer","AI Product Advisor","Responsible AI Consultant","Voice AI Auditor"],"email":"mailto:hello@shreyanbasuray.com","description":"Advises founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market strategy grounded in what the product can honestly claim.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Machine learning engineering","Production AI systems","Large language models","AI agents","LLM evaluation","LLM observability","MLOps","Responsible AI","Machine unlearning","AI governance","Quantum machine learning","Retrieval-augmented generation","Natural language to SQL","Cost modelling for AI systems","AI red teaming","Adversarial testing of LLM applications","Prompt injection","Jailbreak resistance testing","AI assurance","AI product positioning","Go-to-market strategy for AI products","OWASP Top 10 for LLM Applications","MITRE ATLAS","NIST AI Risk Management Framework","ISO/IEC 42001","DPDP Act 2023","Voice AI agents","Voice agent evaluation","Conversational AI diagnostics","Telephony and speech audio analysis"],"sameAs":["https://github.com/Shreyan1","https://www.linkedin.com/in/shreyanbasuray","https://x.com/shreyanbr","https://orcid.org/0000-0002-2641-8048","https://scholar.google.com/citations?user=vih7SfEAAAAJ&hl=en","https://wandb.ai/basurayshreyan","https://www.npmjs.com/~shreyanbr","https://huggingface.co/shreyanbr","https://www.mathworks.com/matlabcentral/profile/authors/23980008","https://pypi.org/user/shreyanbr/"]},{"@type":"WebSite","@id":"https://shreyanbasuray.com/#website","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","inLanguage":"en","publisher":{"@id":"https://shreyanbasuray.com/#person"}},{"@type":"ProfilePage","@id":"https://shreyanbasuray.com/#page","url":"https://shreyanbasuray.com/","name":"Shreyan Basu Ray | Voice AI Auditor & AI Product Advisor","description":"I advise founders and product teams on the path from AI product build to commercial launch: independent evaluation and red-team work on AI products, responsible AI readiness, and go-to-market grounded in what the product can honestly claim.","isPartOf":{"@id":"https://shreyanbasuray.com/#website"},"about":{"@id":"https://shreyanbasuray.com/#person"},"mainEntity":{"@id":"https://shreyanbasuray.com/#person"},"inLanguage":"en"},{"@type":"Course","@id":"https://machine-unlearning.shreyanbasuray.com/#course","name":"Machine Unlearning for Responsible AI","url":"https://machine-unlearning.shreyanbasuray.com/","description":"A hands-on course on making a trained model forget someone's data, and testing whether it really did: simple explainers, quizzes and 24 runnable notebooks, from k-NN to language models.","inLanguage":"en","isAccessibleForFree":true,"educationalLevel":"Intermediate","teaches":["Machine unlearning","Membership inference attacks","SISA training","Unlearning audits","LLM unlearning","Right to be forgotten"],"creator":{"@id":"https://shreyanbasuray.com/#person"},"provider":{"@id":"https://shreyanbasuray.com/#person"},"sameAs":["https://github.com/Shreyan1/machine-unlearning-course"],"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT19H"}}]}</script>
+<link rel="stylesheet" href="/assets/polish.css">
 </head>
 <body>
 <div style="background:#F7F3EA;color:#15171B;font-family:Outfit,system-ui,sans-serif;overflow-x:clip;">
 
 <!-- ============ NAV ============ -->
-<div style="background:#3D5AFE;color:#F4F2FF;">
+<div class="band band-top" style="background:#3D5AFE;color:#F4F2FF;">
     <input type="checkbox" id="nav-open" class="navchk" aria-label="Open the menu">
   <div class="navbar" style="max-width:1140px;margin:0 auto;padding:20px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;">
     <a href="/" style="font-family: 'JetBrains Mono',monospace; font-size: 19px; font-weight: 900; letter-spacing: .02em; color: #FFC300; text-decoration-line: none; font-style: normal;display:inline-flex;align-items:center;min-height:44px">shreyan basu ray</a>
@@ -364,7 +370,7 @@
     <div class="hero-portrait" style="width:clamp(280px,76%,560px);">
       <div data-flip="" role="button" tabindex="0" aria-pressed="false" aria-label="Portrait of Shreyan Basu Ray. Flip between the illustration and the photograph" style="animation: fadeUp .9s cubic-bezier(.22,.7,.2,1) .27s both; border-radius: 50%; position: relative; width: 100%; max-width: 560px; aspect-ratio: 1/1; perspective: 1400px; cursor: pointer">
         <div data-flip-inner="" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,.75,.2,1);">
-          <img src="/assets/portrait.jpg" alt="Shreyan Basu Ray" style="position: absolute; inset: 0; box-sizing: border-box; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; filter: grayscale(1) contrast(1.05); border: 3px solid #F7F3EA; box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.15); backface-visibility: hidden" width="900" height="900" decoding="async" fetchpriority="high">
+          <picture><source srcset="/assets/portrait.webp" type="image/webp"><img src="/assets/portrait.jpg" alt="Shreyan Basu Ray, illustrated" style="position: absolute; inset: 0; box-sizing: border-box; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #F7F3EA; box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.15); backface-visibility: hidden" width="900" height="900" decoding="async" fetchpriority="high"></picture>
           <picture><source srcset="/assets/portrait-real.webp" type="image/webp"><img src="/assets/portrait-real.jpg" alt="Shreyan Basu Ray, photographed" style="position: absolute; inset: 0; box-sizing: border-box; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #F7F3EA; box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.15); backface-visibility: hidden; transform: rotateY(180deg)" width="900" height="900" decoding="async" loading="lazy"></picture>
         </div>
       </div>
@@ -382,7 +388,7 @@
       <svg width="46" height="46" viewBox="0 0 300 300" fill="#FFC300" aria-hidden="true" focusable="false" style="position:absolute;right:14px;bottom:12px;width:46px;height:46px;opacity:.92;z-index:-1;pointer-events:none;"><circle cx="57" cy="42" r="16"/><circle cx="57" cy="107" r="31"/><circle cx="57" cy="172" r="16"/><circle cx="57" cy="233" r="27"/><circle cx="150" cy="52" r="20"/><circle cx="150" cy="118" r="15"/><circle cx="150" cy="187" r="31"/><circle cx="150" cy="251" r="16"/><circle cx="243" cy="42" r="17"/><circle cx="243" cy="105" r="31"/><circle cx="243" cy="171" r="22"/><circle cx="243" cy="230" r="15"/></svg>
     </div>
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;isolation:isolate;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
-      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="880">880</span><span style="color:#3D5AFE;">+</span></div>
+      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="950">950</span><span style="color:#3D5AFE;">+</span></div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">builders in claude developers india ✦ <a class="taplink cardlink" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%27d%20like%20to%20join%20Claude%20Developers%20India.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer">ask to join →</a></div>
       <picture><source srcset="/assets/claude-mark.webp" type="image/webp"><img src="/assets/claude-mark.png" alt="" aria-hidden="true" width="118" height="118" decoding="async" style="position:absolute;right:-30px;bottom:-32px;width:118px;height:118px;opacity:.9;z-index:-1;pointer-events:none;"></picture>
     </div>
@@ -392,9 +398,14 @@
     </div>
     <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;isolation:isolate;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
       <span style="position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#FFC300;color:#15171B;padding:3px 7px;border-radius:2px;">new</span>
-      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="22">22</span></div>
+      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="24">24</span></div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">notebooks in my machine unlearning course ✦ <a class="taplink cardlink" href="#course">play it →</a></div>
       <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="#3D5AFE" stroke-width="1.2" aria-hidden="true" style="position:absolute;right:-18px;bottom:-22px;opacity:.14;z-index:-1;pointer-events:none;"><path d="M7 3v18M17 3v18M7 7.5h10M7 12h10M7 16.5h10"></path></svg>
+    </div>
+    <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;overflow:hidden;isolation:isolate;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:24px 26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv6">
+      <div style="font-size:36px;font-weight:600;letter-spacing:-.03em;"><span data-count="24">24</span></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#6B6659;margin-top:6px;line-height:1.5;">notebooks in quantumai-noob2pro ✦ <a class="taplink cardlink" href="https://github.com/Shreyan1/QuantumAI-Noob2Pro" target="_blank" rel="noopener noreferrer">learn quantum ml →</a></div>
+      <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="#3D5AFE" stroke-width="1.2" aria-hidden="true" style="position:absolute;right:-16px;bottom:-20px;opacity:.14;z-index:-1;pointer-events:none;"><circle cx="12" cy="12" r="1.6"></circle><ellipse cx="12" cy="12" rx="10" ry="4"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"></ellipse></svg>
     </div>
   </div>
 
@@ -407,10 +418,10 @@
 
     <div style="margin-top:22px;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:clamp(22px,5vw,38px);box-shadow:0 8px 24px rgba(21,23,27,.08);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(24px,4vw,32px) clamp(24px,5vw,44px);">
       <div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">enterprise voice agent platform ✦ in production</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#3D5AFE;">enterprise voice agent platform ✦ in production since early 2025</div>
         <h3 style="margin:14px 0 0;font-size:clamp(25px,3vw,33px);font-weight:600;letter-spacing:-.03em;line-height:1.12;">A voice agent that runs at ₹2.29 a minute</h3>
         <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">Built as backend infrastructure so the client can stand up voice AI customer support for any company that needs it. I costed it layer by layer before writing code, and the stack was chosen against that model rather than against a benchmark.</p>
-        <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">₹2.29 per minute, all in, at production quality. It is live and running.</p>
+        <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;max-width:52ch;">₹2.29 per minute, all in, at production quality, reached in early 2025, well before rates like this were normal. It is live and running.</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;">
           <a class="taplink hv7" href="/work/" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #C9D0FF;color:#3D5AFE;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;">read in detail →</a>
           <a class="taplink hv10" href="/writing/auditing-indian-voice-agents/" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #DDD6C6;color:#4C4841;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;">how I audit voice agents →</a>
@@ -611,7 +622,7 @@
     <div class="mu" data-mu style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;">
       <div class="mu-grid">
         <div>
-          <div class="mu-kick"><span class="mu-new">new</span><span>open access ✦ explainers, quizzes, notebooks ✦ october 2026</span></div>
+          <div class="mu-kick"><span class="mu-new">new</span><span>open access ✦ explainers, quizzes, notebooks ✦ november 2026</span></div>
           <h3><a href="https://machine-unlearning.shreyanbasuray.com/" target="_blank" rel="noopener">Machine Unlearning for Responsible AI ↗</a></h3>
           <p class="mu-lead">Teach a trained model to forget someone's data, and prove that it did.</p>
           <p class="mu-body">Carol wrote 40 of 1,257 training digits with a thick marker nobody else used, and the model memorised <b>her</b>. She asks to be forgotten, the company deletes her rows, and <b>nothing changes</b>: the weights already carry her. The course is about what to do next, from k-NN to language models, and it is built around the <b>gold band</b>, the range of results from models retrained without her, rather than a target of 0%.</p>
@@ -619,7 +630,7 @@
             <li>train</li><li>show the issue</li><li>untrain</li><li>show the result</li><li>prove it</li>
           </ol>
           <div class="mu-hud">
-            <div class="mu-stat"><b><span data-count="22">22</span></b><span class="l">runnable notebooks</span></div>
+            <div class="mu-stat"><b><span data-count="24">24</span></b><span class="l">runnable notebooks</span></div>
             <div class="mu-stat"><b><span data-count="40">40</span></b><span class="l">practice problems</span></div>
             <div class="mu-stat"><b><span data-count="300">300</span><span style="color:#FFC300;">+</span></b><span class="l">quiz questions</span></div>
             <div class="mu-stat"><b><span data-count="11">11</span></b><span class="l">badges to earn</span></div>
@@ -707,11 +718,62 @@
         </div>
         <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
-            <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;"><a class="taplink hv9 cardlink" href="https://github.com/Shreyan1" style="color:#15171B;" target="_blank" rel="noopener noreferrer">Watermark robustness research ↗</a></h3>
+            <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;"><a class="taplink hv9 cardlink" href="https://github.com/Shreyan1/ai-text-watermark-remover" style="color:#15171B;" target="_blank" rel="noopener noreferrer">Watermark robustness research ↗</a></h3>
             <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">adversarial</span>
           </div>
           <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A study of how well text watermarks survive once content is paraphrased and regenerated, so a team can judge whether a watermark is worth relying on. Carries an explicit responsible-use note citing EU AI Act Article 50(2).</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ============ CURRENTLY BUILDING ============ -->
+  <div style="margin-top:80px;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"></path></svg>On the bench right now</h2>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;color:#716B5F;">work in progress ✦ november 2026</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;margin-top:22px;">
+      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
+          <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;">Where does one person live in a model?</h3>
+          <span class="wip-pill">writing</span>
+        </div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A research paper on locating a single person inside a trained model. When someone asks to be forgotten, the first question is not how to erase them but where they actually sit, and how far erasing that spot reaches into everything else the model knows.</p>
+        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">research paper ✦ machine unlearning</p>
+      </div>
+      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
+          <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;"><a class="taplink hv9 cardlink" href="https://machine-unlearning.shreyanbasuray.com/" style="color:#15171B;" target="_blank" rel="noopener noreferrer">Machine Unlearning for Responsible AI ↗</a></h3>
+          <span class="wip-pill">growing</span>
+        </div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">The open-access course keeps growing, now 24 runnable notebooks that climb from classical models to LLMs, recommender systems, RAG and vector stores, and surgical weight editing. Every chapter shows how to make a model forget someone and how to prove it did.</p>
+        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">24 notebooks ✦ new chapters landing</p>
+      </div>
+      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
+          <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;">Nev</h3>
+          <span class="wip-pill">in build</span>
+        </div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A local System One decision engine. Routing, classification and gating calls inside software have a known set of answers, so Nev returns a typed answer and a calibrated probability in one forward pass, in tens of milliseconds, with zero generated tokens. No round trip to an LLM, no prose to parse back into a type.</p>
+        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">three tiers on one cost curve ✦ nev-high checkpoint-ready</p>
+      </div>
+      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
+          <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;">Buddy</h3>
+          <span class="wip-pill">in build</span>
+        </div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">A voice-first personal agent gateway. A headless core reaches mail, calendar and the rest of my tools through MCP, with push-to-talk and scheduled jobs instead of always-on listening. Every write defaults to dry-run and needs confirmation. Phase 0 asks one question: do I still use it after two weeks?</p>
+        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">phase 0 ✦ agent host and first connectors</p>
+      </div>
+      <div style="animation:fadeUp .85s cubic-bezier(.22,.7,.2,1) both;position:relative;background:#FEFDFA;border:1px solid #E8E2D4;border-radius:3px;padding:26px;box-shadow:0 6px 18px rgba(21,23,27,.07);transition:transform .18s ease,box-shadow .18s ease;" class="hv8">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 12px;">
+          <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;"><a class="taplink hv9 cardlink" href="https://buildersquorum.com" style="color:#15171B;" target="_blank" rel="noopener noreferrer">Builders’ Quorum ↗</a></h3>
+          <span class="wip-pill">launching</span>
+        </div>
+        <p style="margin:8px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#716B5F;">founder</p>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#4C4841;">I founded Builders’ Quorum, a curated network that puts students, universities, companies and investors in the same room through invitation-only sessions, hackathons and live problems from real teams. The first version of the site is up, and every format runs as a pilot before it scales.</p>
+        <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#716B5F;letter-spacing:.03em;line-height:1.6;">site live ✦ university pilots first</p>
       </div>
     </div>
   </div>
@@ -857,8 +919,8 @@
   <div class="cgrid" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,30px) 40px;align-items:start;">
     <div style="padding:0 6px;">
       <h2 style="display:inline-block;background:#15171B;color:#F7F3EA;padding:11px 20px 13px;clip-path:polygon(0.5% 9%, 2% 0%, 9% 6%, 17% 1%, 26% 7%, 35% 2%, 44% 8%, 53% 1%, 62% 6%, 71% 0%, 80% 7%, 88% 2%, 96% 6%, 99.5% 1%, 99.2% 92%, 97% 100%, 89% 94%, 81% 99%, 72% 93%, 63% 100%, 54% 94%, 45% 99%, 36% 93%, 27% 100%, 18% 94%, 10% 99%, 3% 93%, 0.8% 99%);animation:tapeIn .8s cubic-bezier(.22,.7,.2,1) both;transform-origin:0 60%;margin:0;font-size:26px;font-weight:600;letter-spacing:-.025em;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8AA0FF" stroke-width="1.4" style="opacity:.9;flex:0 0 auto;margin-right:12px;vertical-align:-6px;display:inline-block;" aria-hidden="true"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="10" r="2.5"></circle><path d="M2.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5M15 20c0-2.2 1.4-3.8 3.5-3.8"></path></svg>The dev community</h2>
-      <p style="margin:8px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">claude developers india ✦ 880+ builders</p>
-      <p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I founded Claude Developers India, a WhatsApp community of 880+ builders, and I keep it active. I run "Show Your Products, Brainstorm and Validate", online calls where members demo what they are building to each other and get feedback. Each session also brings in a guest speaker or two for a short talk.</p>
+      <p style="margin:8px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3D5AFE;">claude developers india ✦ 950+ builders</p>
+      <p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I founded Claude Developers India, a WhatsApp community of 950+ builders, and I keep it active. I run "Show Your Products, Brainstorm and Validate", online calls where members demo what they are building to each other and get feedback. Each session also brings in a guest speaker or two for a short talk.</p>
       <p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:#4C4841;">I also mentor at hackathons, most recently Code Wizards 2.0 at SRM University, Ghaziabad Campus.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;">
         <a class="taplink hv12" href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%27d%20like%20to%20join%20Claude%20Developers%20India.&amp;type=phone_number&amp;app_absent=0" style="display:inline-flex;align-items:center;gap:8px;background:#3D5AFE;color:#FFFFFF;padding:12px 20px;font-size:15px;font-weight:500;border-radius:2px;" target="_blank" rel="noopener noreferrer">Ask to join on WhatsApp →</a>
@@ -896,7 +958,7 @@
 </div>
 
 <!-- ============ CONTACT ============ -->
-<div style="margin-top:80px;background:#3D5AFE;color:#F4F2FF;">
+<div class="band band-foot" style="margin-top:80px;background:#3D5AFE;color:#F4F2FF;">
   <div style="max-width:1140px;margin:0 auto;padding:clamp(48px,9vw,72px) clamp(20px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,5vw,40px) 56px;align-items:center;">
    <div>
     <h2 style="margin:0;font-size:clamp(30px,4vw,46px);font-weight:600;letter-spacing:-.04em;line-height:1.06;max-width:20ch;color:#FDFCFF;">Want an outside pass over your AI product?</h2>
@@ -1036,7 +1098,7 @@
     <a href="https://api.whatsapp.com/send/?phone=919830152522&amp;text=Hey%20Shreyan!%20I%20reached%20out%20from%20your%20website.&amp;type=phone_number&amp;app_absent=0" class="flink" target="_blank" rel="noopener noreferrer">whatsapp</a>
     <a href="mailto:hello@shreyanbasuray.com" class="flink">email</a>
   </div>
-  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">reviewed october 2026</span>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#716B5F;">reviewed november 2026</span>
 </div>
 
 </div>

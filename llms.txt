@@ -30,16 +30,28 @@
 - C-RAI, a certification framework for responsible AI sent to MeitY and NASSCOM
 - Agent Complexity Theory, a working paper on choosing agent architectures before building
 - Machine Unlearning for Responsible AI, an open-access course on making a trained
-  model forget someone's data and proving that it did: 22 runnable notebooks,
+  model forget someone's data and proving that it did: 24 runnable notebooks,
   explainers, quizzes, badges and a certificate
   (https://machine-unlearning.shreyanbasuray.com/, source:
   https://github.com/Shreyan1/machine-unlearning-course)
-- Founder of Claude Developers India (880+ builders)
+- Founder of Claude Developers India (950+ builders)
 - Author of 17+ technical articles for Weights & Biases
+
+
+## Currently building (November 2026)
+
+- Nev, a local System One decision engine: typed decisions over a known option
+  set in one forward pass, with zero generated tokens
+- Buddy, a voice-first personal agent gateway built on MCP
+- Founder of Builders' Quorum (https://buildersquorum.com/), a curated network for
+  students, universities, companies and investors
+- A research paper on locating where one person's data lives inside a trained model
+- Machine Unlearning for Responsible AI, still growing (24 notebooks)
 
 ## Representative results
 
-- Enterprise voice agent running at Rs 2.29 per minute all-in at production quality
+- Enterprise voice agent running at Rs 2.29 per minute all-in at production quality,
+  reached in early 2025, before rates like this were common
 - NL2SQL system rebuilt from Rs 95,000 to Rs 35,000 a month of vendor spend
 - Corporate distress metric corrected by fixing the label definition, not the model
   (92.155% current-year distress flagging, 187 spurious labels removed)
