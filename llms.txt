@@ -30,7 +30,7 @@
 - C-RAI, a certification framework for responsible AI sent to MeitY and NASSCOM
 - Agent Complexity Theory, a working paper on choosing agent architectures before building
 - Machine Unlearning for Responsible AI, an open-access course on making a trained
-  model forget someone's data and proving that it did: 24 runnable notebooks,
+  model forget someone's data and proving that it did: 22 runnable notebooks,
   explainers, quizzes, badges and a certificate
   (https://machine-unlearning.shreyanbasuray.com/, source:
   https://github.com/Shreyan1/machine-unlearning-course)
@@ -46,7 +46,7 @@
 - Founder of Builders' Quorum (https://buildersquorum.com/), a curated network for
   students, universities, companies and investors
 - A research paper on locating where one person's data lives inside a trained model
-- Machine Unlearning for Responsible AI, still growing (24 notebooks)
+- Machine Unlearning for Responsible AI, still growing (22 notebooks)
 
 ## Representative results
 
